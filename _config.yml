@@ -1,8 +1,8 @@
 # ----
 # Site
 
-title: Hydra Template
-url: "https://proud-alligator.cloudvent.net"
+title: CSS Book
+url: "https://billmei.github.io/css-adventure/"
 baseurl:
 google_analytics_key:
 google_maps_javascript_api_key:
@@ -16,9 +16,9 @@ author:
   email:
   twitter: # twitter username without the @ symbol
 social:
-  name: Hydra Template
+  name: CSS Adventure
   links:
-    - https://github.com/CloudCannon/hydra-jekyll-template
+    - https://billmei.github.io/css-adventure/
 
 # -----
 # Build
