@@ -31,6 +31,18 @@ body {
   100%  { color: #ff2400 }
 }
 
+@keyframes rainbow-bg {
+  0%   { background-color: #1ddde8 }
+  12%  { background-color: #1de840 }
+  25%  { background-color: #e3e81d }
+  37%  { background-color: #e8b71d }
+  50%  { background-color: #ff2400 }
+  62%  { background-color: #dd00f3 }
+  75%  { background-color: #dd00f3 }
+  87%  { background-color: #2b1de8 }
+  100% { background-color: #1ddde8 }
+}
+
 .jumbo__headline {
   font-family: 'Bungee', sans-serif;
   font-size: 5em;
@@ -77,17 +89,32 @@ a:hover {
     animation: rainbow-text 0.5s linear infinite;
 }
 
+.btn {
+  border: 0;
+  color: black;
+  -webkit-animation: rainbow-bg 60s linear infinite;
+  -z-animation: rainbow-bg 60s linear infinite;
+  -o-animation: rainbow-bg 60s linear infinite;
+    animation: rainbow-bg 60s linear infinite;
+}
+
 .btn:hover {
+  color: white;
   background: linear-gradient(90deg, #ff2400, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3, #ff2400);
   background-size: 1800% 1800%;
-
   -webkit-animation: rainbow 0.5s linear infinite;
   -z-animation: rainbow 0.5s linear infinite;
   -o-animation: rainbow 0.5s linear infinite;
     animation: rainbow 0.5s linear infinite;
-  border: 1px solid transparent;
 }
 
+.bottom-cta {
+    background: #212D47;
+    color: white;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
 
 @media screen and (max-width: 991px) {
   .btn-cta {
