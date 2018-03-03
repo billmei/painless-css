@@ -1,3 +1,7 @@
+body {
+  background-color: #eee;
+}
+
 @-webkit-keyframes rainbow {
     0%{background-position:0% 100%}
     100%{background-position:100% 0%}
@@ -29,31 +33,41 @@
 
 .jumbo__headline {
   font-family: 'Bungee', sans-serif;
-  color: white;
   font-size: 5em;
   text-align: center;
   text-shadow: 4px 4px black;
+  margin-bottom: 1em;
 }
 .jumbo__headline--css {
   font-size: 2em;
   color: white;
   text-shadow: 
-    4px  4px  #dd00f3,
-    8px  8px  #2b1de8,
-    12px 12px #1ddde8,
-    16px 16px #1de840,
-    20px 20px #e3e81d,
-    24px 24px #e8b71d,
-    28px 28px #e81d1d;
+    -4px  4px  #dd00f3,
+    -8px  8px  #2b1de8,
+    -12px 12px #1ddde8,
+    -16px 16px #1de840,
+    -20px 20px #e3e81d,
+    -24px 24px #e8b71d,
+    -28px 28px #e81d1d;
 }
 
-p {
-  font-family: 'Roboto Mono', sans-serif;
+h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Roboto Slab', sans-serif;
 }
-
 
 .jumbotron {
   background-color: #212D47;
+  color: white;
+}
+.jumbotron h3, .jumbotron .lead {
+  text-shadow: 2px 2px black;
+}
+.jumbotron .fine-print {
+  color: #ddd;
+}
+.btn-cta {
+  padding: 0.5em 0.8em;
+  font-size: 2em;
 }
 
 a:hover {
@@ -71,6 +85,14 @@ a:hover {
   -z-animation: rainbow 0.5s linear infinite;
   -o-animation: rainbow 0.5s linear infinite;
     animation: rainbow 0.5s linear infinite;
+  border: 1px solid transparent;
+}
 
 
+@media screen and (max-width: 991px) {
+  .btn-cta {
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
 }
