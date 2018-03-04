@@ -19,6 +19,42 @@ body {
     100%{background-position:100% 0%}
 }
 
+@-webkit-keyframes rainbow-text {
+  0%  { color: #ff2400 }
+  12%  { color: #dd00f3 }
+  25%  { color: #dd00f3 }
+  37%  { color: #2b1de8 }
+  50%  { color: #1ddde8 }
+  62%  { color: #1de840 }
+  75%  { color: #e3e81d }
+  87%  { color: #e8b71d }
+  100%  { color: #ff2400 }
+}
+
+@-moz-keyframes rainbow-text {
+  0%  { color: #ff2400 }
+  12%  { color: #dd00f3 }
+  25%  { color: #dd00f3 }
+  37%  { color: #2b1de8 }
+  50%  { color: #1ddde8 }
+  62%  { color: #1de840 }
+  75%  { color: #e3e81d }
+  87%  { color: #e8b71d }
+  100%  { color: #ff2400 }
+}
+
+@-o-keyframes rainbow-text {
+  0%  { color: #ff2400 }
+  12%  { color: #dd00f3 }
+  25%  { color: #dd00f3 }
+  37%  { color: #2b1de8 }
+  50%  { color: #1ddde8 }
+  62%  { color: #1de840 }
+  75%  { color: #e3e81d }
+  87%  { color: #e8b71d }
+  100%  { color: #ff2400 }
+}
+
 @keyframes rainbow-text {
   0%  { color: #ff2400 }
   12%  { color: #dd00f3 }
@@ -31,6 +67,39 @@ body {
   100%  { color: #ff2400 }
 }
 
+@-webkit-keyframes rainbow-bg {
+  0%   { background-color: #1ddde8 }
+  12%  { background-color: #1de840 }
+  25%  { background-color: #e3e81d }
+  37%  { background-color: #e8b71d }
+  50%  { background-color: #ff2400 }
+  62%  { background-color: #dd00f3 }
+  75%  { background-color: #dd00f3 }
+  87%  { background-color: #2b1de8 }
+  100% { background-color: #1ddde8 }
+}
+@-moz-keyframes rainbow-bg {
+  0%   { background-color: #1ddde8 }
+  12%  { background-color: #1de840 }
+  25%  { background-color: #e3e81d }
+  37%  { background-color: #e8b71d }
+  50%  { background-color: #ff2400 }
+  62%  { background-color: #dd00f3 }
+  75%  { background-color: #dd00f3 }
+  87%  { background-color: #2b1de8 }
+  100% { background-color: #1ddde8 }
+}
+@-o-keyframes rainbow-bg {
+  0%   { background-color: #1ddde8 }
+  12%  { background-color: #1de840 }
+  25%  { background-color: #e3e81d }
+  37%  { background-color: #e8b71d }
+  50%  { background-color: #ff2400 }
+  62%  { background-color: #dd00f3 }
+  75%  { background-color: #dd00f3 }
+  87%  { background-color: #2b1de8 }
+  100% { background-color: #1ddde8 }
+}
 @keyframes rainbow-bg {
   0%   { background-color: #1ddde8 }
   12%  { background-color: #1de840 }
@@ -124,7 +193,6 @@ h2, h3, h4, h5, h6 {
     0 3px 1px -2px rgba(0, 0, 0, .2),
     0 1px 5px 0 rgba(0, 0, 0, .12);
 }
-
 .btn-rainbow:hover {
   color: white;
   background: linear-gradient(90deg, #ff2400, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3, #ff2400);
@@ -133,6 +201,9 @@ h2, h3, h4, h5, h6 {
   -z-animation: rainbow 0.5s linear infinite;
   -o-animation: rainbow 0.5s linear infinite;
     animation: rainbow 0.5s linear infinite;
+}
+.btn-rainbow:active {
+  background: #1ddde8;
 }
 
 .testimonial__text {
