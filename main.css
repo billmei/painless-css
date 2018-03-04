@@ -43,28 +43,13 @@ body {
   100% { background-color: #1ddde8 }
 }
 
-.jumbo__headline {
-  font-family: 'Bungee', sans-serif;
-  font-size: 5em;
-  text-align: center;
-  text-shadow: 4px 4px black;
-  margin-bottom: 1em;
-}
-.jumbo__headline--css {
-  font-size: 2em;
-  color: white;
-  text-shadow: 
-    -4px  4px  #dd00f3,
-    -8px  8px  #2b1de8,
-    -12px 12px #1ddde8,
-    -16px 16px #1de840,
-    -20px 20px #e3e81d,
-    -24px 24px #e8b71d,
-    -28px 28px #e81d1d;
-}
-
 h1, h2, h3, h4, h5, h6, p {
   font-family: 'Roboto Slab', sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+  margin-top: 1em;
+  margin-bottom: 0.8em;
 }
 
 .jumbotron {
@@ -77,19 +62,48 @@ h1, h2, h3, h4, h5, h6, p {
 .jumbotron .fine-print {
   color: #ddd;
 }
+.jumbo__headline {
+  font-family: 'Bungee', sans-serif;
+  font-size: 5em;
+  text-align: center;
+  text-shadow: 4px 4px black;
+}
+.what-is-css-explanation {
+  margin-top: 1em;
+}
+#disable-stylesheets {
+  color: white;
+  text-decoration: underline;
+}
+.jumbo__headline-section {
+  margin-bottom: 5em;
+}
+.jumbo__headline--css {
+  font-size: 2em;
+  color: white;
+  letter-spacing: 0.15em;
+  text-shadow: 
+    -4px  4px  #dd00f3,
+    -8px  8px  #2b1de8,
+    -12px 12px #1ddde8,
+    -16px 16px #1de840,
+    -20px 20px #e3e81d,
+    -24px 24px #e8b71d,
+    -28px 28px #e81d1d;
+}
 .btn-cta {
   padding: 0.5em 0.8em;
   font-size: 2em;
 }
 
-a:hover {
+.rainbow-text:hover {
     -webkit-animation: rainbow-text 0.5s linear infinite;
   -z-animation: rainbow-text 0.5s linear infinite;
   -o-animation: rainbow-text 0.5s linear infinite;
     animation: rainbow-text 0.5s linear infinite;
 }
 
-.btn {
+.btn-rainbow {
   border: 0;
   color: black;
   -webkit-animation: rainbow-bg 60s linear infinite;
@@ -98,7 +112,7 @@ a:hover {
     animation: rainbow-bg 60s linear infinite;
 }
 
-.btn:hover {
+.btn-rainbow:hover {
   color: white;
   background: linear-gradient(90deg, #ff2400, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3, #ff2400);
   background-size: 1800% 1800%;
@@ -108,12 +122,20 @@ a:hover {
     animation: rainbow 0.5s linear infinite;
 }
 
-.bottom-cta {
+.testimonial__text {
+  margin-bottom: 4em;
+}
+.testimonial__author {
+  position: absolute;
+  bottom: 0;
+}
+
+.footer-section {
     background: #212D47;
     color: white;
     text-align: center;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 @media screen and (max-width: 991px) {

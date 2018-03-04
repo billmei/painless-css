@@ -11,10 +11,25 @@
 <body>
 
   <div class="jumbotron jumbotron-fluid">
-    <div class="container">
+    <div class="container jumbo__headline-section">
       <h1 class="jumbo__headline">Learn to be good at<br />
         <span class="jumbo__headline--css">CSS</span>
       </h1>
+      <div class="text-center">
+        <a data-toggle="collapse" href="#what-is-css" role="button" aria-expanded="false" aria-controls="what-is-css" class="text-muted">
+        (what is CSS?)
+      </a>
+      </div>
+      <div class="collapse" id="what-is-css">
+        <div class="row">
+          <div class="what-is-css-explanation col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12 offset-sm-0">
+              Cascading Style Sheets. CSS is the code you write that gives a website its "look and feel". <a id="disable-stylesheets" href="javascript:void(0)">Click here to turn CSS off</a> to see what this page would look like if it had no CSS code at all.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 class="d-none secret-content">CSS really makes a difference, eh? <a id="enable-stylesheets" href="javascript:void(0)">Click here to turn CSS back on</a>.</h2>
     </div>
     <div class="container">
       <div class="row">
@@ -23,19 +38,18 @@
         </div>
         <div class="col-lg-7 offset-lg-1 col-md-7 offset-md-0">
           <p class="lead mb-5">The jargon-free guide to making CSS do what you want without stress</p>
-          <h3 class="mb-4">Launching Fall 2018</h3>
-          <a href="https://billmei.us2.list-manage.com/subscribe?u=1ce577b697f10829b9ec5574f&id=af9611058b" class="btn btn-rainbow btn-cta mb-1">Let me know when it’s released</a>
-          <p class="fine-print"><small>Click on that button and I'll <em>email you a sweet preorder discount</em> when the book is ready.</small></p>
-
+          <h3>Launching Fall 2018</h3>
+          <a href="https://billmei.us2.list-manage.com/subscribe?u=1ce577b697f10829b9ec5574f&id=af9611058b" class="btn btn-rainbow btn-cta mb-1">Let me know when it’s ready</a>
+          <p class="fine-print"><small>Click on that button and I'll <em>email you a sweet preorder discount</em> when the book is ready. I never spam and I keep your email strictly confidential.</small></p>
         </div>
       </div>
     </div>
   </div>
 
   <div class="container">
-    <div class="row">
+    <div class="row mb-5">
       <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0">
-        <p>Hey, I'm <a href="https://billmei.net">Bill Mei</a>. For years, I've been consulting for software startups to help them ship beautiful web design.</p>
+        <p>Hey, I'm <a href="https://billmei.net" class="rainbow-text">Bill Mei</a>. For years, I've been consulting for software startups to help them ship beautiful web design.</p>
         <p>However, I got tired of seeing people make the same mistakes with CSS over and over again. So I'm writing a book to teach <em>everyone</em> (developers <em>and</em> designers!) how to write maintainable, easy-to-understand CSS that is a joy to work with.</p>
 
         <h3>Do you feel like this when you write CSS?</h3>
@@ -43,7 +57,7 @@
 
         <p>You're not alone.</p>
 
-        <p>Imagine how it would feel if you could make CSS do what you want without stress:</p>
+        <p>Imagine how it would feel if you could make CSS do what you want without the frustration:</p>
 
         <ul>
           <li><p>You could approach CSS with confidence instead of with a sense of dread</p></li>
@@ -57,14 +71,16 @@
 
         <p>They never told you in your university CS classes (or at your bootcamp course) how important CSS is when you started working at a real job delivering real products. As a result, you're pressured to ship CSS at your work where you don't have time to learn the fundamentals.</p>
 
-        <p>Worse, the official CSS documentation is very technical and assumes you already know how browser C++ rendering engines work, which is not at all approachable.</p>
+        <p>Worse, the existing CSS resources out there are very technical and assume you already know how browser C++ rendering engines work, which is not at all approachable.</p>
 
         <p>Because there is no good resource that gives you a solid mental model for how CSS actually works from the ground up, you're left copy/pasting stuff from Stackoverflow and hoping it works. No wonder it feels so frustrating to debug those exotic display issues.</p>
 
 
         <h3>If only you had a good resource to learn from, writing CSS could feel like this instead:</h3>
 
-        <!-- TODO: Insert image -->
+        <!-- <p><img src="/images/painting-fast.gif" alt="An artist painting a cityscape extremely quickly" class="img-fluid img-thumbnail" /></p> -->
+  
+        <!-- TODO: Add mp4 as primary, and .gif as fallback. Same with peter griffin gif-->
 
         <p>The book I'm writing will teach you CSS from first principles, giving you the best mental models to think about CSS, so you have a strong foundation to figure out how to solve web design problems on your own without having to resort to brute trial and error.</p>
         <p>It's important to me that the book explains things in a clear, jargon-free way. I'm spending time painstakingly editing and user testing it to make sure it's as fun to read as it is informative, so I can give you the confidence to use CSS to design anything that you can dream of.</p>
@@ -73,27 +89,48 @@
 
 
         <!-- TODO: Add a CTA here: My book will teach you the fundamentals and give you a mental model, so you could figure out how to solve problems on your own without having to resort to brute trial and error. -->
-<!--        TODO: What is CSS? It’s the code you write that gives a website its styling. Click here to see what this website would look like without CSS. -->
+<!-- Css it's a hidden skill people don't talk about because it helps you connect with customers  -->
+
+<!-- TODO: Sample table of contents (coming soon / later) -->
       </div>
     </div>
-    <div class="row">
-      <div class="col">
-        <div class="testimonial-block">
-          <div class="square-image"><img src="https://source.unsplash.com/6anudmpILw4/600x400" alt="Jim James" class=""></div>
-          <blockquote>
-            <p class="">I'm not a real person! But the book manuscript is being tested by real designers and their testimonials are coming soon.</p>
-            <p class=" author">Jim James - Not A Real Person.</p>
-          </blockquote>
+
+  <hr>
+
+    <div class="row mb-5">
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0">
+        <h2>Testimonials</h2>
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-4 d-none d-sm-block">
+                <img src="https://source.unsplash.com/6anudmpILw4/200x200" alt="Jim James" class="rounded-circle img-fluid">
+              </div>
+              <div class="col-sm-8 col-12">
+                <blockquote>
+                  <p class="testimonial__text">I'm not a real person! But the book manuscript is being tested by real designers and their testimonials are coming soon.</p>
+                  <p class="testimonial__author">Jim James - Not A Real Person.</p>
+                </blockquote>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <div class="row mb-5">
+      <!-- TODO: Don't make this a dark background -->
+      <div class="col text-center">
+          <h2><strong>Stop being afraid</strong> of writing CSS</h2>
+          <a href="https://billmei.us2.list-manage.com/subscribe?u=1ce577b697f10829b9ec5574f&id=af9611058b" class="btn btn-rainbow btn-cta">Sign up for early access to the book</a>
       </div>
     </div>
   </div>
 
   <div class="row no-gutters">
     <div class="col">
-      <section class="bottom-cta">
-        <h2 class=""><strong>Stop being afraid</strong> of writing CSS</h2>
-        <a href="https://billmei.us2.list-manage.com/subscribe?u=1ce577b697f10829b9ec5574f&id=af9611058b" class="btn btn-rainbow">Let me know when the book is out</a>
+      <section class="footer-section">
+        Copyright © 2018 Bill Mei. All rights reserved.
       </section>
     </div>
   </div>
