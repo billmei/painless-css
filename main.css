@@ -158,6 +158,7 @@ h2, h3, h4, h5, h6 {
 .jumbo__headline--css {
   font-family: 'Bungee', sans-serif;
   font-size: 2em;
+  margin-left: 0.2em;
   color: white;
   letter-spacing: 0.15em;
   text-shadow: 
