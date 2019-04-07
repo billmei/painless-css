@@ -1,0 +1,4 @@
+p.urgent {
+  /* Only paragraphs with the class "urgent" become bold */
+  font-weight: bold;
+}

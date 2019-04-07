@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Not recommended version: */
+    span p {
+      font-weight: bold;
+    }
+
+    p span {
+      font-weight: normal;
+    }
+
+    /* Recommended version: */
+    /*
+    p {
+      font-weight: bold;
+    }
+    p span {
+      font-weight: normal;
+    }
+    */
+  </style>
+</head>
+<body>
+  <span>
+    <p>
+      I am bold.
+    </p>
+  </span>
+
+  <p>
+    <span>
+      I am not bold.
+    </span>
+  </p>
+</body>
+</html>

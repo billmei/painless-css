@@ -1,0 +1,14 @@
+h1, p, .emphasis {
+  font-style: italic;
+}
+
+/* This is the same as all three rulesets separately: */
+h1 {
+  font-style: italic;
+}
+p {
+  font-style: italic;
+}
+.emphasis {
+  font-style: italic;
+}

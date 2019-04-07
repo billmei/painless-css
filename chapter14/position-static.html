@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .boxes {
+      background-color: orange;
+      width: 200px;
+      height: 100px;
+      border: 2px solid black;
+      display: inline-block;
+      margin: 20px;
+      text-align: center;
+      vertical-align: top;
+    }
+    .example {
+      background-color: limegreen;
+      position: static;
+
+      /* These do nothing */
+      left: 500px;
+      right: 0;
+      top: 300em;
+      bottom: -9999px;
+      z-index: -500;
+    }
+  </style>
+</head>
+<body>
+  <div class="boxes"><pre>position: static;</pre></div>
+  <div class="boxes example"><pre>.example</pre><pre>position: static;</pre></div>
+  <div class="boxes"><pre>position: static;</pre></div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .boxes {
+      background-color: orange;
+      width: 200px;
+      height: 100px;
+      border: 2px solid black;
+      display: inline-block;
+      margin: 20px;
+      text-align: center;
+      vertical-align: top;
+    }
+    .example {
+      background-color: limegreen;
+      position: relative;
+      left: -150px;
+      top: 2em;
+      /* z-index: -1; */
+    }
+  </style>
+</head>
+<body>
+  <div class="boxes"><pre>position: static;</pre></div>
+  <div class="boxes example"><pre>.example</pre><pre>position: relative;</pre></div>
+  <div class="boxes"><pre>position: static;</pre></div>
+</body>
+</html>

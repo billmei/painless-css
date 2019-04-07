@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    button {
+      /* Specificity: 001 */
+      background-color: orange;
+    }
+
+    button .submit-btn {
+      /* Specificity: 011 */
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <button class="submit-btn">What color am I?</button>
+</body>
+</html>

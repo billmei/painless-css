@@ -1,0 +1,7 @@
+#leadparagraph {
+  font-size: 200%;
+}
+.priority-urgent {
+  font-weight: bold;
+}
+.priority-normal {}

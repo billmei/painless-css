@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .table-layout {
+      display: table;
+    }
+    .country, .category {
+      display: table-row;
+    }
+    .category {
+      color: #ffffff;
+      background-color: #000000;
+    }
+    .country:nth-child(2n) {
+      background-color: #eeeeee;
+    }
+    .country div, .category div {
+      display: table-cell;
+      padding: 0.5em 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Top 5 Most Populous Countries</h1>
+  <div class="table-layout">
+    <div class="category">
+      <div class="category__rank">Rank</div>
+      <div class="category__name">Country</div>
+      <div class="category__region">Region</div>
+      <div class="category__population">Population (2017)</div>
+    </div>
+
+    <div class="country">
+      <div class="country__rank">1</div>
+      <div class="country__name">China</div>
+      <div class="country__region">East Asia</div>
+      <div class="country__population">1,409,517,397</div>
+    </div>
+
+    <div class="country">
+      <div class="country__rank">2</div>
+      <div class="country__name">India</div>
+      <div class="country__region">South Asia</div>
+      <div class="country__population">1,339,180,127</div>
+    </div>
+
+    <div class="country">
+      <div class="country__rank">3</div>
+      <div class="country__name">United States</div>
+      <div class="country__region">North America</div>
+      <div class="country__population">324,459,463</div>
+    </div>
+
+    <div class="country">
+      <div class="country__rank">4</div>
+      <div class="country__name">Indonesia</div>
+      <div class="country__region">South-East Asia</div>
+      <div class="country__population">263,991,379</div>
+    </div>
+
+    <div class="country">
+      <div class="country__rank">5</div>
+      <div class="country__name">Brazil</div>
+      <div class="country__region">South America</div>
+      <div class="country__population">209,288,278</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Custom Checkboxes</title>
+  <style>
+    /*
+    The double underscore stuff is known as "BEM Syntax",
+    BEM stands for "Block Element Modifier".
+    You can learn more about BEM here: http://getbem.com/introduction/
+    */
+    body {
+      font-size: 150%;
+    }
+    .custom-checkbox__container {
+      list-style: none;
+    }
+    .custom-checkbox__input {
+      display: none;
+    }
+      .custom-checkbox__input:checked + .custom-checkbox__label {
+        color: #ed2800;
+      }
+      .custom-checkbox__input:checked + .custom-checkbox__label::before {
+        content: '💖';
+      }
+    .custom-checkbox__label {}
+      .custom-checkbox__label:hover {
+        cursor: pointer;
+      }
+      .custom-checkbox__label::before {
+        content: '💔';
+      }
+  </style>
+</head>
+<body>
+  <p>Check this out</p>
+  <ul>
+    <li class="custom-checkbox__container">
+      <input class="custom-checkbox__input" type="checkbox" id="lasers" />
+      <label class="custom-checkbox__label" for="lasers">
+        Activate lasers
+      </label>
+    </li>
+    <li class="custom-checkbox__container">
+      <input class="custom-checkbox__input" type="checkbox" id="splines" />
+      <label class="custom-checkbox__label" for="splines">
+        Reticulate splines
+      </label>
+    </li>
+    <li class="custom-checkbox__container">
+      <input class="custom-checkbox__input" type="checkbox" id="tandc" />
+      <label class="custom-checkbox__label" for="tandc">
+        Agree to Terms and Conditions
+      </label>
+    </li>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,28 @@
+body {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+}
+
+article {
+  border: 1px solid #dddddd;
+  border-radius: 1em;
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-bottom: 0.5em;
+  box-shadow: 2px 2px 4px #cccccc;
+}
+
+h1, h2 {
+  font-family: sans-serif;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+small {
+  color: #888888;
+}
