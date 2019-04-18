@@ -207,14 +207,6 @@ h2, h3, h4, h5, h6 {
   background: #1ddde8;
 }
 
-.testimonial__text {
-  margin-bottom: 4em;
-}
-.testimonial__author {
-  position: absolute;
-  bottom: 0;
-}
-
 .footer-section {
     background: #212D47;
     color: white;
