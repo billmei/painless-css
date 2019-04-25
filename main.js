@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var $linkTags = $('link')
+  var $linkTags = $('link');
 
   $('#disable-stylesheets').on('click', function(e) {
     e.preventDefault();
