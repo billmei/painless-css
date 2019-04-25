@@ -112,7 +112,7 @@ body {
   100% { background-color: #1ddde8 }
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, p, ul, li {
   font-family: 'Roboto Slab', sans-serif;
 }
 
@@ -127,6 +127,26 @@ h2, h3, h4, h5, h6 {
   margin-top: 1em;
   margin-bottom: 0.8em;
   color: #212D47;
+}
+
+dt p, dd p  {
+  margin-bottom: 0.5em;
+}
+dd p:last-child {
+  margin-bottom: 2em;
+}
+dt p::before {
+  content: "Q: ";
+}
+dd p:first-child::before {
+  content: "A: ";
+  font-weight: bold;
+}
+dt p:first-child, dd p:first-child {
+  text-indent: -1.25em;
+}
+dt p, dd p {
+  margin-left: 1.25em;
 }
 
 .jumbotron {
@@ -185,10 +205,12 @@ h2, h3, h4, h5, h6 {
 .btn-rainbow {
   border: 0;
   color: black;
-  -webkit-animation: rainbow-bg 60s linear infinite;
-  -z-animation: rainbow-bg 60s linear infinite;
-  -o-animation: rainbow-bg 60s linear infinite;
-    animation: rainbow-bg 60s linear infinite;
+  background: linear-gradient(90deg, #ff2400, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3, #ff2400);
+  background-size: 1800% 1800%;
+  -webkit-animation: rainbow 10s linear infinite;
+  -z-animation: rainbow 10s linear infinite;
+  -o-animation: rainbow 10s linear infinite;
+    animation: rainbow 10s linear infinite;
   box-shadow:
     0 2px 2px 0 rgba(0, 0, 0, .14),
     0 3px 1px -2px rgba(0, 0, 0, .2),
@@ -207,6 +229,40 @@ h2, h3, h4, h5, h6 {
   background: #1ddde8;
 }
 
+.table-of-contents__list {
+  padding-left: 8em;
+  width: 49%;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 0;
+}
+.table-of-contents__list > li {
+  margin: 0 0 0.5em 0;
+  list-style: none;
+  position: relative;
+}
+.chapter-label {
+  color: #6c757d;
+  position: absolute;
+  right: 101%;
+  text-align: right;
+  width: 8em;
+}
+.accordion-toggle {
+  cursor: pointer;
+}
+.accordion-toggle::after {
+  color: #6c757d;
+  font-size: 0.75em;
+  content: " (expand)";
+}
+.accordion-toggle.expanded::after {
+  content: " (collapse)";
+}
+.accordion-content, .collapse-all {
+  display: none;
+}
+
 .footer-section {
     background: #212D47;
     color: white;
@@ -216,6 +272,13 @@ h2, h3, h4, h5, h6 {
 }
 
 @media screen and (max-width: 991px) {
+  .table-of-contents__list {
+    width: 100%;
+    padding-left: 0;
+  }
+  .chapter-label {
+    display: none;
+  }
   .btn-cta {
     padding: .5rem 1rem;
     font-size: 1.25rem;
