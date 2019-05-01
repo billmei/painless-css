@@ -1,3 +1,20 @@
+const deobfuscatedEmail = () => {
+  const email = [
+    'bi',
+    'll@',
+    'b',
+    'il',
+    'lme',
+    'i.n',
+    'et'
+  ];
+  let result = '';
+  for (let i = 0; i < email.length; i++) {
+    result += email[i];
+  }
+  return result;
+};
+
 $(document).ready(function() {
   var $linkTags = $('link');
 
@@ -39,4 +56,5 @@ $(document).ready(function() {
     $('.accordion-toggle').removeClass('expanded');
   })
 
+  $('.emailLink').attr('href', 'mai' + `lto:${deobfuscatedEmail()}`);
 });

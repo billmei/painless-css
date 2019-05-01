@@ -263,6 +263,16 @@ dt p, dd p {
   display: none;
 }
 
+.emailLink {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
 .footer-section {
     background: #212D47;
     color: white;
