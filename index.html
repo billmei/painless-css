@@ -22,8 +22,11 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" href="favicon.ico">
 
-  <link href="https://fonts.googleapis.com/css?family=Bungee|Roboto+Slab:400,400i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Roboto+Slab:400,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css" integrity="sha384-QokYePQSOwpBDuhlHOsX0ymF6R/vLk/UQVz3WHa6wygxI5oGTmDTv8wahFOSspdm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/fontawesome.css" integrity="sha384-vd1e11sR28tEK9YANUtpIOdjGW14pS87bUBuOIoBILVWLFnS+MCX9T6MMf0VdPGq" crossorigin="anonymous">
+
   <link rel="stylesheet" href="main.css">
 
   <meta name="theme-color" content="#212D47">
@@ -33,19 +36,19 @@
   <div class="jumbotron jumbotron-fluid">
     <div class="container jumbo__headline-section">
       <h1 class="jumbo__headline">
-        <span class="jumbo__headline--painless">Painless</span>
+        “<span class="jumbo__headline--painless">I love</span>
         <br />
-        <span class="jumbo__headline--css">CSS</span>
+        <span class="jumbo__headline--css">CSS!</span><span class="jumbo__headline--quote">”</span>
       </h1>
       <div class="text-center">
-        <p class="lead">Build Beautiful, Intuitive Websites</p>
-        <a data-toggle="collapse" href="#what-is-css" role="button" aria-expanded="false" aria-controls="what-is-css" class="text-muted">
+        <p class="lead">— you, after taking this course</p>
+        <a data-toggle="collapse" href="#what-is-css" role="button" aria-expanded="false" aria-controls="what-is-css" class="what-is-css__toggle text-muted">
         (what is CSS?)
       </a>
       </div>
       <div class="collapse" id="what-is-css">
         <div class="row">
-          <div class="what-is-css-explanation col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12 offset-sm-0">
+          <div class="what-is-css__explanation col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12 offset-sm-0">
               Cascading Style Sheets. CSS is the code you write that gives a website its “look and feel”. <a id="disable-stylesheets" href="javascript:void(0)">Click here to turn CSS off</a> to see what this page would look like if it had no CSS code at all.
           </div>
         </div>
@@ -57,23 +60,35 @@
     <div class="container">
       <div class="row">
         <div class="col-md-5 text-md-right">
-          <img src="images/book-cover.png" alt="The book" class="img-fluid mx-auto" />
+          <img src="images/book-and-screencast.png" alt="The book" class="img-fluid mx-auto" />
         </div>
         <div class="col-md-7">
           <h3>Launching May 2019</h3>
-          <a href="https://billmei.us2.list-manage.com/subscribe?u=1ce577b697f10829b9ec5574f&id=af9611058b" class="btn btn-rainbow btn-cta mb-1">Let me know when it’s ready</a>
+          <a href="#pricing" class="btn btn-rainbow btn-cta mb-1">See Pricing</a>
+          <a href="https://billmei.us2.list-manage.com/subscribe?u=1ce577b697f10829b9ec5574f&id=af9611058b" class="btn btn-outline-light btn-cta mb-1">Get Free Sample</a>
           <p class="fine-print"><small>Click on that button and I'll <em>email you a sweet preorder discount</em> when the book is ready. I never spam and I keep your email strictly confidential.</small></p>
         </div>
       </div>
     </div>
   </div>
 
+  <nav class="navigation">
+    <ul class="nav justify-content-center">
+      <li class="nav-item"><a class="nav-link" href="#toc">Contents</a></li>
+      <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+      <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+      <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+      <li class="nav-item"><a class="nav-link" href="#about">About the Author</a></li>
+      <li class="nav-item"><a class="nav-link" href="#about">Contact</a></li>
+    </ul>
+  </nav>
+
   <div class="container">
     <div class="row mb-5">
       <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0">
 
-        <h3>Is this how you feel when you write CSS?</h3>
-        <p><video autoplay loop muted playsinline poster="images/peter-griffin-css-blinds.gif" class="img-fluid img-thumbnail">
+        <h3 class="text-center">Is this how you feel when you write CSS?</h3>
+        <p class="text-center"><video autoplay loop muted playsinline poster="images/peter-griffin-css-blinds.gif" class="img-fluid img-thumbnail">
           <source src="images/peter-griffin-css-blinds.mp4" type='video/mp4'>
           A video of Peter Griffin struggling with blinds with the caption “CSS” at the bottom
         </video></p>
@@ -90,9 +105,9 @@
 
         <p><em>Painless CSS</em> will give you the tools to master CSS and write it with confidence.</p>
 
-        <a href="https://billmei.us2.list-manage.com/subscribe?u=1ce577b697f10829b9ec5574f&id=af9611058b" class="btn btn-rainbow">Get on the email list for a preorder discount</a>
+        <p class="text-center"><a href="https://billmei.us2.list-manage.com/subscribe?u=1ce577b697f10829b9ec5574f&id=af9611058b" class="btn btn-rainbow">See course options</a></p>
 
-        <h3>It’s not your fault if you haven’t yet learned the easy way to write CSS</h3>
+        <h3 class="text-center">It’s not your fault if you haven’t yet learned the easy way to write CSS</h3>
 
         <p>They never told you in your university CS classes (or at your bootcamp course) how important CSS is when you started working at a real job delivering real products. As a result, you’re pressured to ship CSS at your work where you don’t have time to learn the fundamentals.</p>
 
@@ -100,33 +115,112 @@
 
         <p>Because there is no good resource that gives you a solid mental model for how CSS actually works from the ground up, you’re left copy/pasting stuff from Stackoverflow and hoping it works. No wonder it feels so painful to debug those exotic display issues.</p>
 
-        <h3>If only you had a good resource to learn from, writing CSS could feel like this instead:</h3>
+        <p><em>Painless CSS</em> is the well-explained, no-nonsense resource that you've been waiting for that gives you the real skills you need to write professional-grade CSS.</p>
 
+        <h3 class="text-center">After the course, writing CSS will feel like this:</h3>
 
         <!-- From: https://www.youtube.com/watch?v=7KUkKTznxc4 -->
-        <p><video autoplay loop muted playsinline poster="images/skateboard-jump.gif" class="img-fluid img-thumbnail">
+        <p class="text-center"><video autoplay loop muted playsinline poster="images/skateboard-jump.gif" class="img-fluid img-thumbnail">
           <source src="images/skateboard-jump.mp4" type='video/mp4'>
             A video of a skateboarder fluidly jumping over the Great Wall of China
         </video></p>
 
-  
-        <p>The book I'm writing will teach you CSS from first principles, giving you the best mental models to think about CSS, so you have a strong foundation to figure out how to solve web design problems on your own without having to resort to brute trial and error.</p>
+        <p>CSS is a hidden skill that separates the best software engineers from average developers. This is because using CSS to build user interfaces helps you learn the skills needed to work directly with users and understand their needs.</p>
 
-        <p>It's important to me that the book explains things in a clear, jargon-free way. I'm spending time painstakingly editing and user testing it to make sure it's as fun to read as it is informative, so I can give you the confidence to use CSS to design anything that you can dream of.</p>
+        <p>The engineering recruiting company Triplebyte <a href="https://triplebyte.com/blog/who-y-combinator-companies-want" target="_blank" rel="noopener" class="rainbow-text">analyzed</a> what types of engineers get hired at Y&nbsp;Combinator companies. Their conclusion is clear: “Product Programmers”, those who are motivated by product design, get hired much more often than everyone else.</p>
 
-        <a href="https://billmei.us2.list-manage.com/subscribe?u=1ce577b697f10829b9ec5574f&id=af9611058b" class="btn btn-rainbow">Notify me when the book is out</a>
+        <p><img src="images/product-programmers-annotated.png" alt="A table that shows the majority of companies saying they are more 'interested' in a 'Product Programmer' profile than all other profiles such as 'Technical Programmer' and 'Enterprise Programmer'" class="img-fluid img-thumbnail" /></p>
+
+        <p>Top companies desperately want more “Product Programmers” because they have the skills to see things from a user's perspective.</p>
+
+        <p>There are so few people who are true CSS experts, that it's the easiest way to get an edge over your co-workers, especially if you are a recent grad. This was exactly what I did at my first job out of school&mdash;by solving tough CSS problems from day one, I convinced management to assign me to the most rewarding and impactful front-end projects, allowing me to get promoted to a senior position in a short matter of time.</p>
+
+        <p>Engineering managers desperately want developers who understand users, and working on web design with CSS is the easiest way to get into the user's head and earn yourself a raise.</p>
+
+        <p><em>Painless CSS</em> starts from first principles and gives you the confidence to solve web design problems on your own without having to resort to brute trial and error.</p>
+
+        <p class="text-center mb-0"><a href="https://billmei.us2.list-manage.com/subscribe?u=1ce577b697f10829b9ec5574f&id=af9611058b" class="btn btn-rainbow">Get 3 free lessons</a></p>
       </div>
     </div>
 
     <hr>
 
     <div class="row">
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0">
+        <h2 id="toc" class="text-center">What you'll get in the course</h2>
+
+        <ul class="icon-list card card-body list-unstyled">
+          <li class="media">
+            <i class="fas fa-tasks icon-bullet"></i>
+            <div class="media-body">
+              <p>The <em>Five Steps to Painless CSS:</em> a step-by-step checklist you can use to squash <em>any</em> visual bug you encounter; even the weird, confusing ones.</em></p>
+            </div>
+          </li>
+          <li class="media">
+            <i class="fas fa-medal icon-bullet"></i>
+            <div class="media-body">
+              <p>The <em>CSS Specificity Tournament:</em> a simple mental model to destroy specificity issues forever—you won’t find this explained anywhere else.</p>
+            </div>
+          </li>
+          <li class="media">
+            <i class="fas fa-dumbbell icon-bullet"></i>
+            <div class="media-body">
+              <p>Over <strong>30 hands-on, interactive, and fun homework exercises</strong> to strengthen your newfound CSS skills.</p>
+            </div>
+          </li>
+          <li class="media">
+            <i class="fas fa-code-branch icon-bullet"></i>
+            <div class="media-body">
+              <p>A companion code repo with over <strong>60 code samples and solutions</strong>.</p>
+            </div>
+          </li>
+          <li class="media">
+            <i class="fas fa-book icon-bullet"></i>
+            <div class="media-body">
+              <p>A comprehensive reference to the most common HTML tags and CSS styles you’ll need to work with on a day-to-day basis.</p>
+            </div>
+          </li>
+          <li class="media">
+            <i class="fas fa-film icon-bullet"></i>
+            <div class="media-body">
+              <p><span class="badge badge-primary">NEW!</span> I am launching a video course. <a href="#pricing" class="rainbow-text">Sign up below</a> to pre-order it at a steep discount.</p>
+            </div>
+          </li>
+          <li class="media">
+            <img src="images/gem-icon.svg" class="icon-bullet" role="presentation">
+            <div class="media-body">
+              <p>Hidden bonus chapters that share some of my career secrets to using your new skills to get ahead in the tech industry.</p>
+            </div>
+          </li>
+          <li class="media">
+            <i class="fas fa-comment-alt icon-bullet"></i>
+            <div class="media-body">
+              <p>A complete description of how each line of CSS you write is rendered in <strong>clear, jargon-free language</strong> that anyone with zero technical background can understand.</p>
+            </div>
+          </li>
+          <li class="media">
+            <i class="fas fa-hand-pointer icon-bullet"></i>
+            <div class="media-body">
+              <p>Tips on writing clean, maintainable CSS that boosts your SEO ranking and improves your accessibility.</p>
+            </div>
+          </li>
+          <li class="media">
+            <i class="fas fa-star icon-bullet"></i>
+            <div class="media-body">
+              <p>&hellip;and much, much more! See the table of contents below for the full list.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="col">
         <h2 class="text-center">Table of Contents</h2>
 
         <div class="text-center mb-4">
-          <a href="javascript:void(0)" class="expand-all">Expand all</a>
-          <a href="javascript:void(0)" class="collapse-all">Collapse all</a>
+          <a href="javascript:void(0)" class="expand-all rainbow-text">Expand all</a>
+          <a href="javascript:void(0)" class="collapse-all rainbow-text">Collapse all</a>
         </div>
 
         <div class="table-of-contents mb-4">
@@ -138,7 +232,7 @@
                 <li>What is this book about?</li>
               </ul>
             </li>
-            <li><span class="accordion-toggle"><span class="chapter-label">Chapter 1:</span>HTML: Hypertext Markup Language</span> <ul class="accordion-content">
+            <li><span class="accordion-toggle"><span class="chapter-label">Lesson 1:</span>HTML: Hypertext Markup Language</span> <ul class="accordion-content">
                 <li>What is “Language”?</li>
                 <li>What is “Markup Language”?</li>
                 <li>HTML Tags</li>
@@ -156,7 +250,7 @@
               </ul>
             </li>
             <li><span class="chapter-label">Bonus 1:</span>Tags for Search Engine Optimization</li>
-            <li><span class="accordion-toggle"><span class="chapter-label">Chapter 2:</span>CSS Styles</span> <ul class="accordion-content">
+            <li><span class="accordion-toggle"><span class="chapter-label">Lesson 2:</span>CSS Styles</span> <ul class="accordion-content">
                 <li>Five Steps to Painless CSS</li>
                 <li>Scientific Programming</li>
                 <li>Experiment Design</li>
@@ -170,7 +264,7 @@
               </ul>
             </li>
             <li><span class="chapter-label">Bonus 2:</span>What is a browser?</li>
-            <li><span class="accordion-toggle"><span class="chapter-label">Chapter 3:</span>Rendering</span> <ul class="accordion-content">
+            <li><span class="accordion-toggle"><span class="chapter-label">Lesson 3:</span>Rendering</span> <ul class="accordion-content">
                 <li>How a website loads</li>
                 <li>Painting</li>
                 <li>Parsing</li>
@@ -189,7 +283,7 @@
                 <li>The Future of the Web</li>
               </ul>
             </li>
-            <li><span class="accordion-toggle"><span class="chapter-label">Chapter 4:</span>The DOM</span> <ul class="accordion-content">
+            <li><span class="accordion-toggle"><span class="chapter-label">Lesson 4:</span>The DOM</span> <ul class="accordion-content">
                 <li>What’s the difference between HTML and the DOM?</li>
                 <li>Why is the DOM a tree?</li>
                 <li>How is the DOM rendered?</li>
@@ -200,7 +294,7 @@
               </ul>
             </li>
             <li><span class="chapter-label">Bonus 4:</span>Virtual DOM</li>
-            <li><span class="accordion-toggle"><span class="chapter-label">Chapter 5:</span>Block and Inline Elements</span> <ul class="accordion-content">
+            <li><span class="accordion-toggle"><span class="chapter-label">Lesson 5:</span>Block and Inline Elements</span> <ul class="accordion-content">
                 <li>The Blind Bricklayer</li>
               </ul>
             </li>
@@ -216,7 +310,7 @@
                 <li>Content outside of tags</li>
               </ul>
             </li>
-            <li><span class="accordion-toggle"><span class="chapter-label">Chapter 6:</span>CSS Parsing</span> <ul class="accordion-content">
+            <li><span class="accordion-toggle"><span class="chapter-label">Lesson 6:</span>CSS Parsing</span> <ul class="accordion-content">
                 <li>CSS Stylesheets</li>
                 <li>Loading CSS</li>
                 <li>Loading JS</li>
@@ -229,7 +323,7 @@
               </ul>
             </li>
             <li><span class="chapter-label">Bonus 6:</span>The User Agent Stylesheet</li>
-            <li><span class="accordion-toggle"><span class="chapter-label">Chapter 7:</span>CSS Selectors</span> <ul class="accordion-content">
+            <li><span class="accordion-toggle"><span class="chapter-label">Lesson 7:</span>CSS Selectors</span> <ul class="accordion-content">
                 <li>Tag selector</li>
                 <li>Class Selector</li>
                 <li>ID Selector</li>
@@ -247,7 +341,7 @@
               </ul>
             </li>
             <li><span class="chapter-label">Bonus 7:</span>The Browser as an Operating System</li>
-            <li><span class="accordion-toggle"><span class="chapter-label">Chapter 8:</span>CSS Combinators</span> <ul class="accordion-content">
+            <li><span class="accordion-toggle"><span class="chapter-label">Lesson 8:</span>CSS Combinators</span> <ul class="accordion-content">
                 <li>Child Combinator</li>
                 <li>Descendant Combinator</li>
                 <li>Multiple Selectors</li>
@@ -265,7 +359,7 @@
               </ul>
             </li>
             <li><span class="chapter-label">Bonus 8:</span>How to Learn Faster</li>
-            <li><span class="accordion-toggle"><span class="chapter-label">Chapter 9:</span>CSS Cascading and Inheritance</span> <ul class="accordion-content">
+            <li><span class="accordion-toggle"><span class="chapter-label">Lesson 9:</span>CSS Cascading and Inheritance</span> <ul class="accordion-content">
                 <li>Inheritance</li>
                 <li>Cascading</li>
                 <li>The popular cascade</li>
@@ -278,7 +372,7 @@
               </ul>
             </li>
             <li><span class="chapter-label">Bonus 9:</span>Collaborative Coding</li>
-            <li><span class="accordion-toggle"><span class="chapter-label">Chapter 10:</span>The CSS Specificity Tournament</span> <ul class="accordion-content">
+            <li><span class="accordion-toggle"><span class="chapter-label">Lesson 10:</span>The CSS Specificity Tournament</span> <ul class="accordion-content">
                 <li>Specificity Score</li>
                 <li>Specificity Rank</li>
                 <li>Exceptions to the Tournament</li>
@@ -307,7 +401,7 @@
                 <li>Hyphens</li>
               </ul>
             </li>
-            <li><span class="accordion-toggle"><span class="chapter-label">Chapter 11:</span>The Box Model</span> <ul class="accordion-content">
+            <li><span class="accordion-toggle"><span class="chapter-label">Lesson 11:</span>The Box Model</span> <ul class="accordion-content">
                 <li>The popular box model</li>
                 <li>The Painless CSS Fence</li>
               </ul>
@@ -318,7 +412,7 @@
               </ul>
             </li>
             <li><span class="chapter-label">Bonus 11:</span>Overflow</li>
-            <li><span class="accordion-toggle"><span class="chapter-label">Chapter 12:</span>Document Flow</span> <ul class="accordion-content">
+            <li><span class="accordion-toggle"><span class="chapter-label">Lesson 12:</span>Document Flow</span> <ul class="accordion-content">
                 <li>Inside the Document Flow</li>
                 <li>Normal Flow</li>
                 <li>Changing the Normal Flow</li>
@@ -342,7 +436,7 @@
                 <li>Multiple Techniques</li>
               </ul>
             </li>
-            <li><span class="accordion-toggle"><span class="chapter-label">Chapter 13:</span>Floats</span> <ul class="accordion-content">
+            <li><span class="accordion-toggle"><span class="chapter-label">Lesson 13:</span>Floats</span> <ul class="accordion-content">
                 <li>Floated Layouts, Grid Systems, and Clearfixes</li>
               </ul>
             </li>
@@ -352,7 +446,7 @@
               </ul>
             </li>
             <li><span class="chapter-label">Bonus 13:</span>Render Optimization</li>
-            <li><span class="chapter-label">Chapter 14:</span>Position</li>
+            <li><span class="chapter-label">Lesson 14:</span>Position</li>
             <li><span class="accordion-toggle"><span class="chapter-label">Exercise 14:</span>Using your CSS Superpowers</span> <ul class="accordion-content">
                 <li>Exercise 1</li>
               </ul>
@@ -374,9 +468,9 @@
             <li>Index</li>
           </ul>
         </div>
-        <div class="text-center">
-          <a href="https://billmei.us2.list-manage.com/subscribe?u=1ce577b697f10829b9ec5574f&id=af9611058b" class="btn btn-rainbow btn-cta">Download 3 free sample chapters</a>
-        </div>
+        <p class="text-center">
+          <a href="https://billmei.us2.list-manage.com/subscribe?u=1ce577b697f10829b9ec5574f&id=af9611058b" class="btn btn-rainbow btn-cta">Download 3 free lessons</a>
+        </p>
       </div>
     </div>
 
@@ -384,7 +478,44 @@
 
     <div class="row">
       <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0">
-        <h2>Testimonials</h2>
+        <h2 class="text-center">What if I’m not a programmer?</h2>
+
+        <p>Programmers are not the only folks who benefit from a strong understanding of CSS; here are some things you can accomplish if you work in a non-technical role:</p>
+
+        <ul>
+          <li><p><strong>Designers</strong> can build their own rapid prototypes for higher quality user feedback, and communicate easier with developers by speaking the same vocabulary.</p></li>
+          <li><p><strong>Growth Hackers and Marketers</strong> can do their own design tweaking and A/B testing to move faster. No more filing tickets on Jira and waiting 3 months for a response, while your competitor has already launched a new campaign.</p></li>
+          <li><p><strong>Product Managers</strong> can get a stronger sense of the timelines and resources required for each feature. You'll be able to negotiate more effectively for a budget when you understand why your developers gave the time estimate they did.</p></li>
+        </ul>
+
+        <p>While this book is supposedly about learning CSS, it’s really a book about how to develop the strong internal skills required to master any technical subject. You'll benefit from this course if you have any of the following goals:</p>
+
+        <ul>
+          <li><p>You are an absolute beginner and want to learn CSS from scratch.</p></li>
+          <li><p>You already know CSS and want to fill in the holes in your knowledge, or strengthen your mental models for how CSS works behind the scenes.</p></li>
+          <li><p>You've been working with CSS for some time, but never really “got it”.</p></li>
+          <li><p>You are non-technical, and want a better understanding of the technologies that your colleagues work with, so you can make better decisions when web design is involved.</p></li>
+        </ul>
+
+        <p>Some examples:</p>
+
+        <ul>
+          <li><p>You are a <strong>designer who wants to learn more about the underlying web technologies</strong> to improve your design specs and reduce the chance of them coming back with tons of corrections.</p></li>
+          <li><p>You are a <strong>programmer who graduated from a coding bootcamp</strong>, but are now finding that you need to work with CSS a lot in your job and your bootcamp didn’t teach you anything about CSS.</p></li>
+          <li><p>You are a <strong>student</strong> who wants to learn CSS to get a job as a designer or a front-end developer.</p></li>
+        </ul>
+
+        <p>You’ll find this book useful no matter if you are trying to learn astrophysics, break into quantitative finance, build a bicycle, or want to succeed in the tech industry. This is because all technical subjects benefit from the principle of decomposing a topic into its constituent parts and then developing good intuitions for how these parts congeal to form a coherent whole.</p>
+
+        <p class="text-center"><a href="https://billmei.us2.list-manage.com/subscribe?u=1ce577b697f10829b9ec5574f&id=af9611058b" class="btn btn-rainbow">See course options</a></p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0">
+        <h2 id="testimonials" class="text-center">Praise for <em>Painless CSS</em></h2>
         <div class="card mb-2">
           <div class="card-body">
             <div class="row">
@@ -452,7 +583,7 @@
     <div class="row mb-5">
       <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0">
 
-        <h2>About the Author</h2>
+        <h2 id="about" class="text-center">About the Author</h2>
 
         <p>Hey, I'm <a href="https://billmei.net" class="rainbow-text">Bill Mei</a>. For years, I've been consulting for software startups to help them ship beautiful web design. But I got tired of seeing people make the same mistakes with CSS and then giving up after all the existing free online tutorials failed them.</p>
 
@@ -467,7 +598,7 @@
     <div class="row mb-5">
       <div class="col text-center">
           <h2><strong>Stop being afraid</strong> of writing CSS</h2>
-          <a href="https://billmei.us2.list-manage.com/subscribe?u=1ce577b697f10829b9ec5574f&id=af9611058b" class="btn btn-rainbow btn-cta">Sign up for early access to the book</a>
+          <a href="https://billmei.us2.list-manage.com/subscribe?u=1ce577b697f10829b9ec5574f&id=af9611058b" class="btn btn-rainbow btn-cta">Sign up for early access</a>
       </div>
     </div>
   </div>

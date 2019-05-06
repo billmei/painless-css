@@ -1,5 +1,5 @@
 body {
-  background-color: #eee;
+  background-color: #f5f5f5;
 }
 
 @-webkit-keyframes rainbow {
@@ -152,10 +152,14 @@ dt p, dd p {
 .jumbotron {
   background-color: #212D47;
   color: white;
+  margin-bottom: 0;
 }
 .jumbotron h3, .jumbotron .lead {
   color: white;
   text-shadow: 2px 2px black;
+}
+.lead {
+  font-size: 2em;
 }
 .jumbotron .fine-print {
   color: #ddd;
@@ -165,7 +169,7 @@ dt p, dd p {
   text-align: center;
   text-shadow: 4px 4px black;
 }
-.what-is-css-explanation {
+.what-is-css__explanation {
   margin-top: 1em;
 }
 #disable-stylesheets {
@@ -181,7 +185,7 @@ dt p, dd p {
   margin-left: 0.2em;
   color: white;
   letter-spacing: 0.15em;
-  text-shadow: 
+  text-shadow:
     -4px  4px  #dd00f3,
     -8px  8px  #2b1de8,
     -12px 12px #1ddde8,
@@ -189,6 +193,10 @@ dt p, dd p {
     -20px 20px #e3e81d,
     -24px 24px #e8b71d,
     -28px 28px #e81d1d;
+}
+.jumbo__headline--quote {
+  vertical-align: top;
+  margin-left: -0.25em;
 }
 .btn-cta {
   padding: 0.5em 0.8em;
@@ -203,7 +211,6 @@ dt p, dd p {
 }
 
 .btn-rainbow {
-  border: 0;
   color: black;
   background: linear-gradient(90deg, #ff2400, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3, #ff2400);
   background-size: 1800% 1800%;
@@ -227,6 +234,35 @@ dt p, dd p {
 }
 .btn-rainbow:active {
   background: #1ddde8;
+}
+
+.navigation {
+  text-align: center;
+  background: white;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  padding: 2em 0;
+}
+
+.icon-list li {
+  background: white;
+  margin: 0.5em;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.icon-list li:first-child {
+  margin-top: 0;
+}
+.icon-list li:last-child {
+  border-bottom: none;
+}
+.icon-list li:last-child p {
+  margin-bottom: 0;
+}
+.icon-list .icon-bullet {
+  margin-top: 0.4em;
+  margin-right: 0.7em;
+  width: 1em;
+  height: 1em;
+  text-align: left;
 }
 
 .table-of-contents__list {
@@ -281,7 +317,16 @@ dt p, dd p {
     padding-bottom: 2em;
 }
 
+/* Tablet */
 @media screen and (max-width: 991px) {
+  .jumbo__headline--css {
+    font-size: 1.7em;
+  }
+  .btn-cta {
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
   .table-of-contents__list {
     width: 100%;
     padding-left: 0;
@@ -289,9 +334,28 @@ dt p, dd p {
   .chapter-label {
     display: none;
   }
+}
+
+/* Mobile */
+@media screen and (max-width: 575px) {
+  .jumbo__headline-section {
+    font-size: 0.6em;
+  }
+  .jumbo__headline--css {
+    font-size: 1.7em;
+    text-shadow:
+      -2px  2px  #dd00f3,
+      -4px  4px  #2b1de8,
+      -6px  6px #1ddde8,
+      -8px  8px #1de840,
+      -10px 10px #e3e81d,
+      -12px 12px #e8b71d,
+      -14px 14px #e81d1d;
+  }
   .btn-cta {
-    padding: .5rem 1rem;
-    font-size: 1.25rem;
-    line-height: 1.5;
+    font-size: 1rem;
+  }
+  .what-is-css__toggle, .what-is-css__explanation {
+    font-size: 1.7em;
   }
 }
