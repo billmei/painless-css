@@ -112,7 +112,7 @@ body {
   100% { background-color: #1ddde8 }
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, li {
+h1, h2, h3, h4, h5, h6, p, ul, li, label {
   font-family: 'Roboto Slab', sans-serif;
 }
 
@@ -245,7 +245,7 @@ dt p, dd p {
   padding: 2em 0;
 }
 
-.icon-list li {
+.icon-list.card li {
   background: white;
   margin: 0.5em;
   border-bottom: 1px solid rgba(0,0,0,.1);
@@ -368,9 +368,21 @@ dt p, dd p {
 .sale-price {
   font-weight: bold;
 }
-.buy-buttons a {
+.buy-buttons a, .buy-buttons button {
   min-width: 9.3em;
   margin-bottom: 0.5em;
+}
+
+.modal-header {
+  height: 0;
+  border: none;
+  padding-bottom: 0;
+}
+.modal-header .close {
+  z-index: 1055;
+}
+.sample-book-img {
+  height: 10em;
 }
 
 .emailLink {
