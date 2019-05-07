@@ -119,9 +119,6 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 p {
   line-height: 1.7;
 }
-p.fine-print {
-  line-height: 1.2;
-}
 
 h2, h3, h4, h5, h6 {
   margin-top: 1em;
@@ -161,8 +158,11 @@ dt p, dd p {
 .lead {
   font-size: 2em;
 }
-.jumbotron .fine-print {
+.jumbotron .byline {
   color: #ddd;
+}
+.byline {
+  margin-top: 0.5em;
 }
 .jumbo__headline {
   font-size: 5em;
@@ -218,10 +218,6 @@ dt p, dd p {
   -z-animation: rainbow 10s linear infinite;
   -o-animation: rainbow 10s linear infinite;
     animation: rainbow 10s linear infinite;
-  box-shadow:
-    0 2px 2px 0 rgba(0, 0, 0, .14),
-    0 3px 1px -2px rgba(0, 0, 0, .2),
-    0 1px 5px 0 rgba(0, 0, 0, .12);
 }
 .btn-rainbow:hover {
   color: white;
@@ -234,6 +230,12 @@ dt p, dd p {
 }
 .btn-rainbow:active {
   background: #1ddde8;
+}
+.btn-shadow, .btn-rainbow {
+  box-shadow:
+  0 2px 2px 0 rgba(0, 0, 0, .14),
+  0 3px 1px -2px rgba(0, 0, 0, .2),
+  0 1px 5px 0 rgba(0, 0, 0, .12);
 }
 
 .navigation {
@@ -297,6 +299,78 @@ dt p, dd p {
 }
 .accordion-content, .collapse-all {
   display: none;
+}
+
+.pricing-container {
+  max-width: 1600px;
+}
+.pricing-img {
+  height: 200px;
+}
+.card-highlighted {
+  border-color: #0e902c;
+  border-width: 2px;
+  position: relative;
+}
+.ribbon {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  z-index: 1;
+  overflow: hidden;
+  width: 152px;
+  height: 152px;
+  text-align: right;
+}
+.ribbon span {
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  line-height: 40px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  width: 200px;
+  display: block;
+  background: #0e902c;
+  background: linear-gradient(#28a745 0%, #0e902c 100%);
+  box-shadow: 0 3px 10px -5px #000000;
+  position: absolute;
+  top: 35px; right: -45px;
+}
+.ribbon span::before {
+  content: "";
+  position: absolute; left: 0px; top: 100%;
+  z-index: -1;
+  border-width: 8px;
+  border-style: solid;
+  border-left-color: #0e902c;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: #0e902c;
+}
+.ribbon span::after {
+  content: "";
+  position: absolute; right: 0px; top: 100%;
+  z-index: -1;
+  border-width: 8px;
+  border-style: solid;
+  border-left-color: transparent;
+  border-right-color: #0e902c;
+  border-bottom-color: transparent;
+  border-top-color: #0e902c;
+}
+.card-price {
+  font-size: 2em;
+}
+.sale-strike {
+  text-decoration: line-through;
+}
+.sale-price {
+  font-weight: bold;
+}
+.buy-buttons a {
+  min-width: 9.3em;
+  margin-bottom: 0.5em;
 }
 
 .emailLink {
