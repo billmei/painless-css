@@ -57,4 +57,8 @@ $(document).ready(function() {
   })
 
   $('.emailLink').attr('href', 'mai' + `lto:${deobfuscatedEmail()}`);
+  $('.officeHours').attr('href', 'mai' + `lto:${deobfuscatedEmail()}?subject=${encodeURIComponent('Hi Bill! I’m interested in Painless CSS office hours.')}`);
+  $('.officeHours').on('mouseenter', function(e) {
+    $(this).text(deobfuscatedEmail());
+  });
 });

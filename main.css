@@ -1,5 +1,5 @@
 body {
-  background-color: #f5f5f5;
+  background-color: #f8f8f8;
 }
 
 @-webkit-keyframes rainbow {
@@ -364,9 +364,11 @@ dt p, dd p {
 }
 .sale-strike {
   text-decoration: line-through;
+  font-weight: normal;
 }
 .sale-price {
   font-weight: bold;
+  margin-left: 0.25em;
 }
 .buy-buttons a, .buy-buttons button {
   min-width: 9.3em;
@@ -385,7 +387,7 @@ dt p, dd p {
   height: 10em;
 }
 
-.emailLink {
+.emailLinkDirection {
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -396,11 +398,11 @@ dt p, dd p {
 }
 
 .footer-section {
-    background: #212D47;
-    color: white;
-    text-align: center;
-    padding-top: 2em;
-    padding-bottom: 2em;
+  background: #212D47;
+  color: white;
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 /* Tablet */
