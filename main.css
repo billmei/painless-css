@@ -112,7 +112,7 @@ body {
   100% { background-color: #1ddde8 }
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, li, label {
+h1, h2, h3, h4, h5, h6, p, ul, li, label, a, input, button {
   font-family: 'Roboto Slab', sans-serif;
 }
 
@@ -366,9 +366,14 @@ dt p, dd p {
   text-decoration: line-through;
   font-weight: normal;
 }
+.sale-label {
+  display: block;
+}
 .sale-price {
   font-weight: bold;
-  margin-left: 0.25em;
+}
+.pricing-diff {
+  font-weight: bold;
 }
 .buy-buttons a, .buy-buttons button {
   min-width: 9.3em;
