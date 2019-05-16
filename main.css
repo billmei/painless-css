@@ -381,6 +381,10 @@ dt p, dd p {
   margin-bottom: 0.5em;
 }
 
+.author-photo {
+  width: 100px;
+}
+
 .modal-header {
   height: 0;
   border: none;
