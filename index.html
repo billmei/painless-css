@@ -31,9 +31,9 @@
 
   <meta name="theme-color" content="#212D47">
 </head>
-<body>
+<body data-spy="scroll" data-target="#navspy" data-offset="40">
 
-  <div class="jumbotron jumbotron-fluid">
+  <div id="top" class="jumbotron jumbotron-fluid">
     <div class="container mb-5">
       <div class="jumbo__headline-section">
         <h1 class="jumbo__headline">
@@ -70,22 +70,44 @@
     </div>
   </div>
 
-  <nav class="navigation">
-    <ul class="nav justify-content-center">
-      <li class="nav-item"><a class="nav-link" href="#toc">Contents</a></li>
-      <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-      <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
-      <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-      <li class="nav-item"><a class="nav-link" href="#about">About the Author</a></li>
-      <li class="nav-item"><a class="nav-link" href="#about">Contact</a></li>
-    </ul>
+  <nav class="navbar fixed-top navbar-light d-lg-none navigation">
+    <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse bg-light border" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#top">Back to Top</a></li>
+        <li class="nav-item"><a class="nav-link" href="#why-learn">Why Learn CSS?</a></li>
+        <li class="nav-item"><a class="nav-link" href="#who-should-read">Who Is This For?</a></li>
+        <li class="nav-item"><a class="nav-link" href="#toc">What’s Inside</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About the Author</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">Contact</a></li>
+      </ul>
+    </div>
   </nav>
+
+  <div class="position-relative">
+    <nav class="navfloating navigation d-none d-lg-inline-block bg-light" role="navigation" id="navspy">
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link" href="#top">Back to Top</a></li>
+        <li class="nav-item"><a class="nav-link" href="#why-learn">Why Learn CSS?</a></li>
+        <li class="nav-item"><a class="nav-link" href="#who-should-read">Who Is This For?</a></li>
+        <li class="nav-item"><a class="nav-link" href="#toc">What’s Inside</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About the Author</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
 
   <div class="container">
     <section class="row mb-5">
       <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0">
 
-        <h3 class="text-center">Is this how you feel when you write CSS?</h3>
+        <h3 id="why-learn" class="text-center">Is this how you feel when you write CSS?</h3>
         <p class="text-center"><video autoplay loop muted playsinline class="img-fluid img-thumbnail">
           <source src="images/peter-griffin-css-blinds.mp4" type='video/mp4'>
           A video of Peter Griffin struggling with blinds with the caption “CSS” at the bottom
@@ -135,7 +157,6 @@
 
         <p>There are so few people who are true CSS experts, that it's the easiest way to get an edge over your co-workers, especially if you are a recent grad. This was exactly what I did at my first job out of school&mdash;by solving tough CSS problems from day one, I convinced management to assign me to the most rewarding and impactful front-end projects, allowing me to get promoted to a senior position in just over a year, despite lacking the traditional pedigree.</p>
 
-
         <p><em>Painless CSS</em> starts from first principles and gives you the confidence to solve web design problems on your own without having to resort to brute trial and error.</p>
 
         <p class="text-center mb-0"><button type="button" class="btn btn-rainbow" data-toggle="modal" data-target="#emailSignupModal">Get 3 free lessons</button></p>
@@ -146,15 +167,8 @@
 
     <section class="row mb-5">
       <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0">
-        <h2 id="non-technical" class="text-center">What if I’m not a programmer?</h2>
-
-        <p>Programmers are not the only folks who benefit from a strong understanding of CSS; here are some things you can accomplish after taking the course if you work in a non-technical role:</p>
-
-        <ul>
-          <li><p><strong>Designers</strong> can build their own rapid prototypes for higher quality user feedback, and communicate easier with developers by speaking the same vocabulary.</p></li>
-          <li><p><strong>Growth Hackers and Marketers</strong> can do their own design tweaking and A/B testing to move faster. No more filing tickets on Jira and waiting 3 months for a response from engineering, while your competitor has already launched a new campaign.</p></li>
-          <li><p><strong>Product Managers</strong> can get a stronger sense of the timelines and resources required for each feature. You'll be able to negotiate more effectively for a budget when you understand why your developers gave the time estimate they did.</p></li>
-        </ul>
+        <h2 id="who-should-read" class="text-center">Who is this course for?</h2>
+        <p><strong>Both beginners and experts alike are guaranteed to learn something new and useful in these pages</strong>—it doesn't matter if you've never coded before or are already a front-end veteran.</p>
 
         <p>While this course is supposedly about learning CSS, it’s really a course about how to develop the strong internal skills required to master any technical subject. You'll benefit from this course if you have any of the following goals:</p>
 
@@ -195,6 +209,16 @@
         </ul>
 
         <p><strong>Even if you don't fit into any of the profiles above</strong>, you’ll find the mental models taught by this course useful for mastering a variety of technical subjects, such as: learning astrophysics, breaking into quantitative finance, building a bicycle, or just succeeding in the tech industry in general. This is because all technical subjects benefit from the principle of decomposing a topic into its constituent parts and then developing good intuitions for how these parts congeal to form a coherent whole. <em>Painless CSS</em> will show you how to do this.</p>
+
+        <h2 id="non-technical" class="text-center">What if I’m not a programmer?</h2>
+
+        <p>Programmers are not the only folks who benefit from a strong understanding of CSS; here are some things you can accomplish after taking the course if you work in a non-technical role:</p>
+
+        <ul>
+          <li><p><strong>Designers</strong> can build their own rapid prototypes for higher quality user feedback, and communicate easier with developers by speaking the same vocabulary.</p></li>
+          <li><p><strong>Growth Hackers and Marketers</strong> can do their own design tweaking and A/B testing to move faster. No more filing tickets on Jira and waiting 3 months for a response from engineering, while your competitor has already launched a new campaign.</p></li>
+          <li><p><strong>Product Managers</strong> can get a stronger sense of the timelines and resources required for each feature. You'll be able to negotiate more effectively for a budget when you understand why your developers gave the time estimate they did.</p></li>
+        </ul>
 
         <p class="text-center mb-0"><button type="button" class="btn btn-rainbow" data-toggle="modal" data-target="#emailSignupModal">Get 3 free lessons</button></p>
       </div>
@@ -618,8 +642,8 @@
 
   <div class="container-fluid pricing-container">
     <section class="row mb-5">
-      <div class="col-xl-4 offset-xl-0 order-xl-1 col-md-10 offset-md-1 col-sm-12 offset-sm-0 order-3">
-        <div class="card mb-4 mb-xl-0">
+      <div class="col-xl-4 offset-xl-0 order-xl-1 col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0 order-3">
+        <div class="pricing-card card mb-4 mb-xl-0">
           <div class="card-body">
             <h5 class="card-title text-center">Just the Book</h5>
             <h6 class="card-price text-center"><span class="sale-strike">$40</span> <span class="sale-label">Preorder sale: <span class="sale-price">$19</span></span></h6>
@@ -642,8 +666,8 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-4 offset-xl-0 order-xl-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0 order-2">
-        <div class="card mb-4 mb-xl-0 card-highlighted">
+      <div class="col-xl-4 offset-xl-0 order-xl-2 col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0 order-2">
+        <div class="pricing-card card mb-4 mb-xl-0 card-highlighted">
           <div class="ribbon"><span>Popular</span></div>
           <div class="card-body">
             <h5 class="card-title text-center">Book + Video Course</h5>
@@ -669,8 +693,8 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-4 offset-xl-0 order-xl-3 col-md-10 offset-md-1 col-sm-12 offset-sm-0 order-1">
-        <div class="card mb-4 mb-xl-0">
+      <div class="col-xl-4 offset-xl-0 order-xl-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0 order-1">
+        <div class="pricing-card card mb-4 mb-xl-0">
           <div class="card-body">
             <h5 class="card-title text-center">Book + Video Course + Office Hours</h5>
             <h6 class="card-price text-center"><span class="sale-strike">$750</span> <span class="sale-label">Preorder sale: <span class="sale-price">$374</span></span></h6>

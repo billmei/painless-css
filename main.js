@@ -15,8 +15,27 @@ const deobfuscatedEmail = () => {
   return result;
 };
 
+function stickyNav() {
+  var $navbar = $('#navspy');
+  var distanceToNav = $navbar.offset().top;
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > distanceToNav) {
+      $navbar.css({
+        position: 'fixed',
+        top: '0px',
+      });
+    } else {
+      $navbar.css({
+        position: 'absolute',
+        top: '0px',
+      });
+    }
+  });
+}
+
 $(document).ready(function() {
   var $linkTags = $('link');
+  stickyNav();
 
   $('#disable-stylesheets').on('click', function(e) {
     e.preventDefault();

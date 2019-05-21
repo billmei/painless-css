@@ -1,5 +1,5 @@
 body {
-  background-color: #f8f8f8;
+  background-color: #f8f9fa;
 }
 
 @-webkit-keyframes rainbow {
@@ -235,11 +235,17 @@ dt p, dd p {
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
 }
 
-.navigation {
-  text-align: center;
-  background: white;
-  border-bottom: 1px solid rgba(0,0,0,.1);
-  padding: 2em 0;
+.navbar .nav-item {
+  padding-left: 1em;
+}
+.navfloating {
+  position: absolute;
+  top: 0;
+  padding-top: 1em;
+  z-index: 1;
+}
+.nav-link.active {
+  font-weight: bold;
 }
 
 .icon-list.card li {
@@ -300,6 +306,9 @@ dt p, dd p {
 
 .pricing-container {
   max-width: 1600px;
+}
+.pricing-card {
+  z-index: 2; /* to be above .navfloating */
 }
 .pricing-img {
   height: 200px;
