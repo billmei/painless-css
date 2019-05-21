@@ -16,18 +16,26 @@ const deobfuscatedEmail = () => {
 };
 
 function stickyNav() {
-  var $navbar = $('#navspy');
-  var distanceToNav = $navbar.offset().top;
+  const $contentStart = $('#why-learn');
+  const $navdesktop = $('#navdesktop');
+  const $navmobile = $('#navmobile');
+  const distanceToAppearance = $contentStart.offset().top;
   $(window).scroll(function() {
-    if ($(window).scrollTop() > distanceToNav) {
-      $navbar.css({
+    if ($(window).scrollTop() > distanceToAppearance) {
+      $navdesktop.css({
         position: 'fixed',
         top: '0px',
       });
+      $navmobile.css({
+        display: 'block', // .d-lg-none has !important which overrides this.
+      });
     } else {
-      $navbar.css({
+      $navdesktop.css({
         position: 'absolute',
         top: '0px',
+      });
+      $navmobile.css({
+        display: 'none',
       });
     }
   });

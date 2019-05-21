@@ -235,6 +235,9 @@ dt p, dd p {
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
 }
 
+.navbar {
+  display: none; /* Overridden by JavaScript */
+}
 .navbar .nav-item {
   padding-left: 1em;
 }
