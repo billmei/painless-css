@@ -16,27 +16,25 @@ const deobfuscatedEmail = () => {
 };
 
 function stickyNav() {
-  const $contentStart = $('#why-learn');
-  const $navdesktop = $('#navdesktop');
   const $navmobile = $('#navmobile');
-  const distanceToAppearance = $contentStart.offset().top;
+  const $navdesktop = $('#navdesktop');
+  const distanceToAppearance = $navdesktop.offset().top;
   $(window).scroll(function() {
     if ($(window).scrollTop() > distanceToAppearance) {
       $navdesktop.css({
         position: 'fixed',
         top: '0px',
       });
-      $navmobile.css({
-        display: 'block', // .d-lg-none has !important which overrides this.
-      });
     } else {
       $navdesktop.css({
         position: 'absolute',
         top: '0px',
       });
-      $navmobile.css({
-        display: 'none',
-      });
+    }
+    // Hide the mobile navbar until the user starts scrolling
+    if ($(window).scrollTop() > 100) {
+      // .d-lg-none has !important which overrides this.
+      $navmobile.fadeIn();
     }
   });
 }
@@ -87,5 +85,10 @@ $(document).ready(function() {
   $('.officeHours').attr('href', 'mai' + `lto:${deobfuscatedEmail()}?subject=${encodeURIComponent('Hi Bill! I’m interested in Painless CSS office hours.')}`);
   $('.officeHours').on('mouseenter', function(e) {
     $(this).text(deobfuscatedEmail());
+  });
+
+  // Auto-close navbar when clicking on a link
+  $('.navbar-collapse a').on('click', function() {
+    $('.navbar-collapse').collapse('hide');
   });
 });
