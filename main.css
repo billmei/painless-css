@@ -235,17 +235,26 @@ dt p, dd p {
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
 }
 
+.navbar-wrapper {
+  position: relative;
+  height: 57px; /* same height as .navbar */
+}
 .navbar {
-  display: none; /* Overridden by JavaScript */
+  position: absolute;
+  z-index: 1030; /* same as .position-fixed */
+}
+.navbar-brand {
+  font-size: 1rem;
+  width: 100%;
+  position: relative;
+  margin-right: 0;
+}
+.navbar-toggler-icon {
+  position: absolute;
+  right: 0;
 }
 .navbar .nav-item {
   padding-left: 1em;
-}
-.navfloating {
-  position: absolute;
-  top: 0;
-  padding-top: 1em;
-  z-index: 1;
 }
 .nav-link.active {
   font-weight: bold;
@@ -309,9 +318,6 @@ dt p, dd p {
 
 .pricing-container {
   max-width: 1600px;
-}
-.pricing-card {
-  z-index: 2; /* to be above .navfloating */
 }
 .pricing-img {
   height: 200px;

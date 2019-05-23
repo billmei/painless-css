@@ -16,25 +16,21 @@ const deobfuscatedEmail = () => {
 };
 
 function stickyNav() {
-  const $navmobile = $('#navmobile');
-  const $navdesktop = $('#navdesktop');
-  const distanceToAppearance = $navdesktop.offset().top;
+  const $navbar = $('.navbar');
+  const $navbarWrapper = $('.navbar-wrapper');
+  $navbarWrapper.height($navbar.height() + 17);
+  const distanceToAppearance = $navbar.offset().top;
   $(window).scroll(function() {
     if ($(window).scrollTop() > distanceToAppearance) {
-      $navdesktop.css({
+      $navbar.css({
         position: 'fixed',
         top: '0px',
       });
     } else {
-      $navdesktop.css({
+      $navbar.css({
         position: 'absolute',
         top: '0px',
       });
-    }
-    // Hide the mobile navbar until the user starts scrolling
-    if ($(window).scrollTop() > 100) {
-      // .d-lg-none has !important which overrides this.
-      $navmobile.fadeIn();
     }
   });
 }
