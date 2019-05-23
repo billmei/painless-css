@@ -16,13 +16,9 @@ const deobfuscatedEmail = () => {
 };
 
 function stickyNav() {
-  let $scrollTop;
-  let lastScrollTop = 0;
-  const scrollDelta = 5;
   const $navbar = $('.navbar');
   const $navbarWrapper = $('.navbar-wrapper');
-  const navbarHeight = $navbar.height() + 17;
-  $navbarWrapper.height(navbarHeight);
+  $navbarWrapper.height($navbar.height() + 17);
   const distanceToAppearance = $navbar.offset().top;
   $(window).scroll(function() {
     $scrollTop = $(window).scrollTop();
@@ -31,20 +27,6 @@ function stickyNav() {
         position: 'fixed',
         top: '0px',
       });
-
-      if ($(window).width() <= 991) { // lg breakpoint
-        // Show header when scrolling down in mobile view.
-        if ($scrollTop > lastScrollTop && $scrollTop > navbarHeight) {
-          // Scrolled down
-          $navbar.fadeOut();
-        } else {
-          // Scrolled up
-          $navbar.fadeIn();
-        }
-        lastScrollTop = $scrollTop;
-      } else if (!$navbar.is(':visible')) {
-        $navbar.fadeIn();
-      }
     } else {
       $navbar.css({
         position: 'absolute',
