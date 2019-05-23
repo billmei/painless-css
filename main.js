@@ -54,6 +54,12 @@ function stickyNav() {
   });
 }
 
+function offsetAnchor() {
+  if (location.hash.length !== 0) {
+    window.scrollTo(window.scrollX, window.scrollY - 70);
+  }
+}
+
 $(document).ready(function() {
   var $linkTags = $('link');
   stickyNav();
@@ -102,8 +108,12 @@ $(document).ready(function() {
     $(this).text(deobfuscatedEmail());
   });
 
-  // Auto-close navbar when clicking on a link
   $('.navbar-collapse a').on('click', function() {
+    // Auto-close navbar when clicking on a link
     $('.navbar-collapse').collapse('hide');
+
+    // Jump to a few pixels above the target
+    window.setTimeout(offsetAnchor, 0);
   });
 });
+window.setTimeout(offsetAnchor, 0);
