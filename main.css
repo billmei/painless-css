@@ -192,6 +192,12 @@ dt p, dd p {
   vertical-align: top;
   margin-left: -0.25em;
 }
+
+.btn.btn {
+  border-radius: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
 .btn-cta {
   padding: 0.5em 0.8em;
   font-size: 2em;
