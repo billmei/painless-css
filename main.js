@@ -94,9 +94,12 @@ $(document).ready(function() {
     // Auto-close navbar when clicking on a link
     $('.navbar-collapse').collapse('hide');
   });
-  $('a[href^="#"]').on('click', function() {
-    // Jump to a few pixels above the target
-    window.setTimeout(offsetAnchor, 0);
+  $('a[href^="#"]').on('click', function(e) {
+    e.preventDefault();
+    const $target = $(e.target.getAttribute('href'));
+    $('html,body').animate({
+      scrollTop: $target.offset().top - 70
+    });
   })
 });
 window.setTimeout(offsetAnchor, 0);
