@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Painless CSS: Learn web development from first principles</title>
+  <meta name="description" content="Learn CSS from first principles with Painless CSS, a book and video course that teaches you how to build beautiful, intuitive websites that are a joy to design and maintain." />
+  <meta name="keywords" content="CSS, Cascading Style Sheets, Bill Mei" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Painless CSS" />
+  <link rel="canonical" href="https://www.painlesscss.com">
+  <meta property="og:description" content="Learn CSS from first principles with Painless CSS, a book and video course that teaches you how to build beautiful, intuitive websites that are a joy to design and maintain." />
+  <meta property="og:url" content="https://www.painlesscss.com" />
+  <meta property="og:site_name" content="Painless CSS" />
+  <meta property="og:image" content="https://www.painlesscss.com/images/share-thumbnail.jpg" />
+  <meta property="og:image:type" content="image/jpg" />
+  <meta property="og:image:width" content="250" />
+  <meta property="og:image:height" content="420" />
+  <link rel="image_src" href="https://www.painlesscss.com/images/share-thumbnail.jpg">
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="favicon.ico">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css" integrity="sha384-QokYePQSOwpBDuhlHOsX0ymF6R/vLk/UQVz3WHa6wygxI5oGTmDTv8wahFOSspdm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/fontawesome.css" integrity="sha384-vd1e11sR28tEK9YANUtpIOdjGW14pS87bUBuOIoBILVWLFnS+MCX9T6MMf0VdPGq" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.css" integrity="sha384-DivOqI8LGKSAOf/6uVtscxX4M3rJlzYgbcNosol/kTtugbUOcMcRjXUzIyFAR92j" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="main.css">
+
+  <meta name="theme-color" content="#212D47">
+</head>
+<body class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0">
+        <h1 class="text-center">The 1st Annual CSS Tournament</a></h1>
+        <p>Welcome to the 1st annual CSS Tournament! All CSS properties in conflict sign up for this tournament, and the winner gets applied to the targeted HTML element.</p>
+        <p>Each competitor submits three entries into this competition:</p>
+        <ul type="disc">
+        <li>Entry 1 consists of the number of ID selectors in the CSS rule</li>
+        <li>Entry 2 consists of the number of class, attribute, and pseudo-class selectors in the CSS rule</li>
+        <li>Entry 3 consists of the number of tag and pseudo-element selectors in the CSS rule</li>
+       </ul>
+        <p>&nbsp;<img src="blog-images/diagram-074.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>The number inside each box represents the count of selectors assigned to that entry.</p>
+        <h2><a>Competitors</a></h2>
+        <p>Let’s look at an example of this tournament in action:</p>
+        <p>Source Code: chapter10/tournament.html</p>
+        <p><pre><code class="language-html">&lt;body class=&quot;fullpage&quot; id=&quot;teal-terrier&quot;&gt;
+  &lt;div id=&quot;purple-poodle&quot;&gt;
+    &lt;article class=&quot;sapphire-shepherd&quot;&gt;
+      &lt;p class=&quot;maroon headline content&quot; id=&quot;malamute&quot;&gt;
+        &lt;button class=&quot;submit-btn&quot; disabled&gt;
+          What happens when you hover over me?
+        &lt;/button&gt;
+      &lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/div&gt;
+&lt;/body&gt;</code></pre></p>
+        <p>Let’s meet the competitors:</p>
+        <h3><a>Competitor 1: Maroon Malamute</a></h3>
+        <p><pre><code class="language-css">p.maroon#malamute button[disabled] {
+  margin: 100px;
+  cursor: copy;
+}</code></pre></p>
+        <p>This CSS rule has one ID selector (<code class="language-css">#malamute</code>), one class selector (<code class="language-css">.maroon</code>), one attribute selector (<code class="language-css">[disabled]</code>), and two tag selectors (<code class="language-css">p</code>, <code class="language-css">button</code>).</p>
+        <p>&nbsp;<img src="blog-images/diagram-075.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>We can summarize this competitor’s entries with a single number: <code class="language-none">122</code>. This number is also known as the Specificity Level (or Specificity Score) of the selector. The higher this score, the higher the specificity.</p>
+        <p>Let’s meet the other competitors:</p>
+        <h3><a>Competitor 2: Sapphire Shepherd</a></h3>
+        <p><pre><code class="language-css">.sapphire-shepherd p.headline.content button[disabled] {
+  padding: 2rem;
+  cursor: wait;
+}</code></pre></p>
+        <p><img src="blog-images/diagram-076.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>This selector has a specificity score of <code class="language-none">041</code>.</p>
+        <h3><a>Competitor 3: Purple Poodle</a></h3>
+        <p><pre><code class="language-css">#purple-poodle button {
+  cursor: pointer;
+  text-decoration: underline;
+}</code></pre></p>
+        <p><img src="blog-images/diagram-077.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>This selector has a specificity score of <code class="language-none">101</code>.</p>
+        <h3><a>Competitor 4: Teal Terrier</a></h3>
+        <p><pre><code class="language-css">#teal-terrier.fullpage button.submit-btn {
+  line-height: 2.5;
+  cursor: help;
+}</code></pre></p>
+        <p><img src="blog-images/diagram-078.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>This selector has a specificity score of <code class="language-none">121</code>.</p>
+        <h2><a>Tournament Rules</a></h2>
+        <p>Our competitors are fighting over the cursor CSS property, and these are the declarations in conflict:</p>
+        <ul type="disc">
+        <li><code class="language-css">cursor: copy;</code></li>
+        <li><code class="language-css">cursor: wait;</code></li>
+        <li><code class="language-css">cursor: pointer;</code></li>
+        <li><code class="language-css">cursor: help;</code></li>
+       </ul>
+        <p>Winning the CSS Specificity Tournament comes with a glamorous prize: the winner’s cursor value will apply to the final button in the DOM tree (the selected HTML element).</p>
+        <p>While there is a conflict for cursor, the declarations below are not in competition with each other. They don’t participate in the tournament and they are all immediately applied onto the button.</p>
+        <ul type="disc">
+        <li><code class="language-css">margin: 100px;</code></li>
+        <li><code class="language-css">padding: 2rem;</code></li>
+        <li><code class="language-css">text-decoration: underline;</code></li>
+        <li><code class="language-css">line-height: 2.5;</code></li>
+       </ul>
+        <p><img src="blog-images/diagram-079.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>There are three rounds to the CSS Specificity Tournament. In Round 1, all competitors submit their score from Entry 1 into the round. The competitor with the highest score wins that round. Similarly, competitors submit Entry 2 for Round 2, and Entry 3 for Round 3.</p>
+        <h3><a>Round 1</a></h3>
+        <p>For Round 1, we look at the number of ID selectors for all competitors. The competitor with the greatest number of ID selectors wins this round:</p>
+        <p><img src="blog-images/diagram-080.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>Sapphire Shepherd has no ID selectors, so it is immediately eliminated from Round 1!</p>
+        <p><img src="blog-images/diagram-081.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>Once a competitor is eliminated, it doesn’t get to participate in any subsequent rounds.</p>
+        <p>Maroon Malamute, Purple Poodle, and Teal Terrier are tied at 1 ID selector each, so they all move on to Round 2.</p>
+        <h3><a>Round 2</a></h3>
+        <p>For Round 2, look at the number of class, attribute, and pseudo-class selectors for all remaining competitors. The competitor with the most of these wins this round:</p>
+        <p><img src="blog-images/diagram-082.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>Even though Sapphire Shepherd has the greatest number of class selectors in this round, it was already eliminated in the previous round, so it doesn’t win! It doesn’t matter if a competitor “could have won” if it stayed in the tournament—once competitor is eliminated, it’s permanently gone.</p>
+        <p>Both Maroon Malamute and Teal Terrier are tied in first place for Round 2, so they move forward to Round 3 and Purple Poodle is eliminated:</p>
+        <p><img src="blog-images/diagram-083.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <h3><a>Round 3</a></h3>
+        <p>For Round 3, look at the number of tag and pseudo-element selectors for all remaining competitors. The competitor with the most of these wins the tournament!</p>
+        <p><img src="blog-images/diagram-084.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>Maroon Malamute has 2 tag selectors and Teal Terrier has 1 tag selector, so Maroon Malamute wins the tournament!</p>
+        <p><img src="blog-images/diagram-085.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>The final outcome is that the maroon malamute CSS rule “wins” over the others:</p>
+        <p><pre><code class="language-css">p.maroon#malamute button[disabled] {
+  margin: 100px;
+  cursor: copy
+}</code></pre></p>
+        <p>and the declaration <code class="language-css">cursor: copy</code> is applied to the selected HTML element.</p>
+        <p><img src="blog-images/diagram-086.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>In this example, <code class="language-css">cursor</code> was the only CSS property in conflict. If there were more than one property in conflict (say, two or more CSS rules both had different margin values), then we would run this tournament again for the next property (margin), starting over from the beginning.</p>
+        <h2><a>Shortcut: Specificity Score</a></h2>
+        <p>Now that you understand the tournament analogy, let’s simplify this whole thing to make it easier to use in practice.</p>
+        <p>First, instead of breaking up entries by ID, class, and tag selectors, let’s just assign scores to each CSS rule as follows:</p>
+        <ul type="disc">
+        <li>Every ID selector is worth 100 points</li>
+        <li>Every class, attribute, or pseudo-class selector is worth 10 points</li>
+        <li>Every tag or pseudo-element selector is worth 1 point</li>
+       </ul>
+        <p>Then, we’ll add up all the scores for each competitor:</p>
+        <h4><a>Competitor 1: Maroon Malamute</a></h4>
+        <p><code class="language-css">p.maroon#malamute button[disabled] {}</code></p>
+        <p><code class="language-none">(1 &times; 100) + (2 &times; 10) + (2 &times; 1) = 122</code></p>
+        <p>Maroon Malamute has <code class="language-none">122</code> points.</p>
+        <h4><a>Competitor 2: Sapphire Shepherd</a></h4>
+        <p><code class="language-css">.sapphire-shepherd p.headline.content button[disabled] {}</code></p>
+        <p><code class="language-none">(0 &times; 100) + (4 &times; 10) + (1 &times; 1) = 41</code></p>
+        <p>Sapphire Shepherd has <code class="language-none">041</code> points.</p>
+        <h4><a>Competitor 3: Purple Poodle</a></h4>
+        <p><code class="language-css">#purple-poodle button {}</code></p>
+        <p><code class="language-none">(1 &times; 100) + (0 &times; 10) + (1 &times; 1) = 101</code></p>
+        <p>Purple Poodle has <code class="language-none">101</code> points.</p>
+        <h4><a>Competitor 4: Teal Terrier</a></h4>
+        <p><code class="language-css">#teal-terrier.fullpage button.submit-btn {}</code></p>
+        <p><code class="language-none">(1 &times; 100) + (2 &times; 10) + (1 &times; 1) = 121</code></p>
+        <p>Teal Terrier has <code class="language-none">121</code> points.</p>
+        <h3><a>Specificity Rank</a></h3>
+        <p>Next, instead of going through the tournament round by round, let’s just sort all the specificity scores for each of our competitors from highest to lowest:</p>
+        <ol type="1">
+        <li><code class="language-none">122</code> points: Maroon Malamute</li>
+        <li><code class="language-none">121</code> points: Teal Terrier</li>
+        <li><code class="language-none">101</code> points: Purple Poodle</li>
+        <li><code class="language-none">041</code> points: Sapphire Shepherd</li>
+       </ol>
+        <p>Who’s the winner? Simple! The winner of the tournament is the competitor with the highest score: Maroon Malamute. Another neat fact is that reading this list from bottom to top is the order in which the competitors were eliminated! So Sapphire Shepherd was eliminated first, then Purple Poodle was eliminated second, then Teal Terrier was eliminated third.</p>
+        <p>“Wait a sec Bill,” you may ask, “why did you go through the trouble of explaining the whole tournament analogy when this ranking method is so much easier?” Well, that’s because this shortcut of sorting the specificity scores doesn’t work when you have more than 9 classes (or tags, or IDs, etc.) on an element. Here’s an example:</p>
+        <p><pre><code class="language-css">.big.big.big.big.big.big.big.big.big.big.big.big.big {
+  font-size: xx-large;
+}
+.medium.medium {
+  font-size: medium;
+}
+#x-small {
+  font-size: x-small
+}</code></pre></p>
+        <p>Source Code: chapter10/shortcut.html</p>
+        <p><pre><code class="language-html">&lt;p class=&quot;medium big&quot; id=&quot;x-small&quot;&gt;What size am I?&lt;/p&gt;</code></pre></p>
+        <p>Here are the “scores”:</p>
+        <ul type="disc">
+        <li><code class="language-css">.big.big.big.big.big.big.big.big.big.big.big.big.big {}</code> has a score of <code class="language-none">(13 &times; 10) = 130</code></li>
+        <li><code class="language-css">.medium.medium {}</code> has a score of <code class="language-none">(2 &times; 10) = 20</code></li>
+        <li><code class="language-css">#x-small {}</code> has a score of <code class="language-none">(1 &times; 100) = 100</code></li>
+       </ul>
+        <p>You would expect the size of the element to be <code class="language-css">xx-large</code>, but it is in fact <code class="language-css">x-small</code>!</p>
+        <p><img src="blog-images/diagram-087.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>In the original tournament analogy, the rounds (and entries) are separate from each other. The shortcut ranking method doesn’t work for more than 9 classes because the moment you add the 10th class to a selector which already has a score of 90, its score becomes 100 and it “overpowers” the ID selector, which shouldn’t happen. This problem occurs because we’re using a base-10 counting system, and you could avoid it by changing the base, but at that point it’s much simpler just to use the tournament analogy as your mental model.</p>
+        <p>Luckily, in practice we usually don’t write more than 9 selectors in a CSS rule, so our shortcut of adding together all the specificity scores works handily for most situations you encounter in the real world.</p>
+        <h2><a>Exceptions to the Tournament</a></h2>
+        <p>Normally the winner of the CSS Specificity Tournament is the CSS declaration that gets rendered; but there are certain exceptions where a declaration that is not the winner gets rendered instead:</p>
+        <h3><a>Inline Styles</a></h3>
+        <p>Any inline styles on an HTML element (where you write your CSS directly on the HTML element using the style attribute, instead of using a separate stylesheet) automatically override any winners of the specificity tournament. For example:</p>
+        <p><pre><code class="language-css">#bold {
+  font-weight: bold;
+}</code></pre></p>
+        <p>Source Code: chapter10/inline-style.html</p>
+        <p><pre><code class="language-html">&lt;p style=&quot;font-weight: normal;&quot; id=&quot;bold&quot;&gt;This text is not bold.&lt;/p&gt;</code></pre></p>
+        <p><img src="blog-images/diagram-088.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>This is another reason why we try to avoid inline styles: they can’t be overwritten by any CSS rules we write in our stylesheets.</p>
+        <p>Counterintuitively, using inline styles can be a best practice in certain situations when you coding for a front-end framework such as React, Vue, or Angular. I have a discussion about this later in <a href="#_Beyond_Cascading">Beyond Cascading</a>. For now, we’ll avoid using inline styles. </p>
+        <p>This is an exception to this exception! While inline styles override the tournament winners, any declarations that use the !important keyword will override an inline style.</p>
+        <h3><a>!important</a></h3>
+        <p><code class="language-css">!important</code> is a special keyword in CSS that makes your declaration always win the specificity tournament, no matter what, even if there are inline styles on the element! It looks like this:</p>
+        <p><pre><code class="language-css">p {
+  font-weight: bold !important;
+}
+
+#not-bold {
+  font-weight: normal;
+}</code></pre></p>
+        <p>Source Code: chapter10/important.html</p>
+        <p><pre><code class="language-html">&lt;p style=&quot;font-weight: normal;&quot; id=&quot;not-bold&quot;&gt;This text IS bold.&lt;/p&gt;</code></pre></p>
+        <p><img src="blog-images/diagram-089.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>We avoid using <code class="language-css">!important</code> in our CSS because it can’t be overwritten.<a href="#_ftn53">[53]</a>If you change your mind later, you can’t overpower it with a different rule; you have to remove the <code class="language-css">!important</code> and then also check every other rule for that element to make sure nothing else breaks, because usually the reason an !important was added in the first place was to unbreak some buggy code.</p>
+        <p>The true nightmare of a CSS author is to open up a CSS file and see !important sprinkled everywhere! Selectors in this kind of situation are called Overspecified or Overpowered.</p>
+        <p>This is also why I earlier recommended avoiding IDs for CSS styling, because IDs are also highly powered. No matter how many CSS classes you write, you cannot override an ID.</p>
+        <p>The tournament analogy gives us an intuitive sense for why overpowered selectors are bad. If a selector is enormously powerful in the tournament, it wins faster and at earlier rounds, meaning the only way to beat a powerful selector is to write another style that is even more highly powered.</p>
+        <p>This tendency for specificity to always escalate is known as a specificity war. Like stockpiling nuclear weapons, no one wins at this war—it only becomes harder to de-escalate as specificity increases. The only way to avoid an all-out specificity war is to not stockpile highly powered selectors in the first place.<a href="#_ftn54">[54]</a></p>
+        <h3><a>Tied until the end</a></h3>
+        <p>What if we reach the last round of the CSS Specificity Tournament, and there is still a tie?</p>
+        <p>If we get to the end of the tournament and there is still a tie, then the final tiebreaker is the location of the CSS rule in the source CSS file. Anything that is written later (nearer to the bottom of the file) will win over anything that is written earlier (nearer to the top of the file).</p>
+        <p>If you import multiple CSS files into your HTML document, (e.g. you have multiple <code class="language-html">&lt;style&gt;</code> or <code class="language-html">&lt;link&gt;</code> tags), then it’s the last file (nearer to the bottom of the HTML document) that wins the tie. Thus, the CSS Specificity Tournament can never be tied all the way through, because the final tiebreaker is the physical location of the code, and this is always unique.</p>
+        <p>This is also how duplicate declarations are resolved; if you write:</p>
+        <p><pre><code class="language-css">span {
+  color: red;
+}</code></pre></p>
+        <p>but then later in the same file you write</p>
+        <p><pre><code class="language-css">span {
+  color: blue;
+}</code></pre></p>
+        <p>Then color: blue will get applied to your span.</p>
+        <p>Thus, the order in which you import any third-party CSS files is important, (e.g. using <code class="language-html">&lt;link&gt;</code> tags, or <code class="language-css">@import</code>) because changing the order will change the outcome of the last tiebreaker. In practice, this means the first thing we import is our <code class="language-none">normalize.css</code> or <code class="language-none">reset.css</code> file for standardizing the User Agent Stylesheet, followed by any third-party CSS frameworks such as Foundation or Bootstrap, followed by our own site-specific code.</p>
+        <p>The tiebreaker rule is why I recommend against tag selectors and encourage you to use class selectors instead, because tag selectors are underspecified. Tag selectors have the lowest power, so they are too sensitive to their order in your CSS file, and your design can break if you ever re-order your imports, as the tiebreaker outcome will change in a re-ordering.</p>
+        <h3><a>Inheritance</a></h3>
+        <p>Inherited properties are always given a specificity score of <code class="language-none">000</code>, no matter what their original specificity was.</p>
+        <p><pre><code class="language-css">#powerful {
+  font-weight: bold !important;
+}
+.unpowerful {
+  font-weight: normal;
+}</code></pre></p>
+        <p>Source Code: chapter10/inherited.html</p>
+        <p><pre><code class="language-html">&lt;div id=&quot;powerful&quot; style=&quot;font-weight: bold;&quot;&gt;
+  &lt;div class=&quot;unpowerful&quot;&gt;CSS rules everything around me&lt;/div&gt;
+&lt;/div&gt;</code></pre></p>
+        <p>Since font-weight is an inherited property on the child, it doesn’t matter that the parent is both a highly powered ID selector and has an <code class="language-css">!important</code>, the <code class="language-css">.unpowerful</code> selector will win in this situation.</p>
+        <p><img src="blog-images/diagram-090.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>However, if we change our HTML so that the ID <code class="language-css">#powerful</code> becomes non-inherited,</p>
+        <p><pre><code class="language-html">&lt;div&gt;
+  &lt;div class=&quot;unpowerful&quot; id=&quot;powerful&quot;&gt;
+    CSS rules everything around me
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></p>
+        <p>then the ID will win as expected.</p>
+        <p><img src="blog-images/diagram-091.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>The “generational distance” (whether the property was inherited from a parent, or a grandparent) doesn’t matter—only CSS selectors that directly select your element have a specificity greater than <code class="language-none">000</code>. Only when there are no CSS rules directly selecting your HTML element will parents win over grandparents:</p>
+        <p><pre><code class="language-html">&lt;div id=&quot;powerful&quot;&gt;
+  &lt;div class=&quot;unpowerful&quot;&gt;
+    &lt;p&gt;CSS rules everything around me&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></p>
+        <p><img src="blog-images/diagram-092.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <h3><a>Universal Selector</a></h3>
+        <p>The Universal Selector <code class="language-css">*</code> has a specificity of <code class="language-none">000</code>.</p>
+        <h3><a>Non-Participants</a></h3>
+        <p>Keep in mind that the CSS Specificity Tournament only applies to properties in conflict in each other on a selected element—if two selectors don’t select the same element, then they are not in conflict. For example, what color will the button background be?</p>
+        <p><pre><code class="language-css">button {
+  /* Specificity: 001 */
+  background-color: orange;
+}
+
+button .submit-btn {
+  /* Specificity: 011 */
+  background-color: green;
+}</code></pre></p>
+        <p>Source Code: chapter10/non-participant.html</p>
+        <p><pre><code class="language-html">&lt;button class=&quot;submit-btn&quot;&gt;What color am I?&lt;/button&gt;</code></pre></p>
+        <p><img src="blog-images/diagram-093.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>The answer is it will be orange! This is because the selector <code class="language-css">button&nbsp;.submit‑btn</code> is not selecting our element (it would have selected any children of a button with a class of <code class="language-css">.submit‑btn</code>), and despite its higher power, it does not even participate in the tournament! If the second selector had instead been <code class="language-css">button.submit‑btn</code> (notice the lack of a space), then the button background color will indeed be green.</p>
+        <p>Also keep in mind that a tournament is not needed when properties are not fighting each other. For example:</p>
+        <p><pre><code class="language-css">.welcome-message {
+  color: salmon;
+  background-color: seashell;
+}
+
+#headline {
+  margin-top: 0;
+  background-color: lavender;
+}</code></pre></p>
+        <p>Source Code: chapter10/no-fight.html</p>
+        <p><pre><code class="language-html">&lt;h1 id=&quot;headline&quot; class=&quot;welcome-message&quot;&gt;Welcome to my blog&lt;/h1&gt;</code></pre></p>
+        <p><code class="language-css">color</code> and <code class="language-css">margin-top</code> are talking about different things, so they can both apply to the same element at the same time because they’re not fighting each other. However, <code class="language-css">background-color</code> is in a fight, so for this property we use the tournament to find a winner. <code class="language-css">#headline</code> wins the tournament against <code class="language-css">.welcome-message</code> so the element is given a <code class="language-css">background-color</code> of lavender. The final set of properties applied to our <code class="language-html">&lt;h1&gt;</code> is:</p>
+        <ul type="disc">
+        <li><code class="language-css">color: salmon;</code></li>
+        <li><code class="language-css">margin-top: 0;</code></li>
+        <li><code class="language-css">background-color: lavender;</code></li>
+       </ul>
+        <p><img src="blog-images/diagram-094.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <h3><a>Combinators</a></h3>
+        <p>Combinators are ignored in our tournament. To determine the winner of a round, we follow only the scoring rules laid about above. You would think that changing from a broad selector like <code class="language-css"> </code> (the descendent combinator) to a more narrow selector like <code class="language-css">&gt;</code> (the child combinator) would change the outcome of the tournament, but combinators only affect whether or not the CSS rule is eligible to participate in the tournament in the first place (since it changes whether or not our element is actually selected), and they do nothing to the specificity scores.</p>
+        <p>Here’s an example; what color will our text be?</p>
+        <p><pre><code class="language-css">p &gt; span {
+  color: firebrick;
+}
+p span {
+  color: aquamarine;
+}</code></pre></p>
+        <p>Source Code: chapter10/combinators.html</p>
+        <p><pre><code class="language-html">&lt;p&gt;&lt;span&gt;What color am I?&lt;/span&gt;&lt;/p&gt;</code></pre></p>
+        <p><img src="blog-images/diagram-095.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>The answer is the text will be <code class="language-css">aquamarine</code>! It totally seems like <code class="language-css">p &gt; span</code> should win because the extra child combinator <code class="language-css">&gt;</code> makes it look “more specific” since it’s narrowing down to direct children instead of all descendants, but the <code class="language-css">&gt;</code> does not affect any of the specificity scores, so when we run the tournament we have a score of <code class="language-none">002</code> competing against a score of <code class="language-none">002</code>. Since the result of this tournament is a tie, the last selector p span wins because of the tiebreaker rule, and our text is given a color of <code class="language-css">aquamarine</code>.</p>
+        <p>This example reveals the problem with the classical way of thinking about cascading. The popular explanation of comparing the CSSOM to how the HTML DOM is constructed will mislead you in this example because the structure of the tree has nothing to do with the results of our tournament.</p>
+        <h2><a>The Painless CSS Cascade</a></h2>
+        <p>Here is a summary of the Painless CSS Cascade, in our bottom-up model where we take the perspective of the HTML element, instead of the perspective of the browser rendering engine:</p>
+        <ol type="1">
+        <li>Look at each element one by one, ask “what CSS rules apply to you?”</li>
+        <li>Look at all the rules you found in Step 1, and list all the properties that apply from those rules (e.g.&nbsp;include all inherited properties and discard any non-inherited properties from parents).</li>
+        <li>From the list of properties in Step 2, immediately apply all declarations which are not in a fight. You are left with a smaller list of properties which are in a fight.</li>
+        <li>Going property by property, resolve each fight by using the CSS Specificity Tournament.</li>
+        <li>And now you’re done!</li>
+       </ol>
+        <p>Compare this to the classical (popular) way of explaining CSS cascading described in the last chapter:</p>
+        <ol type="1">
+        <li>Parse the CSS and construct the CSSOM.</li>
+        <li>“Cascade” rules through the CSSOM down to all elements, keeping track of which rules apply to what element using a tree.</li>
+        <li>From the tree generated in Step 2, apply all declarations to their associated node on the tree.</li>
+        <li>If there are any conflicts between properties, resolve the fight by using the CSS Specificity Tournament.</li>
+       </ol>
+        <p>The disadvantage of the top-down model is it does not help us debug CSS issues with individual elements. In the top-down model, we must go through the entire CSSOM to figure what styles are associated to a specific HTML element, and we can’t easily visualize the CSSOM tree in our heads.</p>
+        <p>In contrast, it’s much easier to focus on one individual element and ask, “what CSS rules apply to you?” then go off and find those. In fact, the developer tools in your browser allow you do exactly this using the “Inspect” or “Inspect Element” feature, which will helpfully find all the rules associated with an element without you needing to go through the entirety of your website:</p>
+        <p>Source Code: chapter10/leaderboard.html</p>
+        <p><img src="blog-images/diagram-096.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>All CSS rules that apply to the inspected element show up conveniently in a list in the sidebar:</p>
+        <p><img src="blog-images/diagram-097.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>Even though it’s called “Cascading Style Sheets”, I like to disregard the whole “Cascading” concept and just think about it in terms of each element’s specificity score, and how that affects the outcome of the tournament.</p>
+        <h2><a>After the Tournament</a></h2>
+        <h3><a>Order of elimination</a></h3>
+        <p>Something cool you may have noticed when you opened the developer tools panel: the list of CSS rules we see is ordered according to where they finished in the tournament!</p>
+        <p>You can think of this panel as a “leaderboard” for the tournament, where the 1st place winner of the tournament shows up at the top, then the selector below that is the 2nd place winner, and so forth.<a href="#_ftn55">[55]</a></p>
+        <p><img src="blog-images/diagram-098.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>This becomes clear when you use the panel to disable styles. You can click on the checkbox beside any declaration to enable or disable it. If I disable the declaration that won 1st place, then the 2nd place declaration is the “winner” of the tournament instead, so it becomes the style that is applied to the HTML element.</p>
+        <p><img src="blog-images/diagram-099.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>You can take advantage of this ordering when debugging. To find a specific declaration, you should start at the top and then work your way down to understand what’s going on, because it’s more likely that the final property that survived the tournament is near the top.</p>
+        <p>Once you find the declaration you’re looking for, you can stop there and you don’t need to continue scrolling down to the bottom, because anything nearer the bottom will have already lost the tournament long ago, meaning that you’re wasting your time if you keep scrolling—especially when debugging a large website with thousands of styles.</p>
+        <p>If you’ve scrolled all the way to the bottom and still can’t find your declaration, remember to check the user agent stylesheet in the gray area! It may be that you forgot to style your component and the default style is being applied.</p>
+        <h2><a>Beyond Cascading: CSS-in-JS</a></h2>
+        <p>If you’re thinking to yourself, “this seems very complicated and a lot of work to keep track of”, I agree with you!</p>
+        <p>To address this, the community invented CSS-in-JS libraries and inline style frameworks. Cascading, selectors, inheritance, and specificity are some of the hardest concepts about CSS to understand, so lots of developers sidestep the problem by using a library which abstracts away all of this, so you never have to worry about it again. These frameworks also give you other benefits such as code modularity (by removing the CSS global scope) and the ability to hook into automated tests.</p>
+        <p>For more info about the benefits of a CSS-in-JS library, I recommend watching <a href="https://www.youtube.com/watch?v=19gqsBc_Cx0">this talk by Max Stoiber</a>.</p>
+        <p>Inline style frameworks highlight why you should not learn by memorizing knowledge from dogma. Some experienced developers have a visceral negative reaction to hearing “inline styles”, because they were taught early in their career the best practice to “never use inline styles”. Even I told you not to do it in <a href="#_Chapter_6__CSS">Chapter 6</a>!</p>
+        <p>Indeed, “never use inline styles” was a best practice a long time ago when it made HTML hard to read, hard to debug, and hard to change. However, the technology chugs along and eventually upends the assumptions that lead to these “best practices”. New assumptions lead to new best practices.</p>
+        <p>Inline styles are only painful when you write them by hand—but if you use a CSS-in-JS library to manage your inline styles for you, these downsides disappear, and you are left only with the advantages of code modularity, automated testing, and simple management that works hand-in-hand with a front-end JavaScript framework such as React.</p>
+        <p>If you are stuck with the dogma of “never use inline styles”, you won’t have the curiosity to explore what it means when the original assumptions changed. This is why I’ve structured this book to encourage you to learn to reason for yourself using the <a href="#_Five_Steps_to">Five Steps to Painless CSS</a>.</p>
+        <p>After you’ve learned a framework like React, Angular or Vue, you can come back and learn a CSS-in-JS library to use in your projects. As of this writing (in 2019), the most popular framework that I recommend for CSS-in-JS is <a href="https://www.styled-components.com/">Styled Components</a>.</p>
+        <p>So, if you don’t have to use the cascading or specificity rules by installing a CSS‑in‑JS framework, why learn cascading or specificity at all? I think these are still useful concepts to learn because while your CSS-in-JS framework can protect you from the perils of cascading 99% of the time, the 1% of the time when you encounter a horrible career-ending bug, you can have the confidence to fix it and save your career instead (true story).</p>
+        <p>Keep in mind that not every website uses a CSS-in-JS framework, and for smaller websites you may not want to go through the trouble of setting up one, especially because it requires integration into a larger JavaScript framework such as React or Vue. In these situations, plain vanilla CSS works simply fine.</p>
+        <p>Finally, the last reason why I think it’s still useful to learn all this, is because… umm well… “cascading” is right there in the name: Cascading Style Sheets.<br /></p>
+
+
+        <div id="_ftn53"> 
+         <p> <a href="#_ftnref53"><span>[53]</span></a><span> Or can it? What if you have two</span><span>!importan</span><span>t</span><span>s that are fighting each other? See </span><a href="#_Homework_2"><span>Exercise 10 &sect; Homework 2</span></a><span>.</span> </p> 
+        </div> 
+        <div id="_ftn54"> 
+         <p> <a href="#_ftnref54"><span>[54]</span></a><span> By the way, this principle doesn’t just apply to specificity, but also to properties such as</span><span>z-index</span><span>. If two or more elements are overlapping,</span><span>z-index</span><span> determines which of them is “above” the other one, from the user’s point of view. Normally, all elements have a</span><span>z-index</span><span> of</span><span>0</span><span>, but giving your second element a</span><span>z-index</span><span> of</span><span>1</span><span> makes it overlap the first one.</span> </p> 
+         <p> <span>If you wanted to introduce a third element to overlap the first two, you should give it a</span><span>z-index</span><span> of a small number like</span><span>2</span><span> (or</span><span>5</span><span>, if you want flexibility to add more things in between later) instead of a</span><span>z-index</span><span> of</span><span>20000</span><span>0</span><span>, because otherwise you’ll have to give future elements a</span><span>z-index</span><span> of</span><span>20000</span><span>1</span><span> or higher to beat all the current ones, instead of a smaller number like</span><span>7</span><span>.</span> </p> 
+        </div> 
+        <div id="_ftn55"> 
+         <p> <a href="#_ftnref55"><span>[55]</span></a><span> Or if you read from bottom to top, it’s in the order that they were eliminated from the tournament; so, the style at the bottom was eliminated first, then the selector above that was eliminated second, and so forth.</span> </p> 
+        </div> 
+     </div>
+   </div>
+ </div>
+
+ <div class="row no-gutters">
+   <div class="col">
+     <footer class="footer-section">
+       Copyright © 2019 Bill Mei. All rights reserved.
+     </footer>
+   </div>
+ </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.min.js" integrity="sha256-NFZVyNmS1YlmiklazBA+TALYJlJtZj/y/i/oADk6CVE=" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-10730961-10"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-10730961-10');
+ </script>
+</body>
+</html>
