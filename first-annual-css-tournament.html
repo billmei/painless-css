@@ -199,8 +199,9 @@
         <p><pre><code class="language-css">#bold {
   font-weight: bold;
 }</code></pre></p>
-        <p><small>These code samples come from <a href="https://www.painlesscss.com">Painless CSS</a>, a book and video course that teaches you CSS from first principles. You can download the full repo with all 60 code samples and solutions in <a href="https://www.painlesscss.com">the course</a>.</small></p>
-        <p><pre><code class="language-html">&lt;p style=&quot;font-weight: normal;&quot; id=&quot;bold&quot;&gt;This text is not bold.&lt;/p&gt;</code></pre></p>
+        <p><pre><code class="language-html">&lt;p style=&quot;font-weight: normal;&quot; id=&quot;bold&quot;&gt;
+  This text is not bold.
+&lt;/p&gt;</code></pre></p>
         <p><img src="blog-images/diagram-088.png" class="img-fluid img-browser-screenshot" alt="" /></p>
         <p>This is another reason why we try to avoid inline styles: they can’t be overwritten by any CSS rules we write in our stylesheets.</p>
         <p>Counterintuitively, using inline styles can be a <em>best practice</em> in certain situations when you coding for a front-end framework such as React, Vue, or Angular. I have a discussion about this later in <a href="#beyond-cascading">Beyond Cascading</a>. For now, we’ll avoid using inline styles. </p>
@@ -214,7 +215,6 @@
 #not-bold {
   font-weight: normal;
 }</code></pre></p>
-        <p><small>These code samples come from <a href="https://www.painlesscss.com">Painless CSS</a>, a book and video course that teaches you CSS from first principles. You can download the full repo with all 60 code samples and solutions in <a href="https://www.painlesscss.com">the course</a>.</small></p>
         <p><pre><code class="language-html">&lt;p style=&quot;font-weight: normal;&quot; id=&quot;not-bold&quot;&gt;
   This text IS bold.
 &lt;/p&gt;</code></pre></p>
@@ -281,7 +281,6 @@ button .submit-btn {
   /* Specificity: 011 */
   background-color: green;
 }</code></pre></p>
-        <p><small>These code samples come from <a href="https://www.painlesscss.com">Painless CSS</a>, a book and video course that teaches you CSS from first principles. You can download the full repo with all 60 code samples and solutions in <a href="https://www.painlesscss.com">the course</a>.</small></p>
         <p><pre><code class="language-html">&lt;button class=&quot;submit-btn&quot;&gt;What color am I?&lt;/button&gt;</code></pre></p>
         <p><img src="blog-images/diagram-093.png" class="img-fluid img-browser-screenshot" alt="" /></p>
         <p>The answer is it will be <code class="language-css">orange</code>! This is because the selector <code class="language-css">button&emsp;.submit‑btn</code> is not selecting our element (it would have selected any <em>children</em> of a button with a class of <code class="language-css">.submit‑btn</code>), and despite its higher power, it does not even participate in the tournament! If the second selector had instead been <code class="language-css">button.submit‑btn</code> (notice the lack of a space), then the button background color will indeed be <code class="language-css">green</code>.</p>
@@ -295,7 +294,6 @@ button .submit-btn {
   margin-top: 0;
   background-color: lavender;
 }</code></pre></p>
-        <p><small>These code samples come from <a href="https://www.painlesscss.com">Painless CSS</a>, a book and video course that teaches you CSS from first principles. You can download the full repo with all 60 code samples and solutions in <a href="https://www.painlesscss.com">the course</a>.</small></p>
         <p><pre><code class="language-html">&lt;h1 id=&quot;headline&quot; class=&quot;welcome-message&quot;&gt;
   Welcome to my blog
 &lt;/h1&gt;</code></pre></p>
