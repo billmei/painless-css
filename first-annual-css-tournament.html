@@ -43,7 +43,7 @@
         <li>Entry 2 consists of the number of class, attribute, and pseudo-class selectors in the CSS rule</li>
         <li>Entry 3 consists of the number of tag and pseudo-element selectors in the CSS rule</li>
        </ul>
-        <p>&nbsp;<img src="blog-images/diagram-074.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>&nbsp;<img src="blog-images/Introduction.png" class="img-fluid" alt="" /></p>
         <p>The number inside each box represents the count of selectors assigned to that entry.</p>
         <h2><a>Competitors</a></h2>
         <p>Let’s look at an example of this tournament in action:</p>
@@ -66,7 +66,7 @@
   cursor: copy;
 }</code></pre></p>
         <p>This CSS rule has one ID selector (<code class="language-css">#malamute</code>), one class selector (<code class="language-css">.maroon</code>), one attribute selector (<code class="language-css">[disabled]</code>), and two tag selectors (<code class="language-css">p</code>, <code class="language-css">button</code>).</p>
-        <p>&nbsp;<img src="blog-images/diagram-075.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p>&nbsp;<img src="blog-images/Maroon Malamute.png" class="img-fluid" alt="" /></p>
         <p>We can summarize this competitor’s entries with a single number: <code class="language-none">122</code>. This number is also known as the Specificity Level (or Specificity Score) of the selector. The higher this score, the higher the specificity.</p>
         <p>Let’s meet the other competitors:</p>
         <h3><a>Competitor 2: Sapphire Shepherd</a></h3>
@@ -74,21 +74,21 @@
   padding: 2rem;
   cursor: wait;
 }</code></pre></p>
-        <p><img src="blog-images/diagram-076.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/Sapphire Shepherd.png" class="img-fluid" alt="" /></p>
         <p>This selector has a specificity score of <code class="language-none">041</code>.</p>
         <h3><a>Competitor 3: Purple Poodle</a></h3>
         <p><pre><code class="language-css">#purple-poodle button {
   cursor: pointer;
   text-decoration: underline;
 }</code></pre></p>
-        <p><img src="blog-images/diagram-077.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/Purple Poodle.png" class="img-fluid" alt="" /></p>
         <p>This selector has a specificity score of <code class="language-none">101</code>.</p>
         <h3><a>Competitor 4: Teal Terrier</a></h3>
         <p><pre><code class="language-css">#teal-terrier.fullpage button.submit-btn {
   line-height: 2.5;
   cursor: help;
 }</code></pre></p>
-        <p><img src="blog-images/diagram-078.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/Teal Terrier.png" class="img-fluid" alt="" /></p>
         <p>This selector has a specificity score of <code class="language-none">121</code>.</p>
         <h2><a>Tournament Rules</a></h2>
         <p>Our competitors are fighting over the cursor CSS property, and these are the declarations in conflict:</p>
@@ -106,33 +106,33 @@
         <li><code class="language-css">text-decoration: underline;</code></li>
         <li><code class="language-css">line-height: 2.5;</code></li>
        </ul>
-        <p><img src="blog-images/diagram-079.png" class="img-fluid img-browser-screenshot" alt="" /></p>
+        <p><img src="blog-images/tournament-before.png" class="img-fluid img-browser-screenshot" alt="" /></p>
         <p>There are three rounds to the CSS Specificity Tournament. In Round 1, all competitors submit their score from Entry 1 into the round. The competitor with the highest score wins that round. Similarly, competitors submit Entry 2 for Round 2, and Entry 3 for Round 3.</p>
         <h3><a>Round 1</a></h3>
         <p>For Round 1, we look at the number of ID selectors for all competitors. The competitor with the greatest number of ID selectors wins this round:</p>
-        <p><img src="blog-images/diagram-080.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/Round 1 Before.png" class="img-fluid" alt="" /></p>
         <p>Sapphire Shepherd has no ID selectors, so it is immediately eliminated from Round 1!</p>
-        <p><img src="blog-images/diagram-081.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/Round 1 After.png" class="img-fluid" alt="" /></p>
         <p>Once a competitor is eliminated, it doesn’t get to participate in any subsequent rounds.</p>
         <p>Maroon Malamute, Purple Poodle, and Teal Terrier are tied at 1 ID selector each, so they all move on to Round 2.</p>
         <h3><a>Round 2</a></h3>
         <p>For Round 2, look at the number of class, attribute, and pseudo-class selectors for all remaining competitors. The competitor with the most of these wins this round:</p>
-        <p><img src="blog-images/diagram-082.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/Round 2 Before.png" class="img-fluid" alt="" /></p>
         <p>Even though Sapphire Shepherd has the greatest number of class selectors in this round, it was already eliminated in the previous round, so it doesn’t win! It doesn’t matter if a competitor “could have won” if it stayed in the tournament—once competitor is eliminated, it’s permanently gone.</p>
         <p>Both Maroon Malamute and Teal Terrier are tied in first place for Round 2, so they move forward to Round 3 and Purple Poodle is eliminated:</p>
-        <p><img src="blog-images/diagram-083.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/Round 2 After.png" class="img-fluid" alt="" /></p>
         <h3><a>Round 3</a></h3>
         <p>For Round 3, look at the number of tag and pseudo-element selectors for all remaining competitors. The competitor with the most of these wins the tournament!</p>
-        <p><img src="blog-images/diagram-084.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/Round 3 Before.png" class="img-fluid" alt="" /></p>
         <p>Maroon Malamute has 2 tag selectors and Teal Terrier has 1 tag selector, so Maroon Malamute wins the tournament!</p>
-        <p><img src="blog-images/diagram-085.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/Round 3 After.png" class="img-fluid" alt="" /></p>
         <p>The final outcome is that the maroon malamute CSS rule “wins” over the others:</p>
         <p><pre><code class="language-css">p.maroon#malamute button[disabled] {
   margin: 100px;
   cursor: copy
 }</code></pre></p>
         <p>and the declaration <code class="language-css">cursor: copy</code> is applied to the selected HTML element.</p>
-        <p><img src="blog-images/diagram-086.png" class="img-fluid" alt="" /></p>
+        <p><img src="blog-images/tournament-after.png" class="img-fluid" alt="" /></p>
         <p>In this example, <code class="language-css">cursor</code> was the only CSS property in conflict. If there were more than one property in conflict (say, two or more CSS rules both had different margin values), then we would run this tournament again for the next property (margin), starting over from the beginning.</p>
         <h2><a>Shortcut: Specificity Score</a></h2>
         <p>Now that you understand the tournament analogy, let’s simplify this whole thing to make it easier to use in practice.</p>
@@ -337,7 +337,7 @@ p span {
         <p>The disadvantage of the top-down model is it does not help us debug CSS issues with individual elements. In the top-down model, we must go through the entire CSSOM to figure what styles are associated to a specific HTML element, and we can’t easily visualize the CSSOM tree in our heads.</p>
         <p>In contrast, it’s much easier to focus on one individual element and ask, “what CSS rules apply to you?” then go off and find those. In fact, the developer tools in your browser allow you do exactly this using the “Inspect” or “Inspect Element” feature, which will helpfully find all the rules associated with an element without you needing to go through the entirety of your website:</p>
         <p>Source Code: chapter10/leaderboard.html</p>
-        <p><img src="blog-images/diagram-096.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/diagram-096.png" class="img-fluid" alt="" /></p>
         <p>All CSS rules that apply to the inspected element show up conveniently in a list in the sidebar:</p>
         <p><img src="blog-images/diagram-097.png" class="img-fluid img-browser-screenshot" alt="" /></p>
         <p>Even though it’s called “Cascading Style Sheets”, I like to disregard the whole “Cascading” concept and just think about it in terms of each element’s specificity score, and how that affects the outcome of the tournament.</p>

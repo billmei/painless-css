@@ -2,7 +2,7 @@ body {
   background-color: #f8f9fa;
 }
 .blog {
-  background-color: #fefefe;
+  background-color: #ffffff;
 }
 
 @-webkit-keyframes rainbow {
@@ -445,7 +445,7 @@ dt p, dd p {
 /* Blog */
 .img-browser-screenshot {
   box-shadow: 0 .25rem .5rem rgba(0,0,0,.075);
-  border-radius: 7px;
+  border-radius: 5px;
 }
 
 /* Half Desktop */
