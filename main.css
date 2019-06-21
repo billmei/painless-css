@@ -1,6 +1,9 @@
 body {
   background-color: #f8f9fa;
 }
+.blog {
+  background-color: #fefefe;
+}
 
 @-webkit-keyframes rainbow {
     0%{background-position:0% 100%}

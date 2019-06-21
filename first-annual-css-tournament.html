@@ -180,7 +180,9 @@
   font-size: x-small
 }</code></pre></p>
         <p>Source Code: chapter10/shortcut.html</p>
-        <p><pre><code class="language-html">&lt;p class=&quot;medium big&quot; id=&quot;x-small&quot;&gt;What size am I?&lt;/p&gt;</code></pre></p>
+        <p><pre><code class="language-html">&lt;p class=&quot;medium big&quot; id=&quot;x-small&quot;&gt;
+  What size am I?
+&lt;/p&gt;</code></pre></p>
         <p>Here are the “scores”:</p>
         <ul type="disc">
         <li><code class="language-css">.big.big.big.big.big.big.big.big.big.big.big.big.big {}</code> has a score of <code class="language-none">(13 &times; 10) = 130</code></li>
@@ -202,8 +204,8 @@
         <p><pre><code class="language-html">&lt;p style=&quot;font-weight: normal;&quot; id=&quot;bold&quot;&gt;This text is not bold.&lt;/p&gt;</code></pre></p>
         <p><img src="blog-images/diagram-088.png" class="img-fluid img-thumbnail" alt="" /></p>
         <p>This is another reason why we try to avoid inline styles: they can’t be overwritten by any CSS rules we write in our stylesheets.</p>
-        <p>Counterintuitively, using inline styles can be a best practice in certain situations when you coding for a front-end framework such as React, Vue, or Angular. I have a discussion about this later in <a href="#_Beyond_Cascading">Beyond Cascading</a>. For now, we’ll avoid using inline styles. </p>
-        <p>This is an exception to this exception! While inline styles override the tournament winners, any declarations that use the !important keyword will override an inline style.</p>
+        <p>Counterintuitively, using inline styles can be a best practice in certain situations when you coding for a front-end framework such as React, Vue, or Angular. I have a discussion about this later in <a href="#beyond-cascading">Beyond Cascading</a>. For now, we’ll avoid using inline styles. </p>
+        <p>This is an exception to this exception! While inline styles override the tournament winners, any declarations that use the <code class="language-css">!important</code> keyword will override an inline style.</p>
         <h3><a>!important</a></h3>
         <p><code class="language-css">!important</code> is a special keyword in CSS that makes your declaration always win the specificity tournament, no matter what, even if there are inline styles on the element! It looks like this:</p>
         <p><pre><code class="language-css">p {
@@ -216,8 +218,8 @@
         <p>Source Code: chapter10/important.html</p>
         <p><pre><code class="language-html">&lt;p style=&quot;font-weight: normal;&quot; id=&quot;not-bold&quot;&gt;This text IS bold.&lt;/p&gt;</code></pre></p>
         <p><img src="blog-images/diagram-089.png" class="img-fluid img-thumbnail" alt="" /></p>
-        <p>We avoid using <code class="language-css">!important</code> in our CSS because it can’t be overwritten.<a href="#_ftn53">[53]</a>If you change your mind later, you can’t overpower it with a different rule; you have to remove the <code class="language-css">!important</code> and then also check every other rule for that element to make sure nothing else breaks, because usually the reason an !important was added in the first place was to unbreak some buggy code.</p>
-        <p>The true nightmare of a CSS author is to open up a CSS file and see !important sprinkled everywhere! Selectors in this kind of situation are called Overspecified or Overpowered.</p>
+        <p>We avoid using <code class="language-css">!important</code> in our CSS because it can’t be overwritten.<a href="#_ftn53">[53]</a>If you change your mind later, you can’t overpower it with a different rule; you have to remove the <code class="language-css">!important</code> and then also check every other rule for that element to make sure nothing else breaks, because usually the reason an <code class="language-css">!important</code> was added in the first place was to unbreak some buggy code.</p>
+        <p>The true nightmare of a CSS author is to open up a CSS file and see <code class="language-css">!important</code> sprinkled everywhere! Selectors in this kind of situation are called Overspecified or Overpowered.</p>
         <p>This is also why I earlier recommended avoiding IDs for CSS styling, because IDs are also highly powered. No matter how many CSS classes you write, you cannot override an ID.</p>
         <p>The tournament analogy gives us an intuitive sense for why overpowered selectors are bad. If a selector is enormously powerful in the tournament, it wins faster and at earlier rounds, meaning the only way to beat a powerful selector is to write another style that is even more highly powered.</p>
         <p>This tendency for specificity to always escalate is known as a specificity war. Like stockpiling nuclear weapons, no one wins at this war—it only becomes harder to de-escalate as specificity increases. The only way to avoid an all-out specificity war is to not stockpile highly powered selectors in the first place.<a href="#_ftn54">[54]</a></p>
@@ -293,7 +295,9 @@ button .submit-btn {
   background-color: lavender;
 }</code></pre></p>
         <p>Source Code: chapter10/no-fight.html</p>
-        <p><pre><code class="language-html">&lt;h1 id=&quot;headline&quot; class=&quot;welcome-message&quot;&gt;Welcome to my blog&lt;/h1&gt;</code></pre></p>
+        <p><pre><code class="language-html">&lt;h1 id=&quot;headline&quot; class=&quot;welcome-message&quot;&gt;
+  Welcome to my blog
+&lt;/h1&gt;</code></pre></p>
         <p><code class="language-css">color</code> and <code class="language-css">margin-top</code> are talking about different things, so they can both apply to the same element at the same time because they’re not fighting each other. However, <code class="language-css">background-color</code> is in a fight, so for this property we use the tournament to find a winner. <code class="language-css">#headline</code> wins the tournament against <code class="language-css">.welcome-message</code> so the element is given a <code class="language-css">background-color</code> of lavender. The final set of properties applied to our <code class="language-html">&lt;h1&gt;</code> is:</p>
         <ul type="disc">
         <li><code class="language-css">color: salmon;</code></li>
@@ -348,7 +352,7 @@ p span {
         <p>You can take advantage of this ordering when debugging. To find a specific declaration, you should start at the top and then work your way down to understand what’s going on, because it’s more likely that the final property that survived the tournament is near the top.</p>
         <p>Once you find the declaration you’re looking for, you can stop there and you don’t need to continue scrolling down to the bottom, because anything nearer the bottom will have already lost the tournament long ago, meaning that you’re wasting your time if you keep scrolling—especially when debugging a large website with thousands of styles.</p>
         <p>If you’ve scrolled all the way to the bottom and still can’t find your declaration, remember to check the user agent stylesheet in the gray area! It may be that you forgot to style your component and the default style is being applied.</p>
-        <h2><a>Beyond Cascading: CSS-in-JS</a></h2>
+        <h2 id="beyond-cascading">Beyond Cascading: CSS-in-JS</h2>
         <p>If you’re thinking to yourself, “this seems very complicated and a lot of work to keep track of”, I agree with you!</p>
         <p>To address this, the community invented CSS-in-JS libraries and inline style frameworks. Cascading, selectors, inheritance, and specificity are some of the hardest concepts about CSS to understand, so lots of developers sidestep the problem by using a library which abstracts away all of this, so you never have to worry about it again. These frameworks also give you other benefits such as code modularity (by removing the CSS global scope) and the ability to hook into automated tests.</p>
         <p>For more info about the benefits of a CSS-in-JS library, I recommend watching <a href="https://www.youtube.com/watch?v=19gqsBc_Cx0">this talk by Max Stoiber</a>.</p>
