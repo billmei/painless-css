@@ -447,6 +447,9 @@ dt p, dd p {
   box-shadow: 0 .25rem .5rem rgba(0,0,0,.075);
   border-radius: 5px;
 }
+.keyword {
+  font-weight: bold;
+}
 
 /* Half Desktop */
 @media (max-width: 1199px) { 
