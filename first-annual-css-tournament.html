@@ -24,8 +24,6 @@
 
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css" integrity="sha384-QokYePQSOwpBDuhlHOsX0ymF6R/vLk/UQVz3WHa6wygxI5oGTmDTv8wahFOSspdm" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/fontawesome.css" integrity="sha384-vd1e11sR28tEK9YANUtpIOdjGW14pS87bUBuOIoBILVWLFnS+MCX9T6MMf0VdPGq" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.css" integrity="sha384-DivOqI8LGKSAOf/6uVtscxX4M3rJlzYgbcNosol/kTtugbUOcMcRjXUzIyFAR92j" crossorigin="anonymous">
 
   <link rel="stylesheet" href="main.css">
@@ -37,7 +35,8 @@
     <div class="row">
       <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0">
         <h1 class="text-center">The 1st Annual CSS Tournament</a></h1>
-        <p>Welcome to the 1st annual CSS Tournament! All CSS properties in conflict sign up for this tournament, and the winner gets applied to the targeted HTML element.</p>
+        <p>Welcome to the 1st annual CSS Tournament!</p>
+        <p>All CSS properties in conflict sign up for this tournament, and the winner gets applied to the targeted HTML element.</p>
         <p>Each competitor submits three entries into this competition:</p>
         <ul type="disc">
         <li>Entry 1 consists of the number of ID selectors in the CSS rule</li>
@@ -107,7 +106,7 @@
         <li><code class="language-css">text-decoration: underline;</code></li>
         <li><code class="language-css">line-height: 2.5;</code></li>
        </ul>
-        <p><img src="blog-images/diagram-079.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/diagram-079.png" class="img-fluid img-browser-screenshot" alt="" /></p>
         <p>There are three rounds to the CSS Specificity Tournament. In Round 1, all competitors submit their score from Entry 1 into the round. The competitor with the highest score wins that round. Similarly, competitors submit Entry 2 for Round 2, and Entry 3 for Round 3.</p>
         <h3><a>Round 1</a></h3>
         <p>For Round 1, we look at the number of ID selectors for all competitors. The competitor with the greatest number of ID selectors wins this round:</p>
@@ -133,7 +132,7 @@
   cursor: copy
 }</code></pre></p>
         <p>and the declaration <code class="language-css">cursor: copy</code> is applied to the selected HTML element.</p>
-        <p><img src="blog-images/diagram-086.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/diagram-086.png" class="img-fluid" alt="" /></p>
         <p>In this example, <code class="language-css">cursor</code> was the only CSS property in conflict. If there were more than one property in conflict (say, two or more CSS rules both had different margin values), then we would run this tournament again for the next property (margin), starting over from the beginning.</p>
         <h2><a>Shortcut: Specificity Score</a></h2>
         <p>Now that you understand the tournament analogy, let’s simplify this whole thing to make it easier to use in practice.</p>
@@ -190,7 +189,7 @@
         <li><code class="language-css">#x-small {}</code> has a score of <code class="language-none">(1 &times; 100) = 100</code></li>
        </ul>
         <p>You would expect the size of the element to be <code class="language-css">xx-large</code>, but it is in fact <code class="language-css">x-small</code>!</p>
-        <p><img src="blog-images/diagram-087.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/diagram-087.png" class="img-fluid img-browser-screenshot" alt="" /></p>
         <p>In the original tournament analogy, the rounds (and entries) are separate from each other. The shortcut ranking method doesn’t work for more than 9 classes because the moment you add the 10th class to a selector which already has a score of 90, its score becomes 100 and it “overpowers” the ID selector, which shouldn’t happen. This problem occurs because we’re using a base-10 counting system, and you could avoid it by changing the base, but at that point it’s much simpler just to use the tournament analogy as your mental model.</p>
         <p>Luckily, in practice we usually don’t write more than 9 selectors in a CSS rule, so our shortcut of adding together all the specificity scores works handily for most situations you encounter in the real world.</p>
         <h2><a>Exceptions to the Tournament</a></h2>
@@ -202,7 +201,7 @@
 }</code></pre></p>
         <p>Source Code: chapter10/inline-style.html</p>
         <p><pre><code class="language-html">&lt;p style=&quot;font-weight: normal;&quot; id=&quot;bold&quot;&gt;This text is not bold.&lt;/p&gt;</code></pre></p>
-        <p><img src="blog-images/diagram-088.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/diagram-088.png" class="img-fluid img-browser-screenshot" alt="" /></p>
         <p>This is another reason why we try to avoid inline styles: they can’t be overwritten by any CSS rules we write in our stylesheets.</p>
         <p>Counterintuitively, using inline styles can be a best practice in certain situations when you coding for a front-end framework such as React, Vue, or Angular. I have a discussion about this later in <a href="#beyond-cascading">Beyond Cascading</a>. For now, we’ll avoid using inline styles. </p>
         <p>This is an exception to this exception! While inline styles override the tournament winners, any declarations that use the <code class="language-css">!important</code> keyword will override an inline style.</p>
@@ -217,7 +216,7 @@
 }</code></pre></p>
         <p>Source Code: chapter10/important.html</p>
         <p><pre><code class="language-html">&lt;p style=&quot;font-weight: normal;&quot; id=&quot;not-bold&quot;&gt;This text IS bold.&lt;/p&gt;</code></pre></p>
-        <p><img src="blog-images/diagram-089.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/diagram-089.png" class="img-fluid img-browser-screenshot" alt="" /></p>
         <p>We avoid using <code class="language-css">!important</code> in our CSS because it can’t be overwritten.<a href="#_ftn53">[53]</a>If you change your mind later, you can’t overpower it with a different rule; you have to remove the <code class="language-css">!important</code> and then also check every other rule for that element to make sure nothing else breaks, because usually the reason an <code class="language-css">!important</code> was added in the first place was to unbreak some buggy code.</p>
         <p>The true nightmare of a CSS author is to open up a CSS file and see <code class="language-css">!important</code> sprinkled everywhere! Selectors in this kind of situation are called Overspecified or Overpowered.</p>
         <p>This is also why I earlier recommended avoiding IDs for CSS styling, because IDs are also highly powered. No matter how many CSS classes you write, you cannot override an ID.</p>
@@ -251,7 +250,7 @@
   &lt;div class=&quot;unpowerful&quot;&gt;CSS rules everything around me&lt;/div&gt;
 &lt;/div&gt;</code></pre></p>
         <p>Since font-weight is an inherited property on the child, it doesn’t matter that the parent is both a highly powered ID selector and has an <code class="language-css">!important</code>, the <code class="language-css">.unpowerful</code> selector will win in this situation.</p>
-        <p><img src="blog-images/diagram-090.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/diagram-090.png" class="img-fluid img-browser-screenshot" alt="" /></p>
         <p>However, if we change our HTML so that the ID <code class="language-css">#powerful</code> becomes non-inherited,</p>
         <p><pre><code class="language-html">&lt;div&gt;
   &lt;div class=&quot;unpowerful&quot; id=&quot;powerful&quot;&gt;
@@ -259,14 +258,14 @@
   &lt;/div&gt;
 &lt;/div&gt;</code></pre></p>
         <p>then the ID will win as expected.</p>
-        <p><img src="blog-images/diagram-091.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/diagram-091.png" class="img-fluid img-browser-screenshot" alt="" /></p>
         <p>The “generational distance” (whether the property was inherited from a parent, or a grandparent) doesn’t matter—only CSS selectors that directly select your element have a specificity greater than <code class="language-none">000</code>. Only when there are no CSS rules directly selecting your HTML element will parents win over grandparents:</p>
         <p><pre><code class="language-html">&lt;div id=&quot;powerful&quot;&gt;
   &lt;div class=&quot;unpowerful&quot;&gt;
     &lt;p&gt;CSS rules everything around me&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre></p>
-        <p><img src="blog-images/diagram-092.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/diagram-090.png" class="img-fluid img-browser-screenshot" alt="" /></p>
         <h3><a>Universal Selector</a></h3>
         <p>The Universal Selector <code class="language-css">*</code> has a specificity of <code class="language-none">000</code>.</p>
         <h3><a>Non-Participants</a></h3>
@@ -282,7 +281,7 @@ button .submit-btn {
 }</code></pre></p>
         <p>Source Code: chapter10/non-participant.html</p>
         <p><pre><code class="language-html">&lt;button class=&quot;submit-btn&quot;&gt;What color am I?&lt;/button&gt;</code></pre></p>
-        <p><img src="blog-images/diagram-093.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/diagram-093.png" class="img-fluid img-browser-screenshot" alt="" /></p>
         <p>The answer is it will be orange! This is because the selector <code class="language-css">button&nbsp;.submit‑btn</code> is not selecting our element (it would have selected any children of a button with a class of <code class="language-css">.submit‑btn</code>), and despite its higher power, it does not even participate in the tournament! If the second selector had instead been <code class="language-css">button.submit‑btn</code> (notice the lack of a space), then the button background color will indeed be green.</p>
         <p>Also keep in mind that a tournament is not needed when properties are not fighting each other. For example:</p>
         <p><pre><code class="language-css">.welcome-message {
@@ -304,7 +303,7 @@ button .submit-btn {
         <li><code class="language-css">margin-top: 0;</code></li>
         <li><code class="language-css">background-color: lavender;</code></li>
        </ul>
-        <p><img src="blog-images/diagram-094.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/diagram-094.png" class="img-fluid img-browser-screenshot" alt="" /></p>
         <h3><a>Combinators</a></h3>
         <p>Combinators are ignored in our tournament. To determine the winner of a round, we follow only the scoring rules laid about above. You would think that changing from a broad selector like <code class="language-css"> </code> (the descendent combinator) to a more narrow selector like <code class="language-css">&gt;</code> (the child combinator) would change the outcome of the tournament, but combinators only affect whether or not the CSS rule is eligible to participate in the tournament in the first place (since it changes whether or not our element is actually selected), and they do nothing to the specificity scores.</p>
         <p>Here’s an example; what color will our text be?</p>
@@ -316,7 +315,7 @@ p span {
 }</code></pre></p>
         <p>Source Code: chapter10/combinators.html</p>
         <p><pre><code class="language-html">&lt;p&gt;&lt;span&gt;What color am I?&lt;/span&gt;&lt;/p&gt;</code></pre></p>
-        <p><img src="blog-images/diagram-095.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/diagram-095.png" class="img-fluid img-browser-screenshot" alt="" /></p>
         <p>The answer is the text will be <code class="language-css">aquamarine</code>! It totally seems like <code class="language-css">p &gt; span</code> should win because the extra child combinator <code class="language-css">&gt;</code> makes it look “more specific” since it’s narrowing down to direct children instead of all descendants, but the <code class="language-css">&gt;</code> does not affect any of the specificity scores, so when we run the tournament we have a score of <code class="language-none">002</code> competing against a score of <code class="language-none">002</code>. Since the result of this tournament is a tie, the last selector p span wins because of the tiebreaker rule, and our text is given a color of <code class="language-css">aquamarine</code>.</p>
         <p>This example reveals the problem with the classical way of thinking about cascading. The popular explanation of comparing the CSSOM to how the HTML DOM is constructed will mislead you in this example because the structure of the tree has nothing to do with the results of our tournament.</p>
         <h2><a>The Painless CSS Cascade</a></h2>
@@ -340,15 +339,15 @@ p span {
         <p>Source Code: chapter10/leaderboard.html</p>
         <p><img src="blog-images/diagram-096.png" class="img-fluid img-thumbnail" alt="" /></p>
         <p>All CSS rules that apply to the inspected element show up conveniently in a list in the sidebar:</p>
-        <p><img src="blog-images/diagram-097.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/diagram-097.png" class="img-fluid img-browser-screenshot" alt="" /></p>
         <p>Even though it’s called “Cascading Style Sheets”, I like to disregard the whole “Cascading” concept and just think about it in terms of each element’s specificity score, and how that affects the outcome of the tournament.</p>
         <h2><a>After the Tournament</a></h2>
         <h3><a>Order of elimination</a></h3>
         <p>Something cool you may have noticed when you opened the developer tools panel: the list of CSS rules we see is ordered according to where they finished in the tournament!</p>
         <p>You can think of this panel as a “leaderboard” for the tournament, where the 1st place winner of the tournament shows up at the top, then the selector below that is the 2nd place winner, and so forth.<a href="#_ftn55">[55]</a></p>
-        <p><img src="blog-images/diagram-098.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/diagram-098.png" class="img-fluid img-browser-screenshot" alt="" /></p>
         <p>This becomes clear when you use the panel to disable styles. You can click on the checkbox beside any declaration to enable or disable it. If I disable the declaration that won 1st place, then the 2nd place declaration is the “winner” of the tournament instead, so it becomes the style that is applied to the HTML element.</p>
-        <p><img src="blog-images/diagram-099.png" class="img-fluid img-thumbnail" alt="" /></p>
+        <p><img src="blog-images/diagram-099.png" class="img-fluid img-browser-screenshot" alt="" /></p>
         <p>You can take advantage of this ordering when debugging. To find a specific declaration, you should start at the top and then work your way down to understand what’s going on, because it’s more likely that the final property that survived the tournament is near the top.</p>
         <p>Once you find the declaration you’re looking for, you can stop there and you don’t need to continue scrolling down to the bottom, because anything nearer the bottom will have already lost the tournament long ago, meaning that you’re wasting your time if you keep scrolling—especially when debugging a large website with thousands of styles.</p>
         <p>If you’ve scrolled all the way to the bottom and still can’t find your declaration, remember to check the user agent stylesheet in the gray area! It may be that you forgot to style your component and the default style is being applied.</p>

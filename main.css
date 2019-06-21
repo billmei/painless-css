@@ -442,6 +442,12 @@ dt p, dd p {
   padding-bottom: 2em;
 }
 
+/* Blog */
+.img-browser-screenshot {
+  box-shadow: 0 .25rem .5rem rgba(0,0,0,.075);
+  border-radius: 7px;
+}
+
 /* Half Desktop */
 @media (max-width: 1199px) { 
   .pricing-img--single {
