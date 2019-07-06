@@ -30,16 +30,35 @@
 
   <meta name="theme-color" content="#212D47">
 </head>
-<body class="blog">
+<body class="blog" data-spy="scroll" data-target="#navbarNav" data-offset="180">
   <div class="row no-gutters">
     <div class="col">
-      <p class="seo-img" style="background-image: url('blog-images/tournament-share-thumbnail.jpg');"><img src="blog-images/tournament-share-thumbnail.jpg" alt="The 1st Annual CSS Tournament"></p>
+      <div class="seo-img" style="background-image: url('blog-images/tournament-share-thumbnail.jpg');"><img src="blog-images/tournament-share-thumbnail.jpg" alt="The 1st Annual CSS Tournament"></div>
     </div>
   </div>
+
+  <header class="navbar-wrapper">
+    <nav class="navbar navbar-light navbar-expand-lg bg-light border-bottom w-100" role="navigation">
+      <a href="javascript:void(0)" class="navbar-brand d-lg-none" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation">Navigation <span class="ml-auto navbar-toggler-icon"></span></a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#top">Back to Top</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tournament-rules">Rules</a></li>
+          <li class="nav-item"><a class="nav-link" href="#shortcut">Shortcut</a></li>
+          <li class="nav-item"><a class="nav-link" href="#exceptions">Exceptions</a></li>
+          <li class="nav-item"><a class="nav-link" href="#painless-css-tournament">Summary</a></li>
+          <li class="nav-item"><a class="nav-link" href="#after-the-tournament">After the Tournament</a></li>
+          <li class="nav-item"><a class="nav-link" href="#beyond-cascading">Beyond Cascading</a></li>
+          <li class="nav-item"><a class="nav-link" href="#footnotes">Footnotes</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
   <div class="container">
-    <div class="row">
+    <div class="row mt-5">
       <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0">
-        <h1>The 1st Annual CSS Tournament</h1>
+        <h1 id="top">The 1st Annual CSS Tournament</h1>
         <p class="mb-4 text-muted">Published July, 2019. Written by Bill Mei.</p>
 
         <p><strong>Welcome to the <em>First Annual CSS Tournament!</em></strong></p>
@@ -47,33 +66,6 @@
         <p>While this is the first time we are hosting this tournament in plain view for a live audience, the tournament is actually being run thousands of times per second across millions of computers all over the world.</p>
 
         <p>The purpose of the CSS Tournament is to resolve conflicts between two or more CSS properties that are trying to apply the same style onto the same HTML element. Let’s look at an example:</p>
-
-<!--         <nav>
-          Jump to section
-          <ul>
-            <li><a href="#top">Back to Top</a></li>
-            <li><a href="#tournament-competitors">Competitors</a></li>
-            <li><a href="#tournament-rules">Tournament Rules</a></li>
-            <li><a href="#shortcut">Shortcut: Specificity Score</a><ul>
-              <li><a href="#specificity-rank">Specificity Rank</a></li>
-            </ul></li>
-            <li><a href="#exceptions">Exceptions to the Tournament</a><ul>
-              <li><a href="#inline-styles">Inline Styles</a></li>
-              <li><a href="#important">!important</a></li>
-              <li><a href="#tiebreaker">Tied until the end</a></li>
-              <li><a href="#inheritance">Inheritance</a></li>
-              <li><a href="#universal-selector">Universal Selector</a></li>
-              <li><a href="#non-participants">Non-Participants</a></li>
-              <li><a href="#combinators">Combinators</a></li>
-            </ul></li>
-            <li><a href="#painless-css-tournament">The Painless CSS Tournament</a></li>
-            <li><a href="#after-the-tournament">After the Tournament</a><ul>
-              <li><a href="#order-of-elimination">Order of elimination</a></li>
-            </ul></li>
-            <li><a href="#beyond-cascading">Beyond Cascading: CSS-in-JS</a></li>
-            <li><a href="#footnotes">Footnotes</a></li>
-          </ul>
-        </nav> -->
 
         <p><img src="blog-images/tournament-before.png" class="img-fluid img-browser-screenshot" alt="" /></p>
         <p>
@@ -491,6 +483,7 @@ a[href].command {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.min.js" integrity="sha256-NFZVyNmS1YlmiklazBA+TALYJlJtZj/y/i/oADk6CVE=" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-10730961-10"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
