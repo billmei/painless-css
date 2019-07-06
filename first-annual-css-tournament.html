@@ -125,7 +125,7 @@
         <li><code class="language-css">cursor: pointer;</code></li>
         <li><code class="language-css">cursor: help;</code></li>
         </ul>
-        <p>Winning the <em>First Annual CSS Tournament</em> comes with a glamorous prize: the winner’s <code class="language-css">cursor</code> value will apply to the final <code class="language-css">button</code> in the DOM tree (the selected HTML element).</p>
+        <p>Winning the <em>First Annual CSS Tournament</em> comes with a glamorous prize: the winner’s <code class="language-css">cursor</code> value will apply to the our selected <code class="language-css">button</code>.</p>
 
         <p>Let’s meet the competitors:</p>
 
@@ -160,7 +160,7 @@
         <p><img src="blog-images/Teal Terrier.png" class="img-fluid" alt="" /></p>
         <p>This selector has a specificity score of <code class="language-none">121</code>.</p>
         <h2 id="tournament-rules"><a>Tournament Rules</a></h2>
-        <p>While there is a conflict for <code class="language-css">cursor</code>, the declarations below are not in competition with each other. They don’t participate in the tournament and they are all immediately applied onto the <code class="language-css">button</code>.</p>
+        <p>While there is a conflict for <code class="language-css">cursor</code>, the declarations below are not in competition with each other. They don’t participate in the tournament and they are all immediately applied as a style onto the <code class="language-css">button</code> without needing to participate in the tournament.</p>
         <ul type="disc">
         <li><code class="language-css">margin: 100px;</code></li>
         <li><code class="language-css">padding: 2rem;</code></li>
@@ -263,7 +263,7 @@
   This text is not bold.
 &lt;/p&gt;</code></pre></p>
         <p><img src="blog-images/diagram-088.png" class="img-fluid img-browser-screenshot" alt="" /></p>
-        <p>This is another reason why we try to avoid inline styles: they can’t be overwritten by any CSS rules we write in our stylesheets.</p>
+        <p>In addition to the reasons I described in <a href="https://www.painlesscss.com">Chapter 6</a> of the <em>Painless CSS</em> book, this is another reason why we try to avoid inline styles: they can’t be overwritten by any CSS rules we write in our stylesheets.</p>
         <p>Counterintuitively, using inline styles can be a <em>best practice</em> in certain situations when you coding for a front-end framework such as React, Vue, or Angular. I have a discussion about this later in <a href="#beyond-cascading">Beyond Cascading</a>. For now, we’ll avoid using inline styles. </p>
         <p>This is an exception to this exception! While inline styles override the tournament winners, any declarations that use the <code class="language-css">!important</code> keyword will override an inline style.</p>
         <h3 id="important"><a>!important</a></h3>
@@ -282,7 +282,7 @@
         <p><img src="blog-images/diagram-089.png" class="img-fluid img-browser-screenshot" alt="" /></p>
         <p>We avoid using <code class="language-css">!important</code> in our CSS because it can’t be overwritten.<sup><a href="#_ftn53" id="_ftnref53">[1]</a></sup> If you change your mind later, you can’t overpower it with a different rule; you have to remove the <code class="language-css">!important</code> and then also check every <em>other</em> rule for that element to make sure nothing else breaks, because usually the reason an <code class="language-css">!important</code> was added in the first place was to unbreak some buggy code.</p>
         <p>The true nightmare of a CSS author is to open up a CSS file and see <code class="language-css">!important</code> sprinkled everywhere! Selectors in this kind of situation are called <em class="keyword">Overspecified</em> or <em class="keyword">Overpowered</em>.</p>
-        <p>This is also why I earlier recommended avoiding IDs for CSS styling, because IDs are also highly powered. No matter how many CSS classes you write, you cannot override an ID.</p>
+        <p>This is also why I recommend avoiding IDs for CSS styling, because IDs are also highly powered. No matter how many CSS classes you write, you cannot override an ID.</p>
         <p>The tournament analogy gives us an intuitive sense for why overpowered selectors are bad. If a selector is enormously powerful in the tournament, it wins faster and at earlier rounds, meaning the only way to beat a powerful selector is to write another style that is even more highly powered.</p>
         <p>This tendency for specificity to always escalate is known as a <em class="keyword">specificity war</em>. Like stockpiling nuclear weapons, no one wins at this war—it only becomes harder to de-escalate as specificity increases. The only way to avoid an all-out specificity war is to not stockpile highly powered selectors in the first place.<sup><a href="#_ftn54" id="_ftnref54">[2]</a></sup></p>
         <h3 id="tiebreaker"><a>Tied until the end</a></h3>
@@ -438,7 +438,7 @@ a[href].command {
         <p>If you’re thinking to yourself, “this seems very complicated and a lot of work to keep track of”, I agree with you!</p>
         <p>To address this, the community invented CSS-in-JS libraries and inline style frameworks. Cascading, selectors, inheritance, and specificity are some of the hardest concepts about CSS to understand, so lots of developers sidestep the problem by using a library which abstracts away all of this, so you never have to worry about it again. These frameworks also give you other benefits such as code modularity (by removing the CSS global scope) and the ability to hook into automated tests.</p>
         <p>For more info about the benefits of a CSS-in-JS library, I recommend watching <a href="https://www.youtube.com/watch?v=19gqsBc_Cx0" target="_blank" rel="noopener">this talk by Max Stoiber</a>.</p>
-        <p>Inline style frameworks highlight why you should not learn by memorizing knowledge from dogma. Some experienced developers have a visceral negative reaction to hearing “inline styles”, because they were taught early in their career the best practice to “never use inline styles”. Even I told you not to do it in <a href="#https://www.painlesscss.com">Chapter&nbsp;6 of the book</a>!</p>
+        <p>Inline style frameworks highlight why you should not learn by memorizing knowledge from dogma. Some experienced developers have a visceral negative reaction to hearing “inline styles”, because they were taught early in their career the best practice to “never use inline styles”. Even I told you not to do it in <a href="https://www.painlesscss.com">Chapter&nbsp;6 of the book</a>!</p>
         <p>Indeed, “never use inline styles” was a best practice a long time ago when it made HTML hard to read, hard to debug, and hard to change. However, the technology chugs along and eventually upends the assumptions that lead to these “best practices”. New assumptions lead to new best practices.</p>
         <p>Inline styles are only painful when you write them by hand—but if you use a CSS-in-JS library to manage your inline styles for you, these downsides disappear, and you are left only with the advantages of code modularity, automated testing, and simple management that works hand-in-hand with a front-end JavaScript framework such as React.</p>
         <p>If you are stuck with the dogma of “never use inline styles”, you won’t have the curiosity to explore what it means when the original assumptions changed. This is why I’ve structured this book to encourage you to learn to reason for yourself using the <a href="https://www.painlesscss.com/#toc">Five Steps to Painless CSS</a>.</p>
