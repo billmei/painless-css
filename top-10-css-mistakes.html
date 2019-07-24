@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Painless CSS: Learn Cascading Stylesheets from first principles</title>
-  <meta name="description" content="Learn CSS from first principles with Painless CSS, a book and video course that teaches you how to build beautiful, intuitive websites that are a joy to design and maintain." />
+  <title>Top 10 most deadly CSS mistakes made by new and experienced developers - Painless CSS</title>
+  <meta name="description" content="The more serious the mistake, the harder it is to recover from without a complete re-write of the codebase. Learn how to avoid these common mistakes in this article." />
   <meta name="keywords" content="CSS, Cascading Style Sheets, Bill Mei" />
 
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Painless CSS" />
-  <link rel="canonical" href="https://www.painlesscss.com">
-  <meta property="og:description" content="Learn CSS from first principles with Painless CSS, a book and video course that teaches you how to build beautiful, intuitive websites that are a joy to design and maintain." />
-  <meta property="og:url" content="https://www.painlesscss.com" />
+  <meta property="og:title" content="Top 10 most deadly CSS mistakes made by new and experienced developers - Painless CSS" />
+  <link rel="canonical" href="https://www.painlesscss.com/top-10-css-mistakes.html">
+  <meta property="og:description" content="The more serious the mistake, the harder it is to recover from without a complete re-write of the codebase. Learn how to avoid these common mistakes in this article." />
+  <meta property="og:url" content="https://www.painlesscss.com/top-10-css-mistakes.html" />
   <meta property="og:site_name" content="Painless CSS" />
   <meta property="og:image" content="https://www.painlesscss.com/blog-images/mistake-share-thumbnail.jpg" />
   <meta property="og:image:type" content="image/jpg" />
-  <meta property="og:image:width" content="250" />
-  <meta property="og:image:height" content="420" />
+  <meta property="og:image:width" content="1500" />
+  <meta property="og:image:height" content="1000" />
   <link rel="image_src" href="https://www.painlesscss.com/blog-images/mistake-share-thumbnail.jpg">
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -32,7 +32,7 @@
 <body class="blog" data-spy="scroll" data-target="#navbarNav" data-offset="180">
   <div class="row no-gutters">
     <div class="col">
-      <div class="seo-img" style="background-image: url('blog-images/mistake-share-thumbnail.jpg');"><img src="blog-images/mistake-share-thumbnail.jpg" alt="The 1st Annual CSS Tournament"></div>
+      <div class="seo-img" style="background-image: url('blog-images/mistake-share-thumbnail.jpg');"><img src="blog-images/mistake-share-thumbnail.jpg" alt="Top 10 most deadly CSS mistakes made by new and experienced developers"></div>
     </div>
   </div>
 
@@ -40,17 +40,13 @@
     <div class="row mt-5">
       <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0">
         <h1 id="top">Top 10 most deadly CSS mistakes made by new and experienced developers</h1>
-
         <p class="mb-4 text-muted">Published July, 2019. Written by Bill Mei.</p>
 
-        <p>For years, I’ve seen numerous engineers working at my clients make the same common mistakes with Cascading Stylesheets. Even the talented, experienced engineers make these mistakes despite their expertise across broad technical areas because they haven’t dedicated time to learning CSS the same way they dedicated time to learning algorithms in university.</p>
-        <p>I think CSS comes with a perception of being unintuitive and difficult to work with not because it inherently a bad language, but because of these common mistakes that thwart most developers when they try to write CSS. In fact, if you can avoid these mistakes, you’ll see that CSS is actually a straightforward, easy-to-understand language that doesn’t deserve its reputation.</p>
-        <p>What follows are the top 10 most deadly mistakes I’ve seen engineers make throughout my consulting work, listed in increasing order of severity. The more serious the mistake, the harder it is to recover from without a complete re-write of the codebase.</p>
+        <p>For years, I’ve seen numerous engineers working at my clients make the same common mistakes with <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank" rel="noopener">Cascading Stylesheets (CSS)</a>. Even the talented, experienced engineers make these mistakes despite their expertise across broad technical areas because they haven’t dedicated time to learning CSS the same way they dedicated time to learning algorithms in university.</p>
+        <p>I think CSS comes with a perception of being unintuitive and difficult to work with not because it is inherently a bad language, but because of these common mistakes that thwart most developers when they try to write CSS. In fact, if you can avoid these mistakes, you’ll see that CSS is actually a straightforward, easy-to-understand language that doesn’t deserve its reputation.</p>
+        <p>What follows are the top 10 most deadly mistakes I’ve seen engineers make throughout my consulting engagements, listed in increasing order of severity. The more serious the mistake, the harder it is to recover from without a complete re-write of the codebase.</p>
         <h2 id="mistake-10-following-the-dom-when-writing-selectors">Mistake #10: Following the DOM when writing selectors</h2>
-        <p>Some developers like to maintain a minimalist ethos where they try not to clutter up the HTML with lots of classes, by using the DOM structure as a guide to writing CSS selectors, so that their selectors follow the structure of the DOM tree like so:</p>
-<pre><code class="language-css">body .container .main-content .blog-row .blog-col section article p a.bold {
-  font-weight: bold;
-}</code></pre>
+        <p>Let's take this HTML page as an example:</p>
 <pre><code class="language-html">&lt;body&gt;
   &lt;div class=&quot;container&quot;&gt;
     &lt;div class=&quot;main-content&quot;&gt;
@@ -70,7 +66,13 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/body&gt;</code></pre>
+        <p>Some developers like to maintain a minimalist ethos where they try not to clutter up the HTML with lots of classes, by using the DOM structure as a guide to writing CSS selectors, so that their selectors follow the structure of the DOM tree like so:</p>
+        <h5>🚫 Mistake</h5>
+<pre><code class="language-css">body .container .main-content .blog-row .blog-col section article p a.bold {
+  font-weight: bold;
+}</code></pre>
         <p>Preprocessors like SASS make this especially tempting because they make it easy and natural to nest selectors:</p>
+        <h5>🚫 Mistake</h5>
 <pre><code class="language-sass">body
   .container
     .main-content
@@ -84,22 +86,15 @@
         <p>However, “minimalism” is misguided because by keeping the HTML “clean”, you end up cluttering the CSS and making it harder to understand, debug, and change. Your CSS becomes inflexible, as the long combinator chains force the CSS to take on the job of replicating the structure of HTML, but that’s not the job that CSS is supposed to do.</p>
         <p>The job of CSS is to provide styling, and the job of HTML is to provide the structure. Just because the DOM tree looks one way does not mean the CSS should match it—the way you write CSS should be totally independent of the HTML. If you decide to change the structure of the HTML, then you’ll have to go back and update every combinator chain you’ve made in CSS as well, which is painful, error-prone, and adds unnecessary work.</p>
         <p>Instead, I recommend using targeted classes on your elements whenever possible. If you need to cherry-pick a specific element out of your page, a class selector can do the job just fine:</p>
+        <h5>✅ Correct</h5>
 <pre><code class="language-css">.bold {
   font-weight: bold;
 }</code></pre>
+        <p><small>These code samples come from <a target="_blank" rel="noopener" href="https://www.painlesscss.com">Painless CSS</a>, a book and video course that teaches you CSS from first principles. You can download the full repo with all 60 code samples and solutions in <a target="_blank" rel="noopener" href="https://www.painlesscss.com">the course</a>.</small></p>
         <p>Now if you ever change your mind about the ordering of the links on the page, you don’t need to re-write your entire CSS rule. You can simply move the <code class="language-css">.bold</code> class onto the element you desire.</p>
         <p>Luckily, this mistake is less of an issue if you use a CSS-in-JS implementation. However, CSS-in-JS is not yet widely adopted (as of 2019) and I still see unnecessarily chained selectors in codebases that do not use any preprocessors.</p>
-        <p>More generally, you should avoid overly targeted or overspecified selectors, and also avoid using <code class="language-css">!important</code>. The <a href="https://www.painlesscss.com/first-annual-css-tournament.html">CSS Specificity Tournament</a>, gives us an intuitive sense for why overpowered selectors are bad. If a selector is enormously powerful in the tournament, it wins faster and at earlier rounds, meaning the only way to beat a powerful selector is to write another selector that is even more highly powered.</p>
+        <p>More generally, you should avoid overly targeted or overspecified selectors, and also avoid using <code class="language-css">!important</code>. The <a target="_blank" rel="noopener" href="https://www.painlesscss.com/guide-to-css-specificity.html">CSS Specificity Tournament</a> gives us an intuitive sense for why overpowered selectors are bad. If a selector is enormously powerful in the tournament, it wins faster and at earlier rounds, meaning the only way to beat a powerful selector is to write another selector that is even more highly powered.</p>
         <p>This tendency for specificity to always escalate is known as a <em class="keyword">specificity war</em>. Like stockpiling nuclear weapons, no one wins at this war—it only becomes harder to de-escalate as specificity increases. The only way to avoid an all-out specificity war is to not stockpile highly powered selectors in the first place.</p>
-        <p>Mistake</p>
-<pre><code class="language-css">body &gt; .container &gt; .main-content &gt; .blog-row &gt; .blog-col &gt; section &gt; article &gt; p &gt; a.bold {
-  font-weight: bold;
-}</code></pre>
-        <p>Correct</p>
-<pre><code class="language-css">.bold {
-  font-weight: bold;
-}</code></pre>
-        <p><small>These code samples come from <a href="https://www.painlesscss.com">Painless CSS</a>, a book and video course that teaches you CSS from first principles. You can download the full repo with all 60 code samples and solutions in <a href="https://www.painlesscss.com">the course</a>.</small></p>
         <h2 id="mistake-9-ignoring-seo-when-writing-html">Mistake #9: Ignoring SEO when writing HTML</h2>
         <p>Search Engine Optimization (SEO) is not simply a task you offload to your offshore marketing team once you’re done coding. SEO should be something you take into account while you’re coding, especially because some factors that affect SEO are hard to change once they are already implemented in production; for example, your site’s URL scheme or your services architecture.</p>
         <p>One thing that impacts SEO in the HTML itself is making sure you use <em>semantic tags</em>, because your choice of tags affects how search engines understand and rank your content. If you want to show up near the top of the search results, choosing the right tags is the one of the first places to start.</p>
@@ -130,13 +125,13 @@
         <h2 id="mistake-8-using-px-units">Mistake #8: Using <code class="language-css">px</code> units</h2>
         <p>Actually, using <code class="language-css">px</code> units is fine in certain cases. The real mistake is <strong>using absolute instead of relative units</strong>.</p>
         <p>We prefer using relative measurements such as <code class="language-css">em</code> (The length of an <a href="https://en.wikipedia.org/wiki/Em_(typography)">Em</a>), <code class="language-css">%</code> (percent), <code class="language-css">rem</code> (root-Em), and others whenever possible. This ensures that the website scales proportionally according to your choice of font, and according to the user’s choice of zoom level.</p>
-        <p>Mistake</p>
+        <h5>🚫 Mistake</h5>
 <pre><code class="language-css">p {
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 8px;
 }</code></pre>
-        <p>Correct</p>
+        <h5>✅ Correct</h5>
 <pre><code class="language-css">body {
   font-size: 16px;
 }
@@ -145,7 +140,7 @@ p {
   line-height: 1.25;
   margin-bottom: 0.5em;
 }</code></pre>
-        <p><small>These code samples come from <a href="https://www.painlesscss.com">Painless CSS</a>, a book and video course that teaches you CSS from first principles. You can download the full repo with all 60 code samples and solutions in <a href="https://www.painlesscss.com">the course</a>.</small></p>
+        <p><small>These code samples come from <a target="_blank" rel="noopener" href="https://www.painlesscss.com">Painless CSS</a>, a book and video course that teaches you CSS from first principles. You can download the full repo with all 60 code samples and solutions in <a target="_blank" rel="noopener" href="https://www.painlesscss.com">the course</a>.</small></p>
         <p>The problem with using absolute units like <code class="language-css">px</code> is that every user has a different monitor size, and their browser windows (viewports) also have assorted sizes. This is counterintuitive because in almost every other realm of our lives, like interior decorating, city planning, or baking, we always deal with absolute measures. But on the web, the canvas that we’re painting on will suddenly change proportions every time a new person looks at it. This makes it impossible for your website to always have the same proportions everywhere, so you must try to place your elements in relative terms (brick B should be as big as brick A) instead of absolute terms (brick B is a 200px-by-400px rectangle); otherwise the available space on the screen does not scale appropriately to every window size. Relative units make this easy—<code class="language-css">px</code> locks your design to a specific zoom level and makes your design hard to scale to different devices.</p>
         <h2 id="mistake-7-trying-to-achieve-a-pixel-perfect-design">Mistake #7: Trying to achieve a “Pixel Perfect” design</h2>
         <p>More generally, “Pixel Perfect” design is a bad goal to aim for when writing CSS.</p>
@@ -174,7 +169,7 @@ p {
         <h2 id="mistake-5-not-separating-design-from-layout">Mistake #5: Not separating design from layout</h2>
         <p>The job of CSS is to provide styling, and the job of HTML is to provide the structure. Generally, you should write HTML first in a way that captures the information hiearchy of the page, ignoring any design concerns. Afterwards, you can add CSS to make things look nice.</p>
         <p>While HTML provides structure, it cannot always position elements on the exact spot of a page you want it to appear. Thus, you can use CSS to develop the correct layout of the page so that the elements appear in the right location. Once an element is placed into the right place on the page, it’s easy to dress it up after and make it look nice once it’s already in the right location, so you should think of the “layout CSS” as a different job from the “lipstick CSS”.</p>
-        <p>Mistake</p>
+        <h5>🚫 Mistake</h5>
 <pre><code class="language-css">.article {
   display: inline-block;
   width: 50%;
@@ -189,7 +184,7 @@ p {
 }</code></pre>
 <pre><code class="language-html">&lt;div class=&quot;article&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;article sidebar&quot;&gt;&lt;/div&gt;</code></pre>
-        <p>Correct</p>
+        <h5>✅ Correct</h5>
 <pre><code class="language-css">.article, .sidebar {
   display: inline-block;
 }
@@ -208,12 +203,13 @@ p {
 }</code></pre>
 <pre><code class="language-html">&lt;div class=&quot;article card&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;sidebar card&quot;&gt;&lt;/div&gt;</code></pre>
-        <p><small>These code samples come from <a href="https://www.painlesscss.com">Painless CSS</a>, a book and video course that teaches you CSS from first principles. You can download the full repo with all 60 code samples and solutions in <a href="https://www.painlesscss.com">the course</a>.</small></p>
+        <p><small>These code samples come from <a target="_blank" rel="noopener" href="https://www.painlesscss.com">Painless CSS</a>, a book and video course that teaches you CSS from first principles. You can download the full repo with all 60 code samples and solutions in <a target="_blank" rel="noopener" href="https://www.painlesscss.com">the course</a>.</small></p>
         <p>Making sure to keep the job of “lipstick” separate from the job of “layout” is also known as <em class="keyword">separation of concerns</em>, and this is a common software engineering principle that helps keep our code maintainable and easy-to-understand. We want to use the appropriate tool for the job because separating our CSS in this manner makes it easy to move an element to another part of the page without smudging the lipstick, and also makes it easy to change the color of the lipstick without disrupting the layout. Mixing the two forces us to do both jobs every time we add a new feature, even if it only warrants one job.</p>
         <h2 id="mistake-4-designing-for-desktop-before-mobile">Mistake #4: Designing for desktop before mobile</h2>
-        <p>Gone are the days where mobile websites were an optional extra tacked on by development agencies to pad invoices. Most people now surf the web on their phones and it’s common to see more than 50% of your web traffic come from phones and tablets. People love to extol the “mobile first” philosophy but they forget that “mobile first” implies <em>desktop is a second-class citizen</em>. Instead, the “mobile first” champions behave in the opposite manner, by writing code for desktop first and then later trying to cram the site into a phone. They use <code class="language-css">@media</code> queries to handle the exceptional cases on mobile, but really <em>desktop</em> should be the exceptional case.</p>
+        <p>Gone are the days where mobile websites were an optional extra tacked on by development agencies to pad invoices. Most people now surf the web on their phones and it’s common to see more than 50% of your web traffic come from phones and tablets.</p>
+        <p>People love to extol the “mobile first” philosophy but they forget that <strong>“mobile first” implies <em>desktop is a second-class citizen</em></strong>. Instead, the “mobile first” champions behave in the opposite manner, by writing code for desktop first and then later trying to cram the site into a phone. They use <code class="language-css">@media</code> queries to handle the exceptional cases on mobile, but really <em>desktop</em> should be the exceptional case.</p>
         <p>In this mobile era, your users first find you through their phones, and then only later do they upgrade to the desktop experience if they like your product enough. But does mobile truly come first in the minds of your designers, developers, and product managers? Do you code the mobile site first and then later build the desktop version? Do your designers create wireframes and mockups for mobile before they create wireframes and mockups for desktop? Do you perform A/B testing and solicit user feedback on the mobile version of your website before you test the desktop version?</p>
-        <p>Mistake</p>
+        <h5>🚫 Mistake</h5>
 <pre><code class="language-css">.container {
   width: 980px;
   padding: 1em;
@@ -225,7 +221,7 @@ p {
     padding: 0.5em;
   }
 }</code></pre>
-        <p>Correct</p>
+        <h5>✅ Correct</h5>
 <pre><code class="language-css">.container {
   width: 100%;
   max-width: 980px;
@@ -237,11 +233,11 @@ p {
     padding: 1em;
   }
 }</code></pre>
-        <p><small>These code samples come from <a href="https://www.painlesscss.com">Painless CSS</a>, a book and video course that teaches you CSS from first principles. You can download the full repo with all 60 code samples and solutions in <a href="https://www.painlesscss.com">the course</a>.</small></p>
-        <p>That your users are primarily mobile users is not the only reason to design and develop for mobile before desktop. Another reason is that it’s fundamentally easier to develop for a small screen before scaling the design up to a large screen, and not the reverse. You can always make existing elements bigger to fill a blank space on a larger screen, but it’s trickier to remove elements from a large screen to make them fit into a smaller one.</p>
-        <p>If you ship a mobile website without a desktop site, it will cost you $X to build now, and then $X again to add a desktop site later. But if you ship a desktop website without a mobile site, it will cost you $X to build now, and then $2X to add a mobile site later. This is what people mean by “technical debt”: you are paying a lower cost today, at the expense of paying a greater cost over the long run. Now, if you are blitzscaling, it may make sense to be “inefficient” and build only the desktop website to prove product-market fit with the understanding that a mobile site will cost more later, but this is a business decision. Engineers will prefer building the mobile site first even if it doesn’t always make business sense, so adjust this advice accordingly depending on your stage of growth.</p>
+        <p><small>These code samples come from <a target="_blank" rel="noopener" href="https://www.painlesscss.com">Painless CSS</a>, a book and video course that teaches you CSS from first principles. You can download the full repo with all 60 code samples and solutions in <a target="_blank" rel="noopener" href="https://www.painlesscss.com">the course</a>.</small></p>
+        <p>That your users are mostly mobile users is not the only reason to design and develop for mobile before desktop. The primary reason is that it’s fundamentally easier to develop for a small screen before scaling the design up to a large screen, and not the reverse. You can always make existing elements bigger to fill a blank space on a larger screen, but it’s trickier to remove elements from a large screen to make them fit into a smaller one.</p>
+        <p>If you ship a mobile website without a desktop site, it will cost you $X to build now, and then $X again to add a desktop site later. But if you ship a desktop website without a mobile site, it will cost you $X to build now, and then $2X to add a mobile site later. <strong>This is what people mean by “technical debt”: you are paying a lower cost today, at the expense of paying a greater cost over the long run.</strong> Now, if you are blitzscaling, it may make sense to be “inefficient” and build only the desktop website to prove product-market fit with the understanding that a mobile site will cost more later, but this is a business decision. Engineers will prefer building the mobile site first even if it doesn’t always make business sense, so adjust this advice accordingly depending on your stage of growth.</p>
         <h2 id="mistake-3-not-using-a-naming-scheme">Mistake #3: Not using a naming scheme</h2>
-        <blockquote>
+        <blockquote class="blockquote">
         <p>Namespaces are one honking great idea – let’s do more of those!<br>— <cite>PEP 20: The Zen of Python</cite></p>
         </blockquote>
         <p>It’s always exciting to dive straight into writing code without thinking carefully about your naming scheme for variables. For example, do you call it <code class="language-none">img</code> or <code class="language-none">image</code>? <code class="language-none">blog-img</code> or <code class="language-none">img-blog</code> or <code class="language-none">blog-image</code> or <code class="language-none">blog-img</code>? If you call it <code class="language-none">blog-img</code>, will you later agree on <code class="language-none">ad-img</code> and <code class="language-none">thumbnail-img</code>?</p>
@@ -252,29 +248,29 @@ p {
         <p>It seems so easy. Just install Bootstrap and you are good to go right? Unfortunately a CSS framework can often cause more problems than it solves if you don’t really understand it, and accidentally go against its principles. No matter if you are following an open-source design system like Bootstrap, Material Design, Foundation, or your company’s own home-grown design system.</p>
         <p>One of the best things I ever did for my career was to just set aside 4-8 hours to read the official documentation <em>in its entirety</em> every time I wanted to use a new programming language or framework. As in, not skimming the docs or only searching for keywords that are relevant to my immediate needs, but actually reading it cover-to-cover like a book.</p>
         <p>For example, before I started using Bootstrap, I set aside 6 hours to read its documentation in its entirety. This has saved me countless hours in implementation later, especially in avoiding grid nesting issues that seem to be endemic, because those who skipped the documentation didn’t realize that <a href="http://www.helloerik.com/the-subtle-magic-behind-why-the-bootstrap-3-grid-works">you’re not allowed to nest Bootstrap containers</a>.</p>
-        <p>Diligently reading the documentation is important because many frameworks require you to un-learn the muscle memory you picked up from previous frameworks, and you can’t know where the pitfalls are until you’ve read the whole manual. For example, component inheritance was a common pattern in front-end frameworks such as Backbone. However, frameworks such as React work best when using <a href="https://reactjs.org/docs/composition-vs-inheritance.html">composition instead of inheritance</a>, but you won’t realize this if you skip the docs because you’ll just default to using the inheritance patterns that you’re used to.</p>
+        <p>Diligently reading the documentation is important because many frameworks require you to un-learn the muscle memory you picked up from previous frameworks, and you can’t know where the pitfalls are until you’ve read the whole manual. For example, component inheritance was a common pattern in older front-end frameworks such as Backbone. However, newer frameworks such as React work best when using <a href="https://reactjs.org/docs/composition-vs-inheritance.html">composition instead of inheritance</a>, but you won’t realize this if you skip the docs because you’ll just default to using the inheritance patterns that you’re used to.</p>
         <p>More generally, it’s dangerous to get trapped by the muscle memory you’ve developed from old technology, which leads us to the final fatal mistake:</p>
         <h2 id="mistake-1-not-following-a-systematic-plan-to-learn-css">Mistake #1: Not following a systematic plan to learn CSS</h2>
         <p>Technology is ever evolving, and the only way to stay relevant is to follow a consistent plan of learning and improving.</p>
-        <p>It’s dangerous to learn by memorizing knowledge from dogma. Some experienced developers have a visceral negative reaction to hearing “inline styles”, because they were taught early in their career the best practice to “never use inline styles”.</p>
+        <p>It’s dangerous to learn by memorizing knowledge from dogma. Some experienced developers have a visceral negative reaction to hearing “inline styles”, because they were taught early in their careers the best practice to “never use inline styles”.</p>
         <p>Indeed, “never use inline styles” was a best practice a long time ago when it made HTML hard to read, hard to debug, and hard to change. However, the technology chugs along and eventually upends the assumptions that lead to these “best practices”. New assumptions lead to new best practices.</p>
         <p>Inline styles are only painful when you write them by hand—but if you use a CSS-in-JS library to manage your inline styles for you, these downsides disappear, and you are left only with the advantages of code modularity, automated testing, and simple management that works hand-in-hand with a front-end JavaScript framework such as React.</p>
         <p>If you are stuck with the dogma of “never use inline styles”, you won’t have the curiosity to explore what it means when the original assumptions changed. It’s important to use a systematic, structured plan to learn CSS from the ground up and not just search Google for tutorials that only focus on surface-level practices.</p>
         <p>Unfortunately, I tried looking for free online resources that help you learn CSS in a structured, systematic way, and there simply aren’t any good resources out there. The existing CSS resources either are too technical and assume you already know how browser C++ rendering engines work (which is not at all approachable), or they present only quick and dirty tricks instead of teaching you foundational principles.</p>
         <p>Because there is no good resource that gives you a solid mental model for how CSS actually works from the ground up, you’re left copy/pasting stuff from Stack Overflow and hoping it works. This leaves lots of people with a patchwork knowledge of CSS, knowing just enough to solve specific bugs that arise, but feeling completely helpless when faced with a hard-to-understand bug that seemingly takes hours to fix.</p>
-        <p>Frustrated by seeing people repeatedly same mistakes with CSS in my years of consulting for software startups, I decided to take matters into my own hands and write my own resource. I created a course, <em><a href="https://www.painlesscss.com/">Painless CSS</a></em>, to provide a comprehensive, first-principles guide to learning CSS the right way and to give you the real skills you need to write professional-grade CSS.</p>
+        <p><strong>Frustrated by seeing people repeatedly same mistakes with CSS in my years of consulting for software startups, I decided to take matters into my own hands and write my own resource.</strong> I created a course, <em><a target="_blank" rel="noopener" href="https://www.painlesscss.com/">Painless CSS</a></em>, to provide a comprehensive, first-principles guide to learning CSS the right way and to give you the real skills you need to write professional-grade CSS.</p>
         <p>The secret is that CSS is actually a straightforward language once you are equipped with the right mental models. I created the <em>Painless CSS</em> course because I want CSS to finally shed its undeserved reputation and rise from the ashes as the beautiful programming language that it is.</p>
-        <p>I hope you enjoyed this article, and that it gave you a sense of how to avoid the top 10 most common mistakes I see people make when they write CSS. There are many more other mistakes I see people make with CSS—you can learn about them all in detail, and how to fix them in the <em>Painless CSS</em> course here: <a href="https://www.painlesscss.com">www.painlesscss.com</a>.</p>
+        <p>I hope you enjoyed this article, and that it gave you a sense of how to avoid the top 10 most common mistakes I see people make when they write CSS. <strong>There are many more other mistakes I see people make with CSS</strong>—you can learn about them all in detail, and how to fix them in the <em>Painless CSS</em> course here: <a target="_blank" rel="noopener" href="https://www.painlesscss.com">www.painlesscss.com</a>.</p>
         <p>In the meantime, I hope this article was helpful to you and inspired you to take your plan for learning CSS seriously, no matter if you decide to purchase my course or someone else’s. It’s never been a more exciting time to learn front-end web development, and I wish you the best in your programming journey.</p>
         
         <div class="row no-gutters">
           <div class="col-md-4 product-img">
-            <a href="https://www.painlesscss.com"><img src="images/book-and-screencast.png" alt="The Painless CSS book cover and video screencast example on a monitor" class="card-img"></a>
+            <a target="_blank" rel="noopener" href="https://www.painlesscss.com"><img src="images/book-and-screencast.png" alt="The Painless CSS book cover and video screencast example on a monitor" class="card-img"></a>
           </div>
           <div class="col-md-8">
             <div class="card-body">
               <p><em>Painless CSS</em> is a book and video course that teaches you from first principles how to build beautiful, intuitive websites that are a joy to design and maintain.</p>
-              <p>Learn more at <a href="https://www.painlesscss.com">www.painlesscss.com</a></p>
+              <p>Learn more at <a target="_blank" rel="noopener" href="https://www.painlesscss.com">www.painlesscss.com</a></p>
             </div>
           </div>
         </div>
