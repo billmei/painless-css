@@ -71,7 +71,7 @@
   &lt;/div&gt;
 &lt;/body&gt;</code></pre>
         <p>Preprocessors like SASS make this especially tempting because they make it easy and natural to nest selectors:</p>
-<pre data-dependencies="css"><code class="language-sass">body
+<pre><code class="language-sass">body
   .container
     .main-content
       .blog-row
@@ -84,40 +84,40 @@
         <p>However, “minimalism” is misguided because by keeping the HTML “clean”, you end up cluttering the CSS and making it harder to understand, debug, and change. Your CSS becomes inflexible, as the long combinator chains force the CSS to take on the job of replicating the structure of HTML, but that’s not the job that CSS is supposed to do.</p>
         <p>The job of CSS is to provide styling, and the job of HTML is to provide the structure. Just because the DOM tree looks one way does not mean the CSS should match it—the way you write CSS should be totally independent of the HTML. If you decide to change the structure of the HTML, then you’ll have to go back and update every combinator chain you’ve made in CSS as well, which is painful, error-prone, and adds unnecessary work.</p>
         <p>Instead, I recommend using targeted classes on your elements whenever possible. If you need to cherry-pick a specific element out of your page, a class selector can do the job just fine:</p>
-<pre><code>.bold {
+<pre><code class="language-css">.bold {
   font-weight: bold;
 }</code></pre>
-        <p>Now if you ever change your mind about the ordering of the links on the page, you don’t need to re-write your entire CSS rule. You can simply move the <code>.bold</code> class onto the element you desire.</p>
+        <p>Now if you ever change your mind about the ordering of the links on the page, you don’t need to re-write your entire CSS rule. You can simply move the <code class="language-css">.bold</code> class onto the element you desire.</p>
         <p>Luckily, this mistake is less of an issue if you use a CSS-in-JS implementation. However, CSS-in-JS is not yet widely adopted (as of 2019) and I still see unnecessarily chained selectors in codebases that do not use any preprocessors.</p>
-        <p>More generally, you should avoid overly targeted or overspecified selectors, and also avoid using <code>!important</code>. The <a href="https://www.painlesscss.com/first-annual-css-tournament.html">CSS Specificity Tournament</a>, gives us an intuitive sense for why overpowered selectors are bad. If a selector is enormously powerful in the tournament, it wins faster and at earlier rounds, meaning the only way to beat a powerful selector is to write another selector that is even more highly powered.</p>
+        <p>More generally, you should avoid overly targeted or overspecified selectors, and also avoid using <code class="language-css">!important</code>. The <a href="https://www.painlesscss.com/first-annual-css-tournament.html">CSS Specificity Tournament</a>, gives us an intuitive sense for why overpowered selectors are bad. If a selector is enormously powerful in the tournament, it wins faster and at earlier rounds, meaning the only way to beat a powerful selector is to write another selector that is even more highly powered.</p>
         <p>This tendency for specificity to always escalate is known as a <em class="keyword">specificity war</em>. Like stockpiling nuclear weapons, no one wins at this war—it only becomes harder to de-escalate as specificity increases. The only way to avoid an all-out specificity war is to not stockpile highly powered selectors in the first place.</p>
         <p>Mistake</p>
-<pre><code>body &gt; .container &gt; .main-content &gt; .blog-row &gt; .blog-col &gt; section &gt; article &gt; p &gt; a.bold {
+<pre><code class="language-css">body &gt; .container &gt; .main-content &gt; .blog-row &gt; .blog-col &gt; section &gt; article &gt; p &gt; a.bold {
   font-weight: bold;
 }</code></pre>
         <p>Correct</p>
-<pre><code>.bold {
+<pre><code class="language-css">.bold {
   font-weight: bold;
 }</code></pre>
         <p><small>These code samples come from <a href="https://www.painlesscss.com">Painless CSS</a>, a book and video course that teaches you CSS from first principles. You can download the full repo with all 60 code samples and solutions in <a href="https://www.painlesscss.com">the course</a>.</small></p>
         <h2 id="mistake-9-ignoring-seo-when-writing-html">Mistake #9: Ignoring SEO when writing HTML</h2>
         <p>Search Engine Optimization (SEO) is not simply a task you offload to your offshore marketing team once you’re done coding. SEO should be something you take into account while you’re coding, especially because some factors that affect SEO are hard to change once they are already implemented in production; for example, your site’s URL scheme or your services architecture.</p>
         <p>One thing that impacts SEO in the HTML itself is making sure you use <em>semantic tags</em>, because your choice of tags affects how search engines understand and rank your content. If you want to show up near the top of the search results, choosing the right tags is the one of the first places to start.</p>
-        <p>For example, let’s say you are writing a blog post about real estate prices in Toronto. You could just put everything into <code>&lt;div&gt;</code> elements; however, a <code>&lt;div&gt;</code> is a generic, unsemantic tag which doesn’t imply any inherent meaning in the content. Instead, you should pick a more specific, semantic tag such as <code>&lt;article&gt;</code> to contain the article, <code>&lt;nav&gt;</code> to contain some links to other blog posts, and <code>&lt;table&gt;</code> to contain the tabular data about real estate prices.</p>
+        <p>For example, let’s say you are writing a blog post about real estate prices in Toronto. You could just put everything into <code class="language-html">&lt;div&gt;</code> elements; however, a <code class="language-html">&lt;div&gt;</code> is a generic, unsemantic tag which doesn’t imply any inherent meaning in the content. Instead, you should pick a more specific, semantic tag such as <code class="language-html">&lt;article&gt;</code> to contain the article, <code class="language-html">&lt;nav&gt;</code> to contain some links to other blog posts, and <code class="language-html">&lt;table&gt;</code> to contain the tabular data about real estate prices.</p>
         <p>The advantage of choosing more specific, semantic tags over generic, unsemantic tags is that you are giving search engines more information about your website, which allows the search engine crawler to better understand and deliver content relevant to a reader’s search query.</p>
         <p>Let’s take a look at headers, for example. There are six potential header tags, in order from most important header to least important header:</p>
         <ul>
-          <li><code>&lt;h1&gt;</code></li>
-          <li><code>&lt;h2&gt;</code></li>
-          <li><code>&lt;h3&gt;</code></li>
-          <li><code>&lt;h4&gt;</code></li>
-          <li><code>&lt;h5&gt;</code></li>
-          <li><code>&lt;h6&gt;</code></li>
+          <li><code class="language-html">&lt;h1&gt;</code></li>
+          <li><code class="language-html">&lt;h2&gt;</code></li>
+          <li><code class="language-html">&lt;h3&gt;</code></li>
+          <li><code class="language-html">&lt;h4&gt;</code></li>
+          <li><code class="language-html">&lt;h5&gt;</code></li>
+          <li><code class="language-html">&lt;h6&gt;</code></li>
         </ul>
-        <p><code>&lt;h1&gt;</code> is your most important header, because it is a special signal to the search engine that this is the headline or title of your content (there is also the <code>&lt;title&gt;</code> tag, but most search engines take both into consideration). Additionally, if your user is vision impaired and uses a screen reader, most screen readers know to read <code>&lt;h1&gt;</code>s aloud straight away because it is assumed that this is the headline of your content.</p>
-        <p>This means that if you use an <code>&lt;h1&gt;</code> for anything that is not a headline, or if you have <em>more than one</em> <code>&lt;h1&gt;</code> on a page, the search engine will be confused, and your “real” headline may not show up in the search results.</p>
-        <p>The exception to this is when you nest multiple <code>&lt;h1&gt;</code>s in different sections. Take the following example:</p>
-<pre><code>&lt;article&gt;
+        <p><code class="language-html">&lt;h1&gt;</code> is your most important header, because it is a special signal to the search engine that this is the headline or title of your content (there is also the <code class="language-html">&lt;title&gt;</code> tag, but most search engines take both into consideration). Additionally, if your user is vision impaired and uses a screen reader, most screen readers know to read <code class="language-html">&lt;h1&gt;</code>s aloud straight away because it is assumed that this is the headline of your content.</p>
+        <p>This means that if you use an <code class="language-html">&lt;h1&gt;</code> for anything that is not a headline, or if you have <em>more than one</em> <code class="language-html">&lt;h1&gt;</code> on a page, the search engine will be confused, and your “real” headline may not show up in the search results.</p>
+        <p>The exception to this is when you nest multiple <code class="language-html">&lt;h1&gt;</code>s in different sections. Take the following example:</p>
+<pre><code class="language-html">&lt;article&gt;
   &lt;h1&gt;My cool blog post&lt;/h1&gt;
   &lt;p&gt;This blog is so cool!&lt;/p&gt;
 &lt;/article&gt;
@@ -125,19 +125,19 @@
   &lt;h1&gt;Contact Us&lt;/h1&gt;
   &lt;p&gt;Tel: 867-5309&lt;/p&gt;
 &lt;/footer&gt;</code></pre>
-        <p>Even though there are two <code>&lt;h1&gt;</code>s on this page, one is nested inside an <code>&lt;article&gt;</code> tag and the other one is nested inside a <code>&lt;footer&gt;</code> tag. Since the search engine understands that the <code>&lt;article&gt;</code> is inherently more interesting and important than the <code>&lt;footer&gt;</code>, it can appropriately use the <code>&lt;article&gt;</code>’s <code>&lt;h1&gt;</code> tag instead of the <code>&lt;footer&gt;</code>’s <code>&lt;h1&gt;</code> tag to determine the headline. So in a certain sense, it matters who your parents are, to determine how important you are. Just like in real life. 😉</p>
+        <p>Even though there are two <code class="language-html">&lt;h1&gt;</code>s on this page, one is nested inside an <code class="language-html">&lt;article&gt;</code> tag and the other one is nested inside a <code class="language-html">&lt;footer&gt;</code> tag. Since the search engine understands that the <code class="language-html">&lt;article&gt;</code> is inherently more interesting and important than the <code class="language-html">&lt;footer&gt;</code>, it can appropriately use the <code class="language-html">&lt;article&gt;</code>’s <code class="language-html">&lt;h1&gt;</code> tag instead of the <code class="language-html">&lt;footer&gt;</code>’s <code class="language-html">&lt;h1&gt;</code> tag to determine the headline. So in a certain sense, it matters who your parents are, to determine how important you are. Just like in real life. 😉</p>
         <p>There are many more factors that influence your search engine ranking beyond the ones mentioned. To stay on topic in this article, I encourage you to read a book on SEO if you’re interested in learning about this topic in more detail. (How do you determine what is the best book on SEO? I wonder if it makes sense to just grab whatever one shows up first on Google. https://xkcd.com/125)</p>
-        <h2 id="mistake-8-using-px-units">Mistake #8: Using <code>px</code> units</h2>
-        <p>Actually, using <code>px</code> units is fine in certain cases. The real mistake is <strong>using absolute instead of relative units</strong>.</p>
-        <p>We prefer using relative measurements such as <code>em</code> (The length of an <a href="https://en.wikipedia.org/wiki/Em_(typography)">Em</a>), <code>%</code> (percent), <code>rem</code> (root-Em), and others whenever possible. This ensures that the website scales proportionally according to your choice of font, and according to the user’s choice of zoom level.</p>
+        <h2 id="mistake-8-using-px-units">Mistake #8: Using <code class="language-css">px</code> units</h2>
+        <p>Actually, using <code class="language-css">px</code> units is fine in certain cases. The real mistake is <strong>using absolute instead of relative units</strong>.</p>
+        <p>We prefer using relative measurements such as <code class="language-css">em</code> (The length of an <a href="https://en.wikipedia.org/wiki/Em_(typography)">Em</a>), <code class="language-css">%</code> (percent), <code class="language-css">rem</code> (root-Em), and others whenever possible. This ensures that the website scales proportionally according to your choice of font, and according to the user’s choice of zoom level.</p>
         <p>Mistake</p>
-<pre><code>p {
+<pre><code class="language-css">p {
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 8px;
 }</code></pre>
         <p>Correct</p>
-<pre><code>body {
+<pre><code class="language-css">body {
   font-size: 16px;
 }
 p {
@@ -146,7 +146,7 @@ p {
   margin-bottom: 0.5em;
 }</code></pre>
         <p><small>These code samples come from <a href="https://www.painlesscss.com">Painless CSS</a>, a book and video course that teaches you CSS from first principles. You can download the full repo with all 60 code samples and solutions in <a href="https://www.painlesscss.com">the course</a>.</small></p>
-        <p>The problem with using absolute units like <code>px</code> is that every user has a different monitor size, and their browser windows (viewports) also have assorted sizes. This is counterintuitive because in almost every other realm of our lives, like interior decorating, city planning, or baking, we always deal with absolute measures. But on the web, the canvas that we’re painting on will suddenly change proportions every time a new person looks at it. This makes it impossible for your website to always have the same proportions everywhere, so you must try to place your elements in relative terms (brick B should be as big as brick A) instead of absolute terms (brick B is a 200px-by-400px rectangle); otherwise the available space on the screen does not scale appropriately to every window size. Relative units make this easy—<code>px</code> locks your design to a specific zoom level and makes your design hard to scale to different devices.</p>
+        <p>The problem with using absolute units like <code class="language-css">px</code> is that every user has a different monitor size, and their browser windows (viewports) also have assorted sizes. This is counterintuitive because in almost every other realm of our lives, like interior decorating, city planning, or baking, we always deal with absolute measures. But on the web, the canvas that we’re painting on will suddenly change proportions every time a new person looks at it. This makes it impossible for your website to always have the same proportions everywhere, so you must try to place your elements in relative terms (brick B should be as big as brick A) instead of absolute terms (brick B is a 200px-by-400px rectangle); otherwise the available space on the screen does not scale appropriately to every window size. Relative units make this easy—<code class="language-css">px</code> locks your design to a specific zoom level and makes your design hard to scale to different devices.</p>
         <h2 id="mistake-7-trying-to-achieve-a-pixel-perfect-design">Mistake #7: Trying to achieve a “Pixel Perfect” design</h2>
         <p>More generally, “Pixel Perfect” design is a bad goal to aim for when writing CSS.</p>
         <p>Modern websites must work across a variety of devices (mobile, desktop, tablet, and watches), of which there are a cornucopia of screen sizes, screen resolutions, operating systems, user settings, and JavaScript engines that interfere with your ability to render “Pixel Perfect” designs.</p>
@@ -156,26 +156,26 @@ p {
         <h2 id="mistake-6-breaking-the-document-flow">Mistake #6: Breaking the document flow</h2>
         <p>The tricky part about CSS is you can write different CSS code to achieve the same visual result. For example, to horizontally center an element on a page, you could use any of the following techniques, and they’ll all look the same to the user:</p>
         <ol>
-          <li>Surround the element with <code>&amp;nbsp;</code> until it looks centered</li>
-          <li>Explicitly set the <code>width</code> and left <code>margin</code> of the element to a fixed value that makes it look centered.</li>
-          <li>Use <code>text-align: center</code></li>
-          <li>Use <code>margin: 0 auto</code></li>
-          <li>Use a combination of <code>float</code>ed siblings and a clearfix.</li>
-          <li>Use a combination of <code>position</code>, <code>left</code>, and <code>transform</code>.</li>
+          <li>Surround the element with <code class="language-html">&amp;nbsp;</code> until it looks centered</li>
+          <li>Explicitly set the <code class="language-css">width</code> and left <code class="language-css">margin</code> of the element to a fixed value that makes it look centered.</li>
+          <li>Use <code class="language-css">text-align: center</code></li>
+          <li>Use <code class="language-css">margin: 0 auto</code></li>
+          <li>Use a combination of <code class="language-css">float</code>ed siblings and a clearfix.</li>
+          <li>Use a combination of <code class="language-css">position</code>, <code class="language-css">left</code>, and <code class="language-css">transform</code>.</li>
         </ol>
         <p>Which technique is best? Depending on your goals, it may be perfectly correct to use <em>any</em> of the above techniques.</p>
         <p>Generally speaking, there are some rules of thumb we try to follow to select the best layout method.</p>
-        <p>First, we eliminate any technique that uses absolute measures instead of relative measures. This means #1 <code>&amp;nbsp;</code> and #2 explicitly setting the <code>width</code> are out.</p>
-        <p>Second, we prefer techniques that do <em>not</em> modify the document flow over techniques that break the document flow. This is beacuse elements follow the document flow by default, so if you break this default assumption, you’ll make it harder for your co-workers (or yourself, 6 months from now) to understand what’s going on. This means #5 <code>float</code> and #6 <code>position</code> are out.</p>
+        <p>First, we eliminate any technique that uses absolute measures instead of relative measures. This means #1 <code class="language-html">&amp;nbsp;</code> and #2 explicitly setting the <code class="language-css">width</code> are out.</p>
+        <p>Second, we prefer techniques that do <em>not</em> modify the document flow over techniques that break the document flow. This is beacuse elements follow the document flow by default, so if you break this default assumption, you’ll make it harder for your co-workers (or yourself, 6 months from now) to understand what’s going on. This means #5 <code class="language-css">float</code> and #6 <code class="language-css">position</code> are out.</p>
         <p>More generally, we prefer techniques that require as little change to other things as possible. Keeping your footprint small helps you avoid sprawling, complicated code that is hard to maintain.</p>
-        <p>Technique #3, <code>text-align: center</code> works only on inline elements, so we’ll choose #3 whenever our HTML is already an inline element, and we avoid the extra need to add a <code>display: inline</code> CSS declaration.</p>
-        <p>Technique #4, <code>margin: 0 auto</code> works only on block elements, so we’ll choose #4 whenever our HTML is already a block element, and we avoid the extra need to add a <code>display: block</code> CSS declaration.</p>
-        <p>Breaking the document flow too frequently (e.g. over zealously using <code>float</code>) increases your footprint and makes your layout harder to understand. When there are multiple options to write CSS code to achieve the same visual result, we prefer using techniques that have a smaller footprint.</p>
+        <p>Technique #3, <code class="language-css">text-align: center</code> works only on inline elements, so we’ll choose #3 whenever our HTML is already an inline element, and we avoid the extra need to add a <code class="language-css">display: inline</code> CSS declaration.</p>
+        <p>Technique #4, <code class="language-css">margin: 0 auto</code> works only on block elements, so we’ll choose #4 whenever our HTML is already a block element, and we avoid the extra need to add a <code class="language-css">display: block</code> CSS declaration.</p>
+        <p>Breaking the document flow too frequently (e.g. over zealously using <code class="language-css">float</code>) increases your footprint and makes your layout harder to understand. When there are multiple options to write CSS code to achieve the same visual result, we prefer using techniques that have a smaller footprint.</p>
         <h2 id="mistake-5-not-separating-design-from-layout">Mistake #5: Not separating design from layout</h2>
         <p>The job of CSS is to provide styling, and the job of HTML is to provide the structure. Generally, you should write HTML first in a way that captures the information hiearchy of the page, ignoring any design concerns. Afterwards, you can add CSS to make things look nice.</p>
         <p>While HTML provides structure, it cannot always position elements on the exact spot of a page you want it to appear. Thus, you can use CSS to develop the correct layout of the page so that the elements appear in the right location. Once an element is placed into the right place on the page, it’s easy to dress it up after and make it look nice once it’s already in the right location, so you should think of the “layout CSS” as a different job from the “lipstick CSS”.</p>
         <p>Mistake</p>
-<pre><code>.article {
+<pre><code class="language-css">.article {
   display: inline-block;
   width: 50%;
   margin-bottom: 1em;
@@ -187,10 +187,10 @@ p {
   width: 25%;
   margin-left: 5px;
 }</code></pre>
-<pre><code>&lt;div class=&quot;article&quot;&gt;&lt;/div&gt;
+<pre><code class="language-html">&lt;div class=&quot;article&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;article sidebar&quot;&gt;&lt;/div&gt;</code></pre>
         <p>Correct</p>
-<pre><code>.article, .sidebar {
+<pre><code class="language-css">.article, .sidebar {
   display: inline-block;
 }
 .article {
@@ -206,15 +206,15 @@ p {
   border-radius: 1rem;
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);
 }</code></pre>
-<pre><code>&lt;div class=&quot;article card&quot;&gt;&lt;/div&gt;
+<pre><code class="language-html">&lt;div class=&quot;article card&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;sidebar card&quot;&gt;&lt;/div&gt;</code></pre>
         <p><small>These code samples come from <a href="https://www.painlesscss.com">Painless CSS</a>, a book and video course that teaches you CSS from first principles. You can download the full repo with all 60 code samples and solutions in <a href="https://www.painlesscss.com">the course</a>.</small></p>
         <p>Making sure to keep the job of “lipstick” separate from the job of “layout” is also known as <em class="keyword">separation of concerns</em>, and this is a common software engineering principle that helps keep our code maintainable and easy-to-understand. We want to use the appropriate tool for the job because separating our CSS in this manner makes it easy to move an element to another part of the page without smudging the lipstick, and also makes it easy to change the color of the lipstick without disrupting the layout. Mixing the two forces us to do both jobs every time we add a new feature, even if it only warrants one job.</p>
         <h2 id="mistake-4-designing-for-desktop-before-mobile">Mistake #4: Designing for desktop before mobile</h2>
-        <p>Gone are the days where mobile websites were an optional extra tacked on by development agencies to pad invoices. Most people now surf the web on their phones and it’s common to see more than 50% of your web traffic come from phones and tablets. People love to extol the “mobile first” philosophy but they forget that “mobile first” implies <em>desktop is a second-class citizen</em>. Instead, the “mobile first” champions behave in the opposite manner, by writing code for desktop first and then later trying to cram the site into a phone. They use <code>@media</code> queries to handle the exceptional cases on mobile, but really <em>desktop</em> should be the exceptional case.</p>
+        <p>Gone are the days where mobile websites were an optional extra tacked on by development agencies to pad invoices. Most people now surf the web on their phones and it’s common to see more than 50% of your web traffic come from phones and tablets. People love to extol the “mobile first” philosophy but they forget that “mobile first” implies <em>desktop is a second-class citizen</em>. Instead, the “mobile first” champions behave in the opposite manner, by writing code for desktop first and then later trying to cram the site into a phone. They use <code class="language-css">@media</code> queries to handle the exceptional cases on mobile, but really <em>desktop</em> should be the exceptional case.</p>
         <p>In this mobile era, your users first find you through their phones, and then only later do they upgrade to the desktop experience if they like your product enough. But does mobile truly come first in the minds of your designers, developers, and product managers? Do you code the mobile site first and then later build the desktop version? Do your designers create wireframes and mockups for mobile before they create wireframes and mockups for desktop? Do you perform A/B testing and solicit user feedback on the mobile version of your website before you test the desktop version?</p>
         <p>Mistake</p>
-<pre><code>.container {
+<pre><code class="language-css">.container {
   width: 980px;
   padding: 1em;
 }
@@ -226,7 +226,7 @@ p {
   }
 }</code></pre>
         <p>Correct</p>
-<pre><code>.container {
+<pre><code class="language-css">.container {
   width: 100%;
   max-width: 980px;
   padding: 0.5em;
@@ -244,8 +244,8 @@ p {
         <blockquote>
         <p>Namespaces are one honking great idea – let’s do more of those!<br>— <cite>PEP 20: The Zen of Python</cite></p>
         </blockquote>
-        <p>It’s always exciting to dive straight into writing code without thinking carefully about your naming scheme for variables. For example, do you call it <code>img</code> or <code>image</code>? <code>blog-img</code> or <code>img-blog</code> or <code>blog-image</code> or <code>blog-img</code>? If you call it <code>blog-img</code>, will you later agree on <code>ad-img</code> and <code>thumbnail-img</code>?</p>
-        <p>It seems minor, but CSS is harder to refactor than other languages because we currently don’t have any static analysis tools for CSS that let us perform automated refactoring/renaming. CSS classes can be dynamically added, removed, and constructed using JavaScript, so it’s impossible to find “unused” CSS selectors—just because a snippet of CSS isn’t being used in one state of one page, doesn’t mean it’s not used <em>ever</em>. BEM doesn’t solve this problem if your team can’t agree on whether to call it <code>.center</code>, <code>.centre</code>, <code>.centered</code>, <code>.text-center</code>, or <code>.align-center</code>.</p>
+        <p>It’s always exciting to dive straight into writing code without thinking carefully about your naming scheme for variables. For example, do you call it <code class="language-none">img</code> or <code class="language-none">image</code>? <code class="language-none">blog-img</code> or <code class="language-none">img-blog</code> or <code class="language-none">blog-image</code> or <code class="language-none">blog-img</code>? If you call it <code class="language-none">blog-img</code>, will you later agree on <code class="language-none">ad-img</code> and <code class="language-none">thumbnail-img</code>?</p>
+        <p>It seems minor, but CSS is harder to refactor than other languages because we currently don’t have any static analysis tools for CSS that let us perform automated refactoring/renaming. CSS classes can be dynamically added, removed, and constructed using JavaScript, so it’s impossible to find “unused” CSS selectors—just because a snippet of CSS isn’t being used in one state of one page, doesn’t mean it’s not used <em>ever</em>. BEM doesn’t solve this problem if your team can’t agree on whether to call it <code class="language-css">.center</code>, <code class="language-css">.centre</code>, <code class="language-css">.centered</code>, <code class="language-css">.text-center</code>, or <code class="language-css">.align-center</code>.</p>
         <p>This problem is partially solved by using a CSS-in-JS library because the framework removes the global scope of CSS and encourages you to keep styles alongside their associated components. However, CSS-in-JS is not yet widely adopted (as of 2019), and I still have on my wish list a static analysis tool for CSS—theoretically, CSS-in-JS should make it possible to implement one for the first time.</p>
         <p>This is also partially solved by using a design system, where you agree on a fixed set of variables for colors, spacing, fonts, etc., but unused classes have a tendency to persist because we don’t have an automated way to identify and remove them, and developers are rightfully hesitant to remove anything that might break the website, so they err on the side of caution and prefer to grow the waste pile. Worse, unless you are diligent about promoting and clearly communicating your design system, it may simply get ignored as your co-workers avoid reading your documentation and continue in their old habits.</p>
         <h2 id="mistake-2-not-reading-the-documentation">Mistake #2: Not reading the documentation</h2>
