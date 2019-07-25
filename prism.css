@@ -93,12 +93,22 @@ pre[class*="language-"] {
 	color: #905;
 }
 
+/* Manually color CSS property names when inline */
+.language-css.propertyname {
+	color: #905;
+}
+
 .token.selector,
 .token.attr-name,
 .token.string,
 .token.char,
 .token.builtin,
 .token.inserted {
+	color: #690;
+}
+
+/* Manually color CSS class names when inline */
+.language-css.classname {
 	color: #690;
 }
 
@@ -114,6 +124,11 @@ pre[class*="language-"] {
 .token.atrule,
 .token.attr-value,
 .token.keyword {
+	color: #07a;
+}
+
+/* Manually color CSS at rules when inline */
+.language-css.rulename {
 	color: #07a;
 }
 
